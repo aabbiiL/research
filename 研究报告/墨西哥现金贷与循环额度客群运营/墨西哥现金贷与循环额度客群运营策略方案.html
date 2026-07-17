@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="墨西哥现金贷与循环额度运营策略：前置机会识别、MOT实时响应、组合权益、渠道序列、健康复借、增量周转与留存。">
+<title>从前置识别到全旅程运营｜墨西哥现金贷与循环额度客群运营策略</title>
+<style>
+@page {
+    size: A4;
+    margin: 25mm 20mm 20mm 20mm;
+
+    @top-center {
+        content: "从前置识别到全旅程运营  |  横纵分析法深度研究报告";
+        font-family: "Droid Sans Fallback", Helvetica, Arial, sans-serif;
+        font-size: 8pt;
+        color: #95a5a6;
+        border-bottom: 0.5pt solid #ecf0f1;
+        padding-bottom: 3mm;
+    }
+
+    @bottom-center {
+        content: "第 " counter(page) " 页";
+        font-family: "Droid Sans Fallback", Helvetica, Arial, sans-serif;
+        font-size: 8pt;
+        color: #95a5a6;
+        border-top: 0.8pt solid #1a5276;
+        padding-top: 2mm;
+    }
+}
+
+@page :first {
+    @top-center { content: none; }
+    @bottom-center { content: none; }
+}
+
+body {
+    font-family: "Droid Sans Fallback", Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.75;
+    color: #2c3e50;
+    text-align: justify;
+}
+
+/* 封面 */
+.cover {
+    page-break-after: always;
+    text-align: center;
+    padding-top: 45%;
+}
+.cover h1 {
+    font-size: 28pt;
+    color: #1a5276;
+    margin-bottom: 8mm;
+    font-weight: bold;
+    letter-spacing: 2pt;
+}
+.cover .subtitle {
+    font-size: 14pt;
+    color: #95a5a6;
+    margin-bottom: 6mm;
+}
+.cover .meta {
+    font-size: 11pt;
+    color: #95a5a6;
+    margin-bottom: 4mm;
+}
+.cover .divider {
+    width: 60%;
+    margin: 8mm auto;
+    border: none;
+    border-top: 1.5pt solid #1a5276;
+}
+
+/* 一级标题 */
+h1 {
+    font-size: 20pt;
+    color: #1a5276;
+    margin-top: 16mm;
+    margin-bottom: 6mm;
+    padding-bottom: 3mm;
+    border-bottom: 2pt solid #1a5276;
+    page-break-before: always;
+    font-weight: bold;
+}
+
+/* 二级标题 */
+h2 {
+    font-size: 14pt;
+    color: #1e8449;
+    margin-top: 10mm;
+    margin-bottom: 5mm;
+    font-weight: bold;
+}
+
+/* 三级标题 */
+h3 {
+    font-size: 12pt;
+    color: #2e86c1;
+    margin-top: 6mm;
+    margin-bottom: 3mm;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 11pt;
+    color: #5b2c6f;
+    margin-top: 5mm;
+    margin-bottom: 2mm;
+    font-weight: bold;
+}
+
+/* 段落 */
+p {
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+    orphans: 3;
+    widows: 3;
+}
+
+/* 引用块 */
+blockquote {
+    margin: 4mm 0;
+    padding: 4mm 4mm 4mm 10mm;
+    background: #f8f9fa;
+    border-left: 3pt solid #1a5276;
+    color: #5d6d7e;
+    font-size: 10pt;
+}
+blockquote p {
+    margin: 1mm 0;
+}
+
+/* 粗体 */
+strong, b {
+    font-weight: bold;
+    color: #1a252f;
+}
+
+/* 行内代码 */
+code {
+    font-family: "Courier New", Courier, monospace;
+    background: #fdf2e9;
+    color: #c0392b;
+    padding: 0.5mm 1.5mm;
+    border-radius: 2pt;
+    font-size: 9.5pt;
+}
+
+/* 表格 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+}
+thead th {
+    background: #1a5276;
+    color: white;
+    padding: 3mm;
+    text-align: left;
+    font-weight: bold;
+}
+tbody td {
+    padding: 2.5mm 3mm;
+    border-bottom: 0.5pt solid #bdc3c7;
+}
+tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    border-top: 0.5pt solid #bdc3c7;
+    margin: 4mm 0;
+}
+
+/* 列表 */
+ul, ol {
+    margin: 2mm 0;
+    padding-left: 8mm;
+}
+li {
+    margin-bottom: 1mm;
+}
+
+/* 链接 */
+a {
+    color: #2e86c1;
+    text-decoration: none;
+}
+
+@media screen {
+    html { background: #eaf0f4; scroll-behavior: smooth; }
+    body {
+        max-width: 1080px;
+        margin: 28px auto;
+        padding: 54px 68px 76px;
+        box-sizing: border-box;
+        background: #ffffff;
+        border-radius: 14px;
+        box-shadow: 0 18px 60px rgba(26, 82, 118, 0.12);
+        text-align: left;
+    }
+    .cover {
+        min-height: 68vh;
+        padding-top: 18vh;
+        box-sizing: border-box;
+        border-radius: 10px;
+        background: linear-gradient(145deg, #edf6f7 0%, #ffffff 52%, #edf2fa 100%);
+    }
+    h1 { page-break-before: auto; }
+    h2[id] { scroll-margin-top: 24px; }
+    table { display: block; width: 100%; overflow-x: auto; }
+    a { overflow-wrap: anywhere; }
+    .toc a { color: #1a5276; font-weight: 600; }
+    .toc li { margin-bottom: 7px; }
+}
+@media screen and (max-width: 760px) {
+    body { margin: 0; padding: 28px 20px 48px; border-radius: 0; }
+    .cover { min-height: 60vh; padding: 14vh 18px 0; }
+    .cover h1 { font-size: 24pt; }
+    table { display: block; overflow-x: auto; white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+    <div class="cover">
+        <h1 style="page-break-before: avoid; border: none;">从前置识别到全旅程运营</h1>
+        <div class="subtitle">墨西哥现金贷与循环额度客群运营策略方案</div>
+        <div class="meta">研究时间：2026年7月16—17日 | 所属领域：墨西哥数字消费信贷与客户运营 | 研究对象类型：运营策略</div>
+        <hr class="divider">
+        <div class="meta">作者: OpenAI Codex</div>
+    </div>
+
+
+<blockquote>
+<p>研究时间：2026年7月16—17日 | 所属领域：墨西哥数字消费信贷与客户运营 | 研究对象类型：运营策略</p>
+<p>术语规则：临额、分期、优惠券、触达、转化、留存等已有稳定行业语义的词直接使用中文；专业缩写、监管制度、实验方法和品牌产品保留原文，并在首次出现时补充中文解释，避免为追求“全中文”制造生硬译法。</p>
+</blockquote>
+<h2 id="contents">目录</h2>
+<ol class="toc">
+<li><a href="#sec-1">战略定位</a></li>
+<li><a href="#sec-2">执行摘要与核心方案</a></li>
+<li><a href="#sec-3">纵向分析：从一张塑料卡到实时场景经营</a></li>
+<li><a href="#sec-4">横向分析：不同机构靠什么经营客户</a></li>
+<li><a href="#sec-5">横纵交汇：七个决定策略成败的判断</a></li>
+<li><a href="#sec-6">运营策略蓝图：前置识别、MOT 实时响应、策略组合与实验</a></li>
+<li><a href="#sec-7">三种未来剧本</a></li>
+<li><a href="#sec-8">落地执行手册</a></li>
+<li><a href="#sec-9">研究边界与信息来源</a></li>
+</ol>
+<h2 id="sec-1">一、战略定位</h2>
+<p><strong>墨西哥现金贷及循环额度的客群运营，是在产品与风险层已经给出可用 Offer（额度、期限、价格和资格）的前提下，提前识别下一次健康需求窗口，并决定对谁、何时、以什么 Customer Proposition（客户主张）和权益组合，通过何种渠道序列触达；再用实验判断这些运营干预是否真正提升健康支用、周转和留存。</strong></p>
+<p>本报告的核心对标对象是 cash loan（现金直接支用产品）和 revolving cash line（可还可再用的循环现金额度）。银行信用卡、商户分期与 BNPL（Buy Now, Pay Later，先买后付）只用于补充可迁移的交易场景、权益组合和渠道机制，不作为主叙事。</p>
+<p>运营可以调用产品能力，但不能把产品能力当成运营策略。全文采用五层边界：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>回答的问题</th>
+<th>典型内容</th>
+<th>决策权</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product Capability（产品基础能力）</td>
+<td>客户原本能做什么</td>
+<td>金额/期限模拟、循环支用、提前还款、自动扣款、现金还款、债务重组</td>
+<td>产品、支付、贷后</td>
+</tr>
+<tr>
+<td>Risk/Offer（风险与信贷选项）</td>
+<td>客户能获得什么额度、期限和价格</td>
+<td>永久额度、临额资格与幅度、期限、利率、费用、负担能力</td>
+<td>风险、额度、定价</td>
+</tr>
+<tr>
+<td>Operational Treatment（运营干预）</td>
+<td>为改变特定行为额外做什么</td>
+<td>提醒、成本解释、息费券、Cashback、任务、Referral、组合权益</td>
+<td>运营，在授权范围内配置</td>
+</tr>
+<tr>
+<td>Touch Strategy（触达策略）</td>
+<td>为什么现在触达，怎样触达</td>
+<td>前置识别、Customer Proposition、App/Push/SMS/WhatsApp 序列、频控、冷却与退出</td>
+<td>运营、产品、合规</td>
+</tr>
+<tr>
+<td>Experiment &amp; Outcome（实验与结果）</td>
+<td>不干预时客户原本会怎样</td>
+<td>Control Group、Treatment Group、Holdout、增量利润与风险护栏</td>
+<td>数据、财务、风险</td>
+</tr>
+</tbody>
+</table>
+<p>判断规则很简单：没有活动时所有合格客户仍可使用的，是产品能力；由风险规则决定额度、期限和价格的，是 Risk/Offer；只在指定客群和窗口提供的额外价值，是运营权益；决定谁在何时收到什么内容的，才是触达策略。</p>
+<p>这一定义包含四个必须同时成立的部分。</p>
+<p>第一个是「提前识别」。运营不能等客户进入价格页、支付失败或申请中断后才开始。客户自己的支用—还款周期、额度恢复速度、工资与奖金日历、季节消费窗口、账户活跃变化和产品熟悉度，可以构成下一次需求窗口的领先信号。提前识别不是提前群发，也不负责创造授信资格；它读取并校验 Risk/Offer，提前生成可实验的运营干预、客户主张和完成路径。</p>
+<p>第二个是「MOT 实时响应」。MOT（Moment of Truth，关键行为时点）包括用户结清、额度恢复、价格页退出、支付失败、申请中断、权益即将失效等已经发生的强信号。它适合触发即时响应，却只覆盖运营链路的后半段。前置识别负责创造更早的经营窗口，MOT 负责缩短窗口出现后的完成路径。</p>
+<p>第三个是「协调组合」。完整策略包不是把临额、券、Push 和页面当作同一类组件，而是由一个已获批准的 eligible Offer、一个可选运营权益、一段客户主张、一条渠道序列和一个完成页面组成。临额资格与幅度由风险层决定；运营只决定在什么窗口主动展示、是否叠加券或 Cashback，以及何时停止后续触达。</p>
+<p>第四个是「长期结果」。一次绝对转化率高，可能只是客户本来就会借；券使用率高，可能只是自然需求领取了补贴。运营要证明的不只是某条消息带来一次支用，还包括两次健康支用间隔缩短、活跃周期延长、额度周转改善，并且成熟后的风险调整增量利润为正。</p>
+<h2 id="sec-2">二、执行摘要与核心方案</h2>
+<h3>2.1 墨西哥市场已经具备场景化经营的土壤</h3>
+<p>墨西哥不是一个“数字信贷还没有开始”的市场。INEGI（墨西哥国家统计和地理研究所）的 ENIF 2024（墨西哥国家金融包容性调查）显示，18—70 岁人口中，37.3%持有至少一种正式信贷；银行信用卡持有率由 2021 年的 10.5%升至 2024 年的 15.7%。在拥有正式储蓄账户的人群中，用手机 App 查询或交易的比例从 2021 年的 54.3%升至 2024 年的 69.1%。[M1]</p>
+<p>供给侧也在快速变化。CNBV（Comisión Nacional Bancaria y de Valores，墨西哥银行与证券委员会）统计显示，2024 年面向自然人的信贷合同约 8,160 万份，同比增长 16%；Nu México（墨西哥数字金融机构，后文简称 Nu）、Stori（墨西哥数字信贷机构）和 Klar（墨西哥数字金融机构）三家 SOFIPO（Sociedad Financiera Popular，墨西哥大众金融机构）合计报告超过 940 万份信贷，约占 SOFIPO 发放信贷总量的 95%。[M2] Banco de México（墨西哥中央银行）披露，2025 年 6 月可比信用卡组合约有 2,652 万张卡、5,561 亿比索余额；全体客户有效加权平均利率为 23.9%，非全额还款客户为 37.1%，不含促销时为 52.7%。[M3]</p>
+<p>数字使用、竞争供给和较高融资成本同时存在。运营空间很大，但粗放刺激的代价也很高：错误的临额会放大暴露，错误的券会补贴自然借款，错误的外部消息会伤害信任。</p>
+<h3>2.2 运营采用“前置识别 + MOT 实时响应”双引擎</h3>
+<p>只经营 MOT，会让运营永远晚于客户一步。客户已经进入价格页、支付失败或申请中断，才进入名单，这时团队只能救援已经暴露出来的需求。更完整的经营方式，是在客户尚未主动表达之前识别未来 7、14 或 30 天的机会窗口：预计何时还清并恢复可用额度，个人支用间隔是否接近下一周期，工资、aguinaldo（法定年终奖金）、PTU（Participación de los Trabajadores en las Utilidades，员工利润分享）、返校、旅行或 El Buen Fin（墨西哥大型年末促销季）是否临近，账户活跃是否开始偏离个人基线，过去的哪类权益在什么场景产生过真实增量。</p>
+<p>前置识别不等于提前推销。它完成三件事：识别未来 7/14/30 天的健康需求机会，读取当时有效的 eligible Offer，决定是否进入运营旅程。MOT 实时响应再处理已经发生的强信号，如试算退出和申请中断。产品故障、放款失败、到账异常和困难求助不进入促销队列，而进入独立的 Service Journey（服务旅程）。三类旅程共享联系账本与抑制规则，但目标、Control Group 和考核指标不同。</p>
+<p>North Star Metric（北极星指标）不是一次点击或一次支用，而是<strong>风险可控的活跃周转客户数及其增量贡献利润</strong>。驱动指标包括：两次健康支用间隔、额度恢复后再次支用率、90/180 日活跃留存、活跃月份数、额度健康周转率和策略覆盖后的增量支用；护栏包括金额风险、首逾、投诉、退订、欺诈、客户过度负担和补贴成本。</p>
+<h3>2.3 用可观测状态组织客户，用机会窗口决定何时经营</h3>
+<p>“额度瓶颈、价格敏感、竞争流失、自然复借、低需求”混合了事实、原因解释和策略效果的反事实判断。用户在价格页退出是事实；是否因价格退出，不是事实。用户近期借款下降是事实；需求是否转移到竞品，通常也不是内部数据可以直接确认的事实。</p>
+<p>主状态应保持可观测，并允许随时间变化。O0—O4 是本报告定义的可观测关系状态编码：</p>
+<table>
+<thead>
+<tr>
+<th>主状态</th>
+<th>可观测定义</th>
+<th>前置经营任务</th>
+<th>MOT 实时响应任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O0 新客/证据不足</td>
+<td>历史、事件或成熟结果不足</td>
+<td>建立首个健康行为，形成个人基线</td>
+<td>解释产品、恢复流程，不做伪个性化</td>
+</tr>
+<tr>
+<td>O1 活跃周转</td>
+<td>仍处在个人正常支用—还款节奏</td>
+<td>预测下一需求窗，准备低成本或组合权益</td>
+<td>在结清或额度恢复后提供清晰的再次支用入口</td>
+</tr>
+<tr>
+<td>O2 高意图未转化</td>
+<td>试算、价格/额度页、支用申请等高意图后未完成</td>
+<td>对同类行为提前准备资格与后续完成路径</td>
+<td>区分金额、价格、流程与信任摩擦</td>
+</tr>
+<tr>
+<td>O3 活跃衰减</td>
+<td>相对个人或同 cohort（同期群）的节奏持续下降</td>
+<td>在完全沉默前识别召回窗口</td>
+<td>用低成本或组合策略验证可恢复性</td>
+</tr>
+<tr>
+<td>O4 长期沉默/低信号</td>
+<td>超过正常周期且没有新高意图</td>
+<td>只在强季节或明确资格窗口小样本经营</td>
+<td>默认 No Action，出现新信号后重新进入评估</td>
+</tr>
+</tbody>
+</table>
+<p>主状态回答“客户现在处于什么关系阶段”；机会评分回答“未来一段时间是否值得经营”；金额缺口、价格暴露、流程摩擦、季节接近度和渠道可达属于证据。临额资格与幅度由 Risk/Offer 决定；运营实验评估的是在资格不变时，主动展示 eligible Offer、叠加权益及改变渠道序列的增量。</p>
+<h3>2.4 现金贷运营的主线不是发券，而是贯通“支用—还款—复借”</h3>
+<p>公开案例必须分两类看。DiDi Préstamos 的金额/期限模拟、循环支用、提前还款和再次可用，Nubank、Mercado Pago 与 PicPay 的报价、模拟和债务重组，主要证明产品与服务基础能力存在；它们不等于机构做了主动运营触达。[CL1][CL9][CL10]</p>
+<p>真正具有运营证据的案例更少，也更有价值：Kueski 针对漏斗退出客户使用 WhatsApp Retargeting；JULO 用 automated journey 处理 onboarding、申请流失和沉睡召回；AdaKami 针对已有额度未支用客户使用 App Banner、Pop-up 与 WhatsApp；GLoan Sakto 通过定向 SMS/Push 连接结清、复借与 Cashback；Maya 用定向邀请和首期按时还款门槛兑现 Cashback。[CL4][CL6][CL11][CL7][CL8] Tala、Baubap、京东金条、360 借条和 GoPay Pinjam 提供了可调用的权益规则，但公开资料没有完整披露人群、时点、频控和 Control Group，不能把“权益存在”写成“运营有效”。</p>
+<p>几条路径长得不同，却有同一个结构：</p>
+<pre><code class="language-text">机会窗口形成或 MOT 出现
+→ 读取并锁定 eligible Offer，不由运营改写额度、期限和价格
+→ 选择 No Action、内容干预、权益或相容组合
+→ 配置 Customer Proposition、渠道序列、频控和退出条件
+→ 回到认证 App 完成查看、确认或支用
+→ 以 Control Group 评估增量周转、利润、风险与客户结果
+</code></pre>
+<p>真正的行业分水岭，已经从“能不能批”移动到“能不能提前识别正确窗口，并在窗口内提供可信、可理解、可完成的策略组合”。</p>
+<h3>2.5 运营中枢是机会识别与 Strategy Orchestration（策略组合与渠道协同）</h3>
+<p>系统不应输出“价格敏感用户”然后交给营销平台群发。它应在每个 <code>decision_id</code>（决策记录唯一标识）上完成一条可追溯的决策链：</p>
+<pre><code class="language-text">合规、合同、风险、欺诈与投诉硬拦截
+→ 判定 O0—O4 主状态
+→ 预测未来7/14/30天机会窗口并接收实时 MOT
+→ 读取 Risk/Offer 返回的资格、额度、期限与价格
+→ 生成 No Action、内容、权益与相容组合候选方案
+→ 配置客户主张、渠道序列、频控、完成页面与退出条件
+→ 执行运营 treatment，不修改授信参数
+→ 回传转化、周转、留存、成熟风险、投诉与退订
+</code></pre>
+<p>组合策略不是把不同层级的名词并排罗列。标准策略包写成 <code>eligible Offer + operational benefit + proposition + channel sequence + landing path</code>。例如，风险层返回一个 7 天临额资格；运营层可以测试“仅在 App 被动展示”“预测窗口前 Push 提醒”“临额资格 + 息费券 + Push”“Push 未送达后 SMS 补发”。每个组合都要有统一目标、成本上限、兼容规则和实验臂。No Action 表示本次决策不追加促销触达或权益；Control Group（随机对照组）用于评估局部实验；Holdout（长期保留对照组）用于评估多个旅程叠加后的长期增量，三者不能混用。</p>
+<h3>2.6 首批上线六类现金贷场景，覆盖支用前、在贷中与结清后</h3>
+<p>首批最小可行实验不从全量预测模型开始，而从可解释、可回放、可形成对照的窗口开始：</p>
+<ol>
+<li>
+<strong>预测型健康需求窗口：</strong> 在客户主动查看产品之前，以个人支还周期、收入/季节窗口、活跃偏离和增量响应概率识别未来 7/14/30 天机会；固定 eligible Offer 后，测试提醒、内容、权益与 No Action；</li>
+<li>
+<strong>获批未支用：</strong> 在产品资格和 App 基线完全相同的前提下，区分未查看与查看后退出，测试解释型 Push、息费券、解释+券和 Control Group；</li>
+<li>
+<strong>试算退出：</strong> 产品先保证保存方案、模拟器和页面无故障；运营只对无故障退出客户测试恢复提醒、成本解释和息费券，不用优惠遮盖产品缺陷；</li>
+<li>
+<strong>首期履约培养：</strong> 产品层提供还款入口和账单；运营测试 D-3/D-1 提醒、首期按时后的 Cashback 或进度权益，困难客户立即退出促销；</li>
+<li>
+<strong>预测窗口下的健康复借：</strong> 结清 T+0 只发送交易确认，运营等待个人需求窗口，再测试 eligible Offer 的主动展示、下笔息费券及组合；不在结清当天催借；</li>
+<li>
+<strong>活跃衰减与沉睡召回：</strong> 识别偏离个人节奏但风险稳定的客户，测试场景内容、窄权益和渠道序列；无新需求信号时保持 No Action。</li>
+</ol>
+<p>六类运营场景都使用用户级随机，Control Group 拥有完全相同的产品能力和 eligible Offer，只不接收可选运营干预。申请失败、放款异常、困难援助、安全、账单和法定通知属于 Service Journey，Control Group 使用现有标准服务，不能用 No Action 让客户得不到必要帮助。风险团队确定可实验的临额范围；运营团队只估计展示时机、权益面额、触达频次、渠道顺序和冷却时间。</p>
+<h2 id="sec-3">三、纵向分析：从一张塑料卡到实时场景经营</h2>
+<h3>3.1 1968—2001：信用关系被建立，运营仍围绕产品和风险</h3>
+<p>1968 年，Banamex（墨西哥银行品牌）推出 Bancomático（Banamex 早期信用卡品牌），CONDUSEF（Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros，墨西哥金融服务用户保护委员会）将其记为墨西哥及拉丁美洲第一张信用卡；1969 年，Bancomer（现 BBVA México）和 Carnet（墨西哥本土支付网络品牌）随后进入。[H1] 这一代产品把消费从“先有现金”变成“先建立账户关系”。但早期的经营重心并不是今天所说的场景触达，而是发卡、商户受理、账单、还款与逾期。</p>
+<p>1994—1995 年银行危机把风险纪律写进了行业记忆。Banco de México 回顾称，面向私人部门的银行信贷在 1990 年初约占 GDP（国内生产总值）的 18%，到 1994 年 12 月升至 31%；比索贬值、利率与通胀冲击随后暴露了薄弱的风险管理。[H2] 危机后的系统优先学会的是“谁不能借、谁需要收紧”，还没有足够数据和技术去回答“哪项运营措施可以让一个好客户改变行为”。</p>
+<p>这个历史顺序解释了今天很多组织结构：风险、额度、定价、营销和催收往往分属于不同团队。它在保护资产质量上有效，却容易让同一客户同时收到互相矛盾的策略——营销希望召回，额度团队准备提额，贷后团队又在提示现金流压力。全旅程经营要解决的第一个问题，因而不是模型精度，而是不同团队的策略如何在同一客户旅程中被协调和治理。</p>
+<h3>3.2 2002—2007：零售场景、征信和实时支付把一次交易延长为关系</h3>
+<p>2002 年有两个节点改变了运营边界。《Ley para Regular las Sociedades de Información Crediticia》（信用信息机构监管法）为跨期信用记忆提供制度基础；同年，Banco Azteca（Grupo Elektra 旗下银行）依托 Elektra（墨西哥零售集团）门店开业，把开户、商品需求、消费信贷和还款触点放进同一个零售环境。[H3][H4]</p>
+<p>这比“嵌入式金融”一词流行早了二十年。它展示了一个长期不变的规律：距离真实需求越近，信贷选项越容易被理解，转化也越容易归因。用户站在商品前时，分期或信贷是完成交易的一部分；用户没有任何需求信号时，一条“你有额度”的消息只是机构在制造一个问题。</p>
+<p>2004 年 SPEI 上线，让资金可以实时结算。[H5] 但支付实时不等于运营实时。只有支付、额度、App 行为、触达、实验分组和结果进入同一事件链，实时轨道才会变成实时决策；否则后台已经按秒处理，前台仍按周导出名单。</p>
+<h3>3.3 2007—2017：监管把“能不能触达、怎么说、怎样纠错”变成治理约束</h3>
+<p>2007 年《Ley para la Transparencia y Ordenamiento de los Servicios Financieros》（金融服务透明与秩序法）建立了金融产品合同、费用与信息透明框架；CONDUSEF 的 REUS（Registro Público de Usuarios que no Desean Información Publicitaria de Productos y Servicios Financieros，金融营销拒收用户登记）也从 2007 年起受理不希望接收金融营销的用户登记。2009 年 Banco de México 统一 CAT 计算口径；2010 年个人数据保护法和信用卡规则继续压实信息、异议、扣款取消和最低还款要求。[H6][H7][H8]</p>
+<p>这些规则对运营的影响很具体。折扣券不是普通电商券，临额也不是单纯的营销卖点。只要策略改变价格、费用、合同或还款负担，短消息、落地页、合同和账单就必须讲同一种语言。退订与 REUS 不是发送前临时清洗的名单，而应是策略生成之前的硬性准入条件。</p>
+<p>2014 年之后，Buró de Entidades Financieras（金融机构信息查询平台）、REDECO（Registro de Despachos de Cobranza，催收机构登记系统）、投诉和合同登记进一步把用户保护数据化；2017 年远程开户与生物识别规则又让申请、身份核验、失败和恢复成为可记录的数字事件。[H9] 从这里开始，生命周期 CRM（Customer Relationship Management，客户关系管理）有了更细的时间颗粒：首用、结清、额度恢复、申请中断、长期未登录，都可以单独触发旅程。</p>
+<p>但“可以触发”只回答了自动化问题。一个事件触发券、另一个事件触发临额、第三个事件触发 SMS，如果没有策略兼容规则、旅程协调和随机 Control Group，自动化只会更快地制造冲突。</p>
+<h3>3.4 2018—2020：Ley Fintech 与移动原生机构把 App 变成主要客户交互入口</h3>
+<p>2018 年《Ley para Regular las Instituciones de Tecnología Financiera》（金融科技机构监管法，通称 Ley Fintech）为电子支付资金机构、众筹等 ITF（Institución de Tecnología Financiera，金融科技机构）类型建立专门制度，并推动开放 API（Application Programming Interface，应用程序接口）与数字金融基础设施进入监管议程。[H10] 它不是一部覆盖所有数字贷款的统一法律；银行、SOFIPO、SOFOM（Sociedad Financiera de Objeto Múltiple，多元金融公司）与 ITF 的牌照、合同和约束仍不同。运营实验必须绑定具体法律实体，不能只绑定品牌。</p>
+<p>2019 年 CoDi（Cobro Digital，墨西哥数字收款平台）上线，2020 年 Nu 和 Stori 面向公众发出数字信用卡，Kueski Pay（Kueski 的商户分期产品）把分期嵌入商户支付。[H11][H12][H13] 疫情又迫使申请、服务、还款、欺诈处理和催收尽可能远程完成。</p>
+<p>这一阶段真正改变的是反馈速度。交易发生后几秒可以 Push，申请中断后几分钟可以恢复，用户可在 App 中查看、模拟和接受信贷选项。运营与产品开始合为一体：页面不是活动落地页的终点，而是决策发生的地方。</p>
+<h3>3.5 2021—2026：竞争从活动自动化走向 Next Best Action（下一最优策略）</h3>
+<p>2021—2026 年的墨西哥同时出现两种看似矛盾的现实。一边是正式账户、信用卡和 App 使用快速增长；另一边是现金、预付费手机和非正规就业仍有很强影响。ENIF 2024 显示，小额购买中经常使用现金的受访者占 85.2%，大额购买也有 73.5%；ENDUTIH 2023（Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares，墨西哥家庭信息技术使用调查）显示，80.9%的手机用户使用预付费套餐；ENOE（Encuesta Nacional de Ocupación y Empleo，墨西哥全国职业与就业调查）显示 2024 年第四季度劳动非正规率为 52.2%。[M1][H14][H15]</p>
+<p>因此，墨西哥不能把“实时决策”误写成“所有人都用 App”。高数字活跃用户可以在支付失败后实时展示临额或分期；现金型、低连接或低频用户可能更需要可验证的 SMS、便利店还款路径、较早的提醒和更少的触达。没有 App 行为不是低需求，可能只是数字轨迹断裂。</p>
+<p>在方法上，运营能力可以分为五层，但生命周期与 MOT 不是前后替代关系。生命周期提供前置识别，MOT 提供实时响应，两类输入最终汇入同一套策略协同：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>经营问题</th>
+<th>决策单位</th>
+<th>主要缺陷</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>产品批量营销</td>
+<td>这周推什么</td>
+<td>产品 × 名单</td>
+<td>无法识别自然转化，部门触达冲突</td>
+</tr>
+<tr>
+<td>生命周期经营</td>
+<td>用户处于什么关系阶段</td>
+<td>用户 × 生命周期</td>
+<td>能提前准备，但同阶段的需求窗口仍不同</td>
+</tr>
+<tr>
+<td>MOT 实时响应</td>
+<td>用户刚刚发生了什么</td>
+<td>用户 × 事件</td>
+<td>响应精确但偏后置，规则容易并发</td>
+</tr>
+<tr>
+<td>双引擎机会经营</td>
+<td>未来何时值得经营，当前如何响应</td>
+<td>用户 × 机会窗口 × MOT</td>
+<td>需要统一状态、联系历史与实验设计</td>
+</tr>
+<tr>
+<td>实时策略协同</td>
+<td>哪组权益与渠道序列产生最佳长期结果</td>
+<td>连续状态 × 策略组合</td>
+<td>复杂、易黑箱，必须约束成本与客户负担</td>
+</tr>
+</tbody>
+</table>
+<p>墨西哥运营体系应把第四层作为近期目标，把第五层作为局部能力。先让个人周转节奏、生命周期窗口和高价值 MOT 都能生成清楚的候选策略、对照与结果记录，再在数据完整的 App 活跃客群中做有限实时化。没有必要从一个覆盖全客群的“万能智能运营平台”起步。</p>
+<h3>3.6 中国、东南亚、巴西与成熟市场：从“下一产品”转向持续关系经营</h3>
+<p>从现金贷看，跨国演化更直接：早期运营集中在首借获客和到期提醒，随后加入复借券、推荐奖和按时还款奖励，当前正在把资格复评、金额/期限模拟、申请恢复、提前还款、结清复借与困难援助连接成完整周期。中国京东金条与 360 借条、印尼 JULO、菲律宾 GLoan 与 Maya Personal Loan、巴西 Nubank 与 PicPay 分别展示了状态链、履约权益、定向 Cashback 和 App 内自助服务。[CL5][CL6][CL7][CL8][CL9][CL10] 这条现金贷主线比信用卡积分活动更接近墨西哥循环现金额度的实际经营问题。</p>
+<p>中国的银行活动已经普遍展示出「受邀名单—App 报名—行为达标—自动兑现—异常资格拦截」这条状态链。农业银行公开活动可通过短信、掌银 Push、弹窗或专区邀请，客户在 App 内报名、完成消费或指定支付后领取权益；其临额说明也把旅行、婚庆、教育等场景、有效期和用途放在一起。[G1][G2]</p>
+<p>更有价值的变化发生在跨周期。农业银行把本月受邀任务与次月多倍积分连接；建设银行把分期与结账满减组合，也把新户奖励推迟到核卡后的真实首笔消费；银联把季度内第 1、3、6、12、15 笔交易做成可见进度；中国银行则在交易前临额、结账分期、交易后单笔分期和账单分期之间形成交易阶段策略序列。[CN1][CN2][CN3][CN4][CN5] 这些机制不是只捕捉一个 MOT，而是在第一次策略之后继续经营复用和留存。</p>
+<p>美国的 Chase Offers（Chase 卡关联优惠）与 Amex Offers（American Express 卡关联优惠）把优惠绑定到卡片和真实交易：先加入优惠，再以已登记卡完成符合条件的消费，系统自动匹配、返还账单金，并处理最低消费、次数、上限、指定商户与退款冲回。[G3][G4] 英国 Monzo Flex（Monzo 交易后分期产品）则允许客户在交易发生后两周内，从真实流水中选择一笔转为分期，并展示月供、计划和以货币金额计的利息。[G5]</p>
+<p>Commonwealth Bank of Australia（澳大利亚联邦银行，后文简称 CBA）对 Customer Engagement Engine（客户互动决策引擎）的公开描述更进一步：个性化优惠、可疑交易预警、困难客户识别和灵活还款安排，都进入 Next Best Conversation（下一次最合适的客户沟通）的范围。[G6] 对墨西哥运营体系的启示不是“马上训练两千个模型”，而是销售、组合权益、安全、服务、还款援助与 No Action 都要进入同一套策略协同。</p>
+<p>印尼、菲律宾和巴西展示了另一条更接近墨西哥的路径。GoPay（印尼数字钱包）与 Bank Jago（印尼数字银行）把开户和支付嵌入打车、外卖、电商与二维码场景；Kredivo（印尼 BNPL 与消费信贷平台）在结账金额略高于额度时提供部分自付，避免把所有缺口都交给提额。[ID1][ID2] GCash（菲律宾数字钱包）用钱包、账单、储蓄和信用还款行为每周更新 GScore（GCash 客户资格评分），却明确说明分数不保证授信；Maya（菲律宾数字金融平台）用 Maya XP（经验值等级体系）与 Maya Missions（任务机制）把支付、储蓄、借款和等级权益组织成可见旅程。[PH1][PH2] Nubank（巴西数字银行）用担保资金、App 任务和按时还款帮助 thin-file（征信记录较少）用户逐步获得预授信；巴西 Mercado Pago（数字支付与金融平台）同时利用日常支付关系和结账场景呈现信贷选项。[BR1][BR2]</p>
+<p>这些市场共同把运营从“客户已经失败后再救援”前移到“积累可用于判断需求的行为信号、准备机会，并在真实场景完成”。差异也很明确：印尼和巴西依赖高密度钱包、二维码或即时支付事件；菲律宾依赖钱包生态；中国依赖超级 App 和卡组织任务。墨西哥只能迁移方法，不能假设拥有同样的数据密度。</p>
+<p>可迁移的是生命周期状态机、机会窗口、事件日志、策略组件目录、自动兑现、跨渠道协调、长期 Holdout 和增量评估。不能照搬的是中国超级 App 与实名环境、American Express（美国卡组织与金融服务公司，简称 Amex）的卡组织内商户数据、成熟市场的征信和支付覆盖。墨西哥的现金、预付费手机、非正规收入和 WhatsApp（即时通信平台）政策，需要写进系统边界，而不是写进报告脚注。</p>
+<h2 id="sec-4">四、横向分析：不同机构靠什么经营客户</h2>
+<h3>4.1 对标范围：现金贷是主样本，卡与商户信贷是补充样本</h3>
+<p>现金贷与信用卡的运营逻辑并不相同。信用卡天然拥有消费交易、商户和账单场景；现金贷更依赖“获批但未支用、金额与期限试算、放款、在贷、还款、结清、复借”这条周期。只借鉴信用卡首刷、积分或收银台优惠，会漏掉现金贷最重要的三段：支用漏斗恢复、在贷履约经营和结清后的健康复借。</p>
+<p>本报告因此采用两层对标：第一层比较 cash loan 与 revolving cash line 的完整周期；第二层再从信用卡、钱包和 BNPL 提取可迁移的组合权益、场景入口与自动兑现机制。迁移判断看四件事：是否依赖本方拿不到的数据、是否会诱导不必要借款、是否能建立随机对照、收益能否覆盖信用损失与客户负担。</p>
+<h3>4.2 产品与服务能力参考：证明“能完成”，不证明“运营有效”</h3>
+<table>
+<thead>
+<tr>
+<th>地区与机构</th>
+<th>公开可验证的产品/服务能力</th>
+<th>正确用途</th>
+<th>不能据此推断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>墨西哥 DiDi Préstamos</td>
+<td>循环额度、金额/期限模拟、部分支用、提前还款、SPEI/OXXO 还款、还款后再次申请 [CL1]</td>
+<td>作为现金贷旅程可完成的产品基线</td>
+<td>不能证明 SMS、提醒或复借运营产生增量</td>
+</tr>
+<tr>
+<td>墨西哥 Tala / Baubap</td>
+<td>支用、现金还款、结清后重评；Va de Vuelta、下笔优惠等权益账户 [CL2][CL3]</td>
+<td>区分基础借还能力与可调用权益规则</td>
+<td>权益存在不等于机构已形成有效触达策略</td>
+</tr>
+<tr>
+<td>中国京东金条 / 360 借条</td>
+<td>支用、统一还款日、自动扣款、提前还款、额度恢复 [CL5]</td>
+<td>参考 Offer、券、还款和状态回传的产品链</td>
+<td>不能用超级平台规模替代运营实验</td>
+</tr>
+<tr>
+<td>印尼 JULO / GoPay Pinjam</td>
+<td>多用途循环额度、再次支用、账单支付与还款 [CL6][CL12]</td>
+<td>支撑跨周期运营的账户与交易底座</td>
+<td>Re-availment 本身不是召回或复借运营</td>
+</tr>
+<tr>
+<td>菲律宾 GLoan / Maya</td>
+<td>预资格、现金支用、提前结清、再次评估、循环信用 [CL7][CL8]</td>
+<td>支撑定向活动的产品基础能力</td>
+<td>未使用月份返息等合同机制不等于触达收益</td>
+</tr>
+<tr>
+<td>巴西 Nubank / Mercado Pago / PicPay</td>
+<td>报价、金额/期限模拟、提前还款折息、App 内重组 [CL9][CL10]</td>
+<td>作为自助服务和困难援助能力参考</td>
+<td>不应把模拟器、折息和重组列为促销运营案例</td>
+</tr>
+</tbody>
+</table>
+<p>产品能力是必要条件，但不是运营 treatment。Control Group 与 Treatment Group 必须拥有相同的产品能力和 Risk/Offer；否则实验测到的是产品改造或授信差异，而不是运营触达增量。</p>
+<h3>4.3 可核验运营触达案例：只保留“对谁、何时、给什么、怎样触达”</h3>
+<p>公开证据按四级标注：E1 是披露随机对照或明确 Holdout 的因果证据；E2-V 是 CRM、广告或技术供应商的客户案例归因；E2-C 是机构自述；E3-C 是观察结果；E4-P 是官方活动条款。本次未找到披露完整设计与净增量利润的 E1 现金贷案例。</p>
+<table>
+<thead>
+<tr>
+<th>地区与机构</th>
+<th>运营目标与目标客群</th>
+<th>识别信号与触发窗口</th>
+<th>Customer Proposition 与权益</th>
+<th>触达序列和完成路径</th>
+<th>公开结果与证据强度</th>
+<th>对墨西哥的可迁移做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>墨西哥 Kueski Cash</td>
+<td>恢复申请漏斗；定向经营重复客户</td>
+<td>申请退出、受邀资格、历史借还与自动还款条件</td>
+<td>恢复申请；或 1,500 比索生活券/下一笔 20% 利率折扣</td>
+<td>WhatsApp Retargeting，配合 Email、Push 和 App 还款/申请入口</td>
+<td>Braze 称 WhatsApp 再触达使 conversion 提升 15%，属 E2-V，未披露对照、样本量和口径 [CL4]</td>
+<td>渠道切换与漏斗恢复可迁移；15% 不能作为本方预算收益</td>
+</tr>
+<tr>
+<td>印尼 JULO</td>
+<td>修复 onboarding/申请流失，召回沉睡和流失客户</td>
+<td>注册或申请阶段中断、dormant/churned 状态、历史行为分群</td>
+<td>进度解释、JULO Poin、Cashback、Missions 或 Referral</td>
+<td>automated journey 使用 App、Push、SMS、Email、WhatsApp 与 In-app Chat</td>
+<td>MoEngage 称留存活动转化率 13%、整体交易 3 倍，属 E2-V；13% 是活动转化率，不是提升 13% [CL6]</td>
+<td>可迁移“分群—旅程—回传”机制，权益与渠道贡献仍需本方拆分</td>
+</tr>
+<tr>
+<td>印尼 AdaKami</td>
+<td>激活已有额度但未支用客户</td>
+<td>已有额度、未提款、App 页面访问与活动资格</td>
+<td>额度仍可使用；0% 利息券、免息券、礼卡或抽奖</td>
+<td>App 首页按钮、Banner、Pop-up、H5，结果通过 App/WhatsApp 通知</td>
+<td>Apple Ads 称该广告渠道获批贷款转化高 60%，属 E2-V 渠道比较，不是权益增量 [CL11]</td>
+<td>适合设计获批未支用 Journey Card；渠道数据不能归因给券</td>
+</tr>
+<tr>
+<td>菲律宾 GLoan Sakto</td>
+<td>促进选定客户短周期结清与再次支用</td>
+<td>SMS/Push 受邀、14 天活动窗口、再次资格复评</td>
+<td>完成“支用—全额还款—再次支用”后获 5% Cashback，最多 4 次</td>
+<td>定向 SMS/Push → GCash App → 资格复评与支用</td>
+<td>E4-P 活动规则，未披露相对 Control Group 的增量 [CL7]</td>
+<td>机制完整但 debt cycling 风险高；只可在负担能力与过快复借护栏下测试</td>
+</tr>
+<tr>
+<td>菲律宾 Maya Personal Loan</td>
+<td>提升首期按时还款和贷款存续质量</td>
+<td>定向邀请、借款金额门槛、首期履约</td>
+<td>首期按时后分档获得 250—1,000 比索 Cashback</td>
+<td>定向 SMS、App 内卡片和 Push → App 还款入口</td>
+<td>E4-P 活动规则；AI Action Card 的 ARPU 结果为跨产品 E2-C，非贷款独立收益 [CL8]</td>
+<td>权益延后到首期履约后兑现，优于放款即返</td>
+</tr>
+<tr>
+<td>Tala / Baubap / 京东金条 / GoPay Pinjam</td>
+<td>经营连续履约、复借或推荐</td>
+<td>按时/提前结清、活动资格、Referral 完成条件</td>
+<td>Repayment Streak、Va de Vuelta、息费券、成本折扣或双方奖励</td>
+<td>公开条款可验证权益与完成条件；完整触达时点、频控和分流多未披露</td>
+<td>E4-P，只证明权益机制存在 [CL2][CL3][CL5][CL12]</td>
+<td>作为运营权益库参考，不作为触达效果标杆</td>
+</tr>
+</tbody>
+</table>
+<h3>4.4 现金贷全周期运营矩阵：MOT 之前同样有大量经营空间</h3>
+<table>
+<thead>
+<tr>
+<th>生命周期与场景</th>
+<th>产品/服务基线</th>
+<th>运营 treatment</th>
+<th>触达序列</th>
+<th>实验与主指标</th>
+<th>关键护栏</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预测型健康需求窗口</td>
+<td>eligible Offer 已由 Risk/Offer 返回，App 可查看和模拟</td>
+<td>轻提醒、场景内容、息费券、权益组合或 No Action</td>
+<td>预计窗口前 App 被动展示；实验组一次 Push</td>
+<td>相同 Offer 下比较增量健康支用和利润</td>
+<td>自然借款补贴、过快复借、多头负债</td>
+</tr>
+<tr>
+<td>获批未支用</td>
+<td>所有组拥有相同报价、模拟器和支用入口</td>
+<td>解释型内容、息费券、解释+券</td>
+<td>D0 App；D+1 Push；D+2 仅对 Push 未送达者测试 SMS</td>
+<td>7 日 Approved-to-Draw 增量</td>
+<td>报价失效、风险变化、频控、退订</td>
+</tr>
+<tr>
+<td>试算退出</td>
+<td>产品先保证方案保存、页面正确和 Deep Link 可恢复</td>
+<td>月供/总成本解释、恢复提醒、息费券</td>
+<td>退出后 30—120 分钟 App/Push；SMS 单独实验</td>
+<td>无故障客户的恢复与支用增量</td>
+<td>技术故障不发券；CAT 口径一致</td>
+</tr>
+<tr>
+<td>申请或放款异常</td>
+<td>KYC、账户、SPEI、状态页和人工恢复能力</td>
+<td>不做促销；执行标准或增强 Service Journey</td>
+<td>App 状态页 → 必要 SMS → 人工</td>
+<td>增强服务相对标准服务的恢复率和到账 P90</td>
+<td>不得设置沉默对照；防重复放款与诈骗</td>
+</tr>
+<tr>
+<td>放款后与首期履约</td>
+<td>账单、还款日、自动扣款、现金还款入口均可用</td>
+<td>费用摘要、D-3/D-1 提醒、首期履约后 Cashback/进度</td>
+<td>T+0 凭证；到期前 App/Push；必要 SMS</td>
+<td>首期按时还款增量和奖励后利润</td>
+<td>到账后不刺激加借；困难客户退出促销</td>
+</tr>
+<tr>
+<td>结清后健康复借</td>
+<td>T+0 还款确认、额度恢复、重新评估和模拟入口</td>
+<td>在预测窗口测试 Offer 提醒、下笔息费券或组合</td>
+<td>T+0 仅服务确认；预测窗口前 App/Push</td>
+<td>结清至健康复借间隔、固定 cohort 留存</td>
+<td>7/14 日过快复借、Debt Service Ratio、重叠贷款</td>
+</tr>
+<tr>
+<td>活跃衰减与沉睡</td>
+<td>App 入口和 eligible Offer 对所有组保持一致</td>
+<td>低成本内容、窄场景券、组合或 No Action</td>
+<td>每个窗口一次 Push；SMS 作为独立补发实验</td>
+<td>90/180 日恢复增量与优惠依赖</td>
+<td>默认克制；失败后冷却 30 日</td>
+</tr>
+<tr>
+<td>困难、早逾、投诉或欺诈</td>
+<td>延期/重组、费用解释、人工服务和认证渠道</td>
+<td>Protected Service Journey（保护性服务旅程），无促销权益</td>
+<td>认证 App、人工服务、必要 SMS</td>
+<td>问题解决、恢复履约和损失避免</td>
+<td>所有券、临额展示和复借触达立即停止</td>
+</tr>
+</tbody>
+</table>
+<p>产品和服务基础能力决定旅程能否完成；运营策略在基础能力稳定后，针对可运营客群选择触达时点、客户主张、权益和渠道。两者共同影响转化，但必须分别归因、分别治理。</p>
+<h3>4.5 各市场真正可迁移的现金贷机制</h3>
+<p><strong>墨西哥：先补齐现金还款的服务基线，再经营下一次健康使用。</strong> DiDi、Tala 与 Baubap 提供 SPEI 之外的现金或便利店路径，并在 App 或 SMS 回传结果；这是产品与服务能力，不是运营 treatment。[CL1][CL2][CL3] 运营可读取“客户常用渠道、到账时延、是否完成首还”等信号，在到期前展示最短还款路径；完成结清后再根据个人周期决定是否进入下一次健康复借旅程，而不是把“有现金还款渠道”本身计算为运营收益。</p>
+<p><strong>中国：把 Offer、运营权益和履约状态分层管理，但降低超级平台依赖。</strong> 京东金条和 360 借条的公开规则同时包含资格展示、息费券、支用、统一还款日、自动扣款、结清和额度恢复。[CL5] 其中额度与期限属于 Risk/Offer，自动扣款与额度恢复属于产品能力，息费券及其定向展示才属于运营 treatment。可迁移的是各层独立版本、券的生效/核销/失效、还款后的下一步旅程，以及跨层引用时的统一 <code>decision_id</code>；不可迁移的是假设本方拥有电商、支付、身份与消费的全量行为。</p>
+<p><strong>印尼：把履约权益做成可用价值。</strong> JULO Poin 可用于支付账单，提前还款 Cashback 具有明确档位与上限，Missions 则提供持续任务。[CL6] 对墨西哥而言，积分只有在客户能理解、能兑换、能核对时才有价值；若现金客户无法在 App 内顺畅使用，简单的下笔息费券或现金还款补助可能更有效。</p>
+<p><strong>菲律宾：收益机制强，但债务循环风险也最清楚。</strong> GLoan Sakto 把“14 天内结清并复借”直接与 5% Cashback 连接，适合作为高周转机制的公开样本，却不应成为照搬模板。[CL7] 本方如测试类似机制，必须同时观察过快复借率、跨平台贷款数、Debt Service Ratio（偿债收入比）、早逾和困难援助；否则“周转提升”可能只是更快进入下一轮负债。Maya 将 Cashback 延后至首期按时还款后兑现，比放款即返更能把权益与履约联系起来。[CL8]</p>
+<p><strong>巴西：借鉴统一 App 入口，不把产品自助能力写成触达效果。</strong> Nubank、Mercado Pago 与 PicPay 的公开路径强调个性化资格、客户自助模拟、提前还款利息减免和 App 内困难服务。[CL9][CL10] 这些证明了报价、模拟、提前还款与重组可以在持续关系入口中完成，但没有证明某条 Push、SMS 或权益组合带来增量转化。墨西哥可迁移统一入口和状态切换；客户一旦进入困难援助，复借与促销 treatment 必须退出。</p>
+<h3>4.6 银行、信用卡与商户信贷：只提取补充机制</h3>
+<p>银行与卡类案例仍有价值，但只用于补足现金贷不天然拥有的交易场景、会员进度和自动兑现能力。以下六条路径不用于替代现金贷生命周期：</p>
+<table>
+<thead>
+<tr>
+<th>供给者</th>
+<th>经营关系</th>
+<th>公开机制（产品、权益或触达）</th>
+<th>可迁移的运营用法</th>
+<th>主要风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统银行</td>
+<td>工资、存款、卡、积分与线下关系</td>
+<td>预审批、首月权益、交易后分期、积分抵扣</td>
+<td>主账户数据与具体交易时点</td>
+<td>跨系统、跨渠道链路长</td>
+</tr>
+<tr>
+<td>Nu México</td>
+<td>控制感、透明度与 App 主要客户交互入口</td>
+<td>资格型 App 报价、月度复评、自助分期、实时通知</td>
+<td>无资格时不展示；复杂选项在 App 内解释</td>
+<td>成长节奏与客户预期不一致</td>
+</tr>
+<tr>
+<td>Stori</td>
+<td>从 thin-file 或受损征信到 credit building</td>
+<td>推荐、提额、联名、月度会员任务</td>
+<td>将成长与兴趣做成可见路径</td>
+<td>权益/提额承诺兑现不稳会伤信任</td>
+</tr>
+<tr>
+<td>Klar</td>
+<td>graduation（从担保卡升级为普通信用卡）与月度等级</td>
+<td>Klar Plus 保级、品类 Cashback、邀请制 Klar Platino</td>
+<td>权益可失去也可恢复，召回理由明确</td>
+<td>门槛复杂、页面口径可能不一致</td>
+</tr>
+<tr>
+<td>Mercado Pago</td>
+<td>钱包、电商、支付与商户场景</td>
+<td>结账分期、交易后游戏化、生态权益</td>
+<td>意图强、路径短、归因清楚</td>
+<td>总成本与额度占用可能违背客户直觉</td>
+</tr>
+<tr>
+<td>Kueski Pay</td>
+<td>商户分期的高频复购</td>
+<td>商户折扣、重复购买资格与还款提醒</td>
+<td>强交易场景与短周期复购</td>
+<td>逐笔重审不等于稳定循环额度</td>
+</tr>
+</tbody>
+</table>
+<h4>4.6.1 传统银行：把策略放在主账户和交易之后</h4>
+<p>BBVA Start（首 30 日合格消费免息分期权益）将首 30 日合格消费自动转为三个月免息；BBVA 的交易后分期只面向受邀客户，可通过 Email、SMS 或 Push 发送个性化邀请；Santander 的 Mis Ofertas（App 内预审批产品入口）把提额、信用卡、个人贷、工资预支、余额转移等预审批机会放进 App；积分抵扣也只有在具体合格交易里才出现。[X1][X2]</p>
+<p>这类机制看起来传统，却非常接近场景化运营：策略由资格、账户状态、交易和时间窗共同决定。它的优势是数据深、资金稳定、信任基础强；短板是数字链路可能跨系统。Push 把客户叫回 App，如果仍要打电话或去网点，运营价值会在末端环节流失。</p>
+<h4>4.6.2 Nu：用资格克制和控制感代替固定积分轰炸</h4>
+<p>Nu 的公开路径是免年费信用卡、用卡与还款行为、Cuenta Nu（Nu 存款账户）关系、担保卡或更深信用产品。它每月自动复评额度；满足条件才通过 App 和 Email 告知。个贷报价也不是全量常驻入口，符合资格的客户会在 App 首页看到并自行模拟期限和付款日。[X3][X4]</p>
+<p>Nu 最可迁移的不是紫色品牌或免年费，而是两种克制。没有成熟资格时不展示；需要比较期限、总成本和提前还款时，把操作放在 App 模拟器里，不让外部消息承担解释复杂合同的任务。实时交易通知和官方来电提醒则维护安全感，避免促销把安全入口稀释。</p>
+<h4>4.6.3 Stori 与 Klar：把 credit building（信用积累）做成可见月度任务</h4>
+<p>Stori 从高通过率和担保卡服务首次用卡或 thin-file 用户，再通过 credit building、Stori Black（Stori 高阶信用卡产品）、联名卡、推荐与 Stori Pro（Stori 月度会员计划）做分叉。Stori Pro 可通过 Email、Push、App 内邀请，按月消费档位给出 Cashback 或其他权益；联名则把大而泛的客群拆成时尚、球队、交通、健康等更具体的身份场景。[X5]</p>
+<p>Klar 的路径更像 graduation：担保卡持续良好使用后可收到升级通知，再进入按月消费达标的 Klar Plus（会员等级），价值更高时进入邀请制 Klar Platino（高阶等级）。Klarfest（Klar 商户促销活动）又把会员资格、商户、最低消费、MSI（Meses sin Intereses，免息分期）、活动窗口和 Cashback 上限叠在一起。[X6]</p>
+<p>两家共同展示了一个比通用券更省钱的结构：资格 × 场景 × 门槛 × 时限 × 成本上限。它也有一条脆弱边界——成长任务必须可理解、可查询、可兑现。若 Push 说已经升级，App 没有入口；或不同页面写出不同门槛，激励会迅速变成投诉。</p>
+<h4>4.6.4 Mercado Pago：在意图最强的结账时刻出现</h4>
+<p>Mercado Pago 的 Meses sin Tarjeta（无卡分期）在 Mercado Libre（该集团在墨西哥使用的西语品牌名）、线上 Checkout（结账页或结账场景）、支付链接或线下扫码等交易时刻自动识别资格并展示分期。商户收到全款，平台负责后续还款管理和资金回收。信用卡活动也可绑定已完成交易，例如合格消费后在 App 内生成数字奖励。[X7]</p>
+<p>这里的优势不是券更大，而是路径短。用户已经有商品和购买意图，信贷选项只负责解决支付能力或现金流安排。在墨西哥循环额度产品中，临额可以提前进入资格准备，但正式确认更适合出现在预计需求窗口、金额缺口、支付失败或支用请求附近。确认前要同时展示每期金额、总成本、占用额度和释放节奏，否则短期转化会透支长期信任。</p>
+<h4>4.6.5 Kueski Pay：商户信贷的复购运营不能冒充稳定额度</h4>
+<p>Kueski 用首贷优惠、双周还款、重复客户折扣、商户券和自动扣款推动复购。但 Kueski Pay 的每笔交易仍需重新审批；其官方在应用评价回复中也澄清，当前不存在固定循环额度。[X8]</p>
+<p>这条路径适合作为替代品参照，而不是循环额度参数对标。它揭示了一个常被忽略的运营风险：客户看到“预批金额”会把它理解成已经属于自己的可用资源，机构却把它理解成下一次评估的上限。命名和展示如果故意模糊，短期点击可能上升，复购信任反而下降。</p>
+<h3>4.7 横向结论：产品能力是底座，运营价值来自增量干预</h3>
+<p>横向对标必须先回答“公开材料披露的是哪一层”。预审批、临额幅度和期限是 Risk/Offer；模拟、确认、还款和重组是产品或服务能力；邀请、首月任务、指定商户、活动窗口、Cashback 和报名路径才可能构成运营 treatment；Push、SMS、App、Email 的先后与退出才是 Touch Strategy。只有四项同时可识别——目标客群、触发窗口、干预内容、相对 Control Group 的结果——才能把案例写成运营效果证据。</p>
+<p>一项策略越接近真实事件，越容易解释和设置对照，却也越晚；等到支付失败才出现，可能已经失去交易。前置识别的价值，是在真实窗口到来前完成资格、内容、渠道和权益准备。它不能依赖“高价值”“可能流失”这类宽标签，而要依赖个人周期、生命周期阶段、额度轨迹和本地季节窗口，并通过随机 Control Group 判断是否真的缩短了健康支用间隔。</p>
+<h3>4.8 卡、钱包与商户信贷的补充对标</h3>
+<p>公开资料对“用了什么机制”披露较多，对“相对 Control Group 增加多少利润”披露很少。下表用 <code>Product</code>、<code>Risk/Offer</code>、<code>Treatment</code>、<code>Touch</code> 和 <code>Service</code> 标明所属层，并将公开结果和本报告的运营推断分开：没有因果数据的案例，不把客户规模、活动参与或交易增长写成策略收益。</p>
+<table>
+<thead>
+<tr>
+<th>地区与机构</th>
+<th>经营阶段/场景</th>
+<th>公开机制及所属层</th>
+<th>触达渠道与完成路径</th>
+<th>公开结果或可验证收益</th>
+<th>对墨西哥的借鉴价值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>墨西哥 BBVA / Santander</td>
+<td>新卡首月、真实交易后、账户内预审批</td>
+<td>
+<code>Risk/Offer</code> 预审批；<code>Product</code> 分期；<code>Treatment</code> 首月免息与积分抵扣</td>
+<td>
+<code>Touch</code> SMS/Push 邀请 → App 查看与确认</td>
+<td>未披露单策略因果收益；可验证首用、分期接受与账户深化</td>
+<td>利用主账户和交易事实前置资格，复杂成本回到 App [X1][X2]</td>
+</tr>
+<tr>
+<td>墨西哥 Nu</td>
+<td>credit building、月度复评、合格客户深化</td>
+<td>
+<code>Risk/Offer</code> 额度复评与个贷报价；<code>Product</code> 自助分期；<code>Service</code> 安全提醒</td>
+<td>
+<code>Touch</code> App 主入口，Email 与实时通知辅助</td>
+<td>未披露运营增量；只能验证资格克制与自助路径</td>
+<td>不成熟时不展示；安全与销售共享入口但分开治理 [X3][X4]</td>
+</tr>
+<tr>
+<td>墨西哥 Stori / Klar</td>
+<td>thin-file 成长、月度任务、会员保级</td>
+<td>
+<code>Treatment</code> Cashback、联名权益与会员任务；<code>Risk/Offer</code> graduation</td>
+<td>
+<code>Touch</code> App 进度 → Push/Email 邀请</td>
+<td>未披露因果 ROI；可验证月度达标、复用与保级留存</td>
+<td>将“首用—按时还款—复用”做成可见成长，而非单次券 [X5][X6]</td>
+</tr>
+<tr>
+<td>墨西哥 Mercado Pago / Kueski Pay</td>
+<td>结账、商户分期、短周期复购</td>
+<td>
+<code>Product</code> 结账分期；<code>Treatment</code> 数字奖励、复购券与商户折扣</td>
+<td>
+<code>Touch</code> Checkout/App/商户场景内完成</td>
+<td>未披露单项策略增量；可验证成交、复购及逐笔审批落差</td>
+<td>信贷靠近真实购买，但“机会”不能包装成稳定额度 [X7][X8]</td>
+</tr>
+<tr>
+<td>中国农业银行</td>
+<td>受邀任务、跨月复用</td>
+<td>
+<code>Risk/Offer</code> 提额/分期资格；<code>Treatment</code> 多倍积分与次月权益</td>
+<td>
+<code>Touch</code> 定向 SMS → App 报名/领取 → 指定支付</td>
+<td>公开规则未披露增量利润；可验证跨月达标与复用</td>
+<td>将 Offer 与下一周期健康使用连接，不奖励借款金额 [CN1]</td>
+</tr>
+<tr>
+<td>中国建设银行</td>
+<td>电商结账、新户首用</td>
+<td>
+<code>Product</code> 分期；<code>Treatment</code> 满减与首笔后下一笔券</td>
+<td>
+<code>Touch</code> 商品/收银台、手机银行与微信入口</td>
+<td>未披露因果 ROI；可验证首刷、二刷、分期成交和退款冲回</td>
+<td>组合权益在真实结账出现；新客奖励延后到真实行为 [CN2][CN3]</td>
+</tr>
+<tr>
+<td>中国银联 / 中国银行</td>
+<td>季度持续使用；交易前后现金流安排</td>
+<td>
+<code>Treatment</code> 阶梯任务/会员/券；<code>Risk/Offer</code> 临额；<code>Product</code> 多类分期</td>
+<td>
+<code>Touch</code> 进度页、App、SMS 与商户收银台</td>
+<td>未披露因果利润；可验证季度活跃、任务进度和分期迁移</td>
+<td>用跨周期 treatment 串联交易前中后，不把所有机制同时堆叠 [CN4][CN5]</td>
+</tr>
+<tr>
+<td>印尼 GoPay × Bank Jago</td>
+<td>高频支付生态中的开户、首用和持续支付</td>
+<td>
+<code>Product</code> 账户与电子钱包一体化、无最低余额</td>
+<td>
+<code>Touch</code> Gojek/GoPay/Tokopedia/QRIS 场景内完成</td>
+<td>官方称约两分钟可升级；未披露相对 Control Group 的留存收益</td>
+<td>缩短开通与首用距离；它是能力参考，不是触达增量证据 [ID1]</td>
+</tr>
+<tr>
+<td>印尼 Kredivo</td>
+<td>商户结账、金额缺口、后续还款</td>
+<td>
+<code>Risk/Offer</code> 动态额度；<code>Product</code> 分期与部分自付；<code>Service</code> 还款渠道</td>
+<td>
+<code>Touch</code> Checkout/App；SMS、Email、App 到期提醒</td>
+<td>未披露因果 ROI；可验证缺口成交、复购和按时还款</td>
+<td>建立金额缺口带，另行实验提醒、券和组合 [ID2][ID3]</td>
+</tr>
+<tr>
+<td>菲律宾 GCash</td>
+<td>借款前日常钱包行为、到期提醒</td>
+<td>
+<code>Risk/Offer</code> GScore/资格复核与 GCredit；<code>Service</code> 到期说明</td>
+<td>
+<code>Touch</code> App Inbox/Push，关键到期 SMS，Email 说明</td>
+<td>分数每周更新但不保证授信；未披露运营增量</td>
+<td>用支付、账单、储蓄行为识别前置机会，不把分数承诺成额度 [PH1][PH3]</td>
+</tr>
+<tr>
+<td>菲律宾 Maya</td>
+<td>首用、跨产品活跃和会员留存</td>
+<td>
+<code>Treatment</code> Maya XP、Missions 与利率加成；<code>Risk/Offer</code> Easy Credit</td>
+<td>
+<code>Touch</code> App 进度/任务页，Push、SMS、Email</td>
+<td>未披露因果 ROI；可验证等级迁移、任务完成和跨产品留存</td>
+<td>把跨产品权益编排为持续旅程，不只刺激借款 [PH2]</td>
+</tr>
+<tr>
+<td>巴西 Nubank</td>
+<td>thin-file 首用和 credit building</td>
+<td>
+<code>Product</code> 担保资金转额度；<code>Treatment</code> App 任务；<code>Risk/Offer</code> 预授信</td>
+<td>
+<code>Touch</code> App 内可视任务与进度</td>
+<td>官方披露完成任务者中逾半数一个月内获首个预授信额度，曾覆盖逾 500 万人；非随机因果结果 [BR1]</td>
+<td>可借鉴可视任务，但不能把预授信结果归因于触达</td>
+</tr>
+<tr>
+<td>巴西 Mercado Pago</td>
+<td>日常支付前置识别、结账、账单与 Pix</td>
+<td>
+<code>Risk/Offer</code> 信用额度；<code>Product</code> 分期；<code>Treatment</code> 钱包/商户权益</td>
+<td>
+<code>Touch</code> Mercado Livre Checkout、App、二维码、Pix 与服务渠道</td>
+<td>未披露单策略因果 ROI；可验证结账成交、支付活跃和还款</td>
+<td>将关系信号与结账 MOT 连接；墨西哥数字事件密度更低 [BR2]</td>
+</tr>
+<tr>
+<td>美国 Chase / Amex</td>
+<td>已登记卡的真实商户消费</td>
+<td>
+<code>Treatment</code> Card-linked Offer 与账单返还；<code>Product</code> 自动匹配/冲回</td>
+<td>
+<code>Touch</code> App/账户内加入 → 刷卡后自动兑现</td>
+<td>未披露单优惠因果 ROI；可验证激活、合格交易与退款净额</td>
+<td>自动兑现与商户成本上限可迁移，卡组织数据不可照搬 [G3][G4]</td>
+</tr>
+<tr>
+<td>英国 Monzo / 澳大利亚 CBA</td>
+<td>真实交易后分期；持续客户关系</td>
+<td>
+<code>Product</code> 交易后 Flex；<code>Treatment/Service</code> 优惠、安全与困难支持对话</td>
+<td>
+<code>Touch</code> App 交易详情与 Next Best Conversation</td>
+<td>公开材料未披露本报告可比的增量利润</td>
+<td>销售与服务共享协调框架，但目标和评估分开 [G5][G6]</td>
+</tr>
+</tbody>
+</table>
+<p>从经营收益看，各地区的机制可以归为五条收益实现路径：</p>
+<table>
+<thead>
+<tr>
+<th>收益实现路径</th>
+<th>典型机制</th>
+<th>直接收益</th>
+<th>延迟收益</th>
+<th>必须扣除</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>激活提速</td>
+<td>新户首用任务、担保 credit building、场景内开户</td>
+<td>首用增量、获客成本回收加快</td>
+<td>M1/M3（首用后第 1/3 个月）留存与信用历史形成</td>
+<td>首用券、流失客户补贴、早期风险</td>
+</tr>
+<tr>
+<td>周转提速</td>
+<td>还款后权益、个人周期提醒、跨月任务</td>
+<td>再支用间隔缩短、额度流量周转提高</td>
+<td>活跃月数与客户长期价值</td>
+<td>资金成本、余额滞留、过度负担</td>
+</tr>
+<tr>
+<td>交易救援</td>
+<td>eligible Offer（临额/分期）+ 产品补差能力 + 运营券/提醒</td>
+<td>失败交易恢复、增量成交</td>
+<td>商户复用与品类黏性</td>
+<td>新增暴露、优惠、退款和欺诈</td>
+</tr>
+<tr>
+<td>留存深化</td>
+<td>会员等级、可视进度、支付/储蓄/信用组合</td>
+<td>复用、主账户行为、跨产品活跃</td>
+<td>90/180 日留存与 LTV（Lifetime Value，客户生命周期价值）</td>
+<td>会员权益、自然高频客补贴、复杂度</td>
+</tr>
+<tr>
+<td>服务与信任</td>
+<td>安全提醒、账单帮助、困难支持</td>
+<td>投诉和损失避免</td>
+<td>关系恢复、退订下降、长期留存</td>
+<td>客服容量、补救和合规成本</td>
+</tr>
+</tbody>
+</table>
+<p>国际案例不能替代墨西哥本方实验。公开“收益”多为产品结果或机构自述，不等于随机对照下的净增量。墨西哥落地时，所有策略统一换算为相对 Control Group 的增量支用、周转、留存和风险调整利润，再决定扩量。</p>
+<h2 id="sec-5">五、横纵交汇：七个决定策略成败的判断</h2>
+<h3>5.1 客群应被定义为“当前关系阶段”，不能被定义为永久身份</h3>
+<p>同一个客户可以从激活未首用进入首用培养，再进入稳定周转；额度趋紧、支付失败、活跃衰减或困难状态又会改变经营方式。标签若按月刷新，运营会慢一拍；标签若写成“价格敏感”“竞品流失”，模型推断还会被文案当作事实重复强化。</p>
+<p>主生命周期阶段保持互斥，机会与证据允许并存。收入形态、地区、产品层级只用于资格、效果异质性和公平性审查。系统最终生成的不是永久人群标签，而是一个有失效时间的 <code>opportunity_id</code>（机会窗口唯一标识）：预计窗口、可信度、适用策略组件、最晚干预时间、预算，以及 No Action 与 Control Group 分流规则。</p>
+<h3>5.2 前置识别创造经营时间，MOT 缩短完成路径</h3>
+<p>前置识别需要五组领先证据：个人支用—还款—再支用节奏，额度利用和恢复轨迹，生命周期成熟度，工资/奖金/季节/品类窗口，客户长期价值与历史优惠依赖。它的产出不是“立刻发送”，而是决定谁值得准备、何时进入旅程、哪些组合可以被安全展示。</p>
+<p>MOT 处理的是已经暴露的强信号：价格页、申请中断、金额缺口、支付失败、结清和额度恢复。一个完整旅程应形成：</p>
+<pre><code class="language-text">窗口前提醒 → MOT 实时响应 → 交易后复用与留存 → 风险表现回传
+</code></pre>
+<p>如果只有前置识别，运营容易变成基于概率的过早打扰；如果只有 MOT，运营会失去首用培养、周转提速和流失前干预。双引擎的价值在于时间与精度互补。</p>
+<h3>5.3 运营单元应是策略组合，不是被迫选择唯一策略</h3>
+<p>单项 treatment 适合诊断，组合 treatment 适合解决复合摩擦。组合并不要求每个元素属于同一层：Risk/Offer 可以返回 eligible 临额或期限选项，运营再叠加息费券、Cashback、任务或解释内容，Touch Strategy 决定 Push、SMS 与 App 的先后。金额不足与价格敏感同时存在时，可以测试“主动展示 eligible 临额 + 商户券”；现金流不匹配且理解不足时，可以测试“主动展示已批准分期方案 + 小额满减 + 模拟器 Deep Link”；首用培养则可把“产品教育 + 首笔任务 + 按时还款后的次月权益”串成跨周期旅程。</p>
+<p>组合策略必须经过四项检查：各层引用不越权；总成本和新增暴露受控；客户看到的是一套可理解的价值；实验能区分协同效应。纯运营组合的典型四臂设计是“Control Group / A（提醒）/ B（券）/ A+B（提醒+券）”，各组拥有相同产品能力和 eligible Offer，其中：</p>
+<pre><code class="language-text">组合协同增量 = Δ(A+B) − Δ(A) − Δ(B)
+</code></pre>
+<p>协同增量为正且能覆盖额外风险与成本，才保留组合。组合权益不是堆券，也不是多渠道重复发送，而是一套有共同目标、进入条件、退出条件和兑现规则的 treatment（实验中的策略处理）。</p>
+<h3>5.4 临额属于 Risk/Offer，运营只实验展示时机与权益叠加</h3>
+<p>风险团队可在个人健康周转窗口接近、额度趋紧但尚未失败时预先计算临额资格，也可在金额缺口、旅行或季节消费、支付失败时重新评估。运营不决定客户是否合格、增加多少或收取什么价格；运营实验的是 eligible 临额在 App 被动展示、预测窗口提醒、MOT 实时提示，以及是否叠加券或成本解释。前置识别给运营准备时间，MOT 提高相关性，两者都不应演变为无需求信号的广撒。</p>
+<p>纯运营实验必须让 Control Group 与 Treatment Group 拥有相同的临额资格、幅度、有效期和价格，只改变是否主动展示、何时展示、如何解释及是否叠加运营权益。它至少回答：主动触达是否增加成功支用；是否缩短健康再支用间隔；新增余额是否只是把未来支用提前；到期恢复是否造成体验落差；成熟后的风险调整利润是否为正。若实验直接改变临额资格或幅度，它就是风险/产品与运营的联合实验，不能宣称为触达策略增量。临额、永久提额和“可申请机会”使用不同名称；App 确认页展示金额、有效期、费用、还款与恢复规则，由客户主动接受。</p>
+<h3>5.5 券既是利益组件，也是价格摩擦诊断工具</h3>
+<p>小额券可以独立检验价格摩擦，也可以与“主动展示已批准的分期/临额选项”、会员进度或解释内容组成策略组合。给历史高转化客户发券再看核销，测到的往往是自然需求；只有相同产品能力、eligible Offer、场景和渠道下的随机比较，才有机会识别增量。</p>
+<p>券应有窄场景、短窗口、明确门槛、成本上限、自动兑现和退款冲回。若提醒与券的增量接近，选择提醒；若 A+B 没有超过单项策略增量之和，不保留组合补贴；若券提升支用却损害投诉、逾期或成熟利润，策略整体失败。</p>
+<h3>5.6 渠道组成有退出条件的序列，不是同一文案的复制器</h3>
+<table>
+<thead>
+<tr>
+<th>渠道</th>
+<th>最适合承担</th>
+<th>在组合旅程中的位置</th>
+<th>不适合承担</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App 内</td>
+<td>资格、金额、总成本、模拟、确认、进度与兑现</td>
+<td>主要确认与办理页面</td>
+<td>唤醒长期不登录客户</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>强时效提醒、状态变化、Deep Link 回原场景</td>
+<td>首次低成本唤醒</td>
+<td>解释复杂合同；连续追发</td>
+</tr>
+<tr>
+<td>SMS</td>
+<td>低连接、关键状态和失败回退</td>
+<td>Push 未达或关键事项兜底</td>
+<td>敏感信息、长篇促销、可疑短链</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>规则、账单、权益摘要和可留存说明</td>
+<td>复杂说明与凭证</td>
+<td>分钟级交易救援</td>
+</tr>
+<tr>
+<td>WhatsApp</td>
+<td>有效同意后的对话服务与简单引导</td>
+<td>用户发起或许可明确的服务接续</td>
+<td>无同意营销、敏感数据、平台禁止类别</td>
+</tr>
+<tr>
+<td>无新增促销触达</td>
+<td>自然需求估计、疲劳保护</td>
+<td>可作为 No Action 的执行结果；实验中由 Control Group 承担正式对照</td>
+<td>被当作系统漏发</td>
+</tr>
+</tbody>
+</table>
+<p>一次旅程可以包含多个触点，但每个触点都有进入与退出条件：App 已完成便停止 Push；Push 已打开便不发 SMS；权益已领取便停止召回；投诉、困难或风险状态出现便切换为服务旅程。WhatsApp 仍须满足有效同意、退订和平台金融产品政策。[C1] 复杂价格、身份和账户操作回到认证 App。</p>
+<h3>5.7 信任、服务和客户负担是策略约束，不是营销之后的补救</h3>
+<p>墨西哥的高现金使用、预付费手机和高非正规就业，使“没有点击”不能直接解释为“没有需求”。诈骗提醒、异常交易确认、账单帮助、还款困难和投诉处理也可能比促销更重要。客户处于欺诈核验、投诉处理中、早期逾期或困难援助状态时，促销组件应停止，服务与援助组件继续。</p>
+<p>中国现金贷可借鉴资格展示、息费券与还款状态链；印尼可借鉴申请恢复、JULO 履约权益与再次支用；菲律宾可借鉴 GLoan 的提前结清返息、首还 Cashback 及其债务循环护栏；巴西可借鉴个贷模拟、提前还款折息与困难重组。信用卡和成熟市场案例再补充 Card-linked Offer 的交易反馈、长期 Holdout 与 FCA（Financial Conduct Authority，英国金融行为监管局）Consumer Duty（消费者责任规则）下的 customer outcomes（消费者财务结果）约束。[G9] 共同底座不是某国的券面额，而是客户生命周期阶段、机会窗口、MOT、策略组合、协调渠道与长期结果。墨西哥应先建成日级或小时级的双引擎协同，再在事件完整的局部场景缩短到分钟级。</p>
+<h2 id="sec-6">六、运营策略蓝图：前置识别、MOT 实时响应、策略组合与实验</h2>
+<h3>6.1 目标体系同时衡量周转、留存、利润和客户健康</h3>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>指标</th>
+<th>口径</th>
+<th>经营含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北极星</td>
+<td>风险可控的活跃周转客户数</td>
+<td>观察窗内完成健康支用或“支用—按约还款—再支用”，且未触发风险/困难护栏的客户数</td>
+<td>防止只追余额或点击</td>
+</tr>
+<tr>
+<td>经济结果</td>
+<td>风险调整增量贡献利润</td>
+<td>Treatment Group 相对 Control Group 的收入减资金、损失、权益、渠道、服务与投诉成本</td>
+<td>判断运营是否真正创造价值</td>
+</tr>
+<tr>
+<td>支用激活</td>
+<td>Approved-to-Draw Rate</td>
+<td>获得有效资格后在观察窗内成功支用人数 ÷ 获得有效资格人数</td>
+<td>识别获批未支用漏斗，不把批核当转化</td>
+</tr>
+<tr>
+<td>履约效率</td>
+<td>获批至放款时间</td>
+<td>从资格确认到成功入账的中位数及 P90（第 90 百分位）时长</td>
+<td>区分运营问题、流程问题与支付轨道问题</td>
+</tr>
+<tr>
+<td>周转</td>
+<td>额度流量周转倍数</td>
+<td>观察期累计支用本金 ÷ 同期日均有效额度，可大于 1</td>
+<td>区分持续周转与余额长期占用</td>
+</tr>
+<tr>
+<td>周转</td>
+<td>健康再支用间隔</td>
+<td>合格还款或额度恢复至下一笔健康支用的中位天数</td>
+<td>衡量是否加快健康使用，而非单纯滚贷</td>
+</tr>
+<tr>
+<td>留存</td>
+<td>固定首次支用 cohort 的 M1/M2/M3 健康留存</td>
+<td>M0（首次健康支用月）客户中，后续第 1/2/3 个月仍健康使用的比例</td>
+<td>避免滚动活跃池造成错觉</td>
+</tr>
+<tr>
+<td>激活</td>
+<td>首次健康支用率</td>
+<td>观察窗内首次健康支用人数 ÷ 可运营新客数</td>
+<td>判断新客是否跨过第一道门槛</td>
+</tr>
+<tr>
+<td>护栏</td>
+<td>过快复借与债务循环</td>
+<td>结清后 7/14 日复借、多头或重叠贷款、Debt Service Ratio、利用轨迹</td>
+<td>区分合理周转与被权益推动的债务循环</td>
+</tr>
+<tr>
+<td>护栏</td>
+<td>风险与 consumer outcomes</td>
+<td>FPD（First Payment Default，首期违约）、DPD（Days Past Due，逾期天数）、金额风险、投诉、退订、欺诈、困难援助</td>
+<td>防止短期转化损害成熟风险与客户结果</td>
+</tr>
+</tbody>
+</table>
+<p>日均额度利用率只描述余额占用，不能代替周转倍数。高利用可能来自频繁健康使用，也可能来自余额滞留；必须结合还款纪律、再支用和成熟风险解释。所有周转与留存指标都报告绝对值和相对 Control Group 的增量。</p>
+<h3>6.2 决策数据与执行权限分成九层</h3>
+<ol>
+<li>
+<strong>同意与硬约束：</strong> 持牌实体、合同、REUS、渠道同意、退订、欺诈、投诉、困难援助和冷却；</li>
+<li>
+<strong>身份与生命周期：</strong> 新客、获批未支用、首用培养、稳定周转、活跃衰减、沉睡、困难与恢复；</li>
+<li>
+<strong>Product Capability：</strong> 模拟、支用、账单、还款、自动扣款、现金还款、额度恢复、流程恢复与服务入口；</li>
+<li>
+<strong>Risk/Offer：</strong> 资格、额度、临额范围、期限、价格、费用、负担能力和有效期；运营只读，不得改写；</li>
+<li>
+<strong>Predictive Opportunity（预测型机会）：</strong> 个人支还节奏、预计 7/14/30 天窗口、季节/收入日历、活跃偏离和增量响应概率；</li>
+<li>
+<strong>实时 MOT：</strong> 试算退出、页面退出、流程中断、结清、额度恢复与服务请求；</li>
+<li>
+<strong>Operational Treatment：</strong> No Action、提醒、解释、息费券、Cashback、积分/任务、Referral 与相容权益组合；</li>
+<li>
+<strong>Touch 与 Service Queue：</strong> 客户主张、App/Push/SMS/WhatsApp 序列、频控、退出，以及促销、服务恢复、保护性服务三条互斥队列；</li>
+<li>
+<strong>实验与履约日志：</strong> <code>opportunity_id</code>、<code>decision_id</code>、Offer 版本、Treatment、Control Group、发送、到达、打开、兑现、支用、还款和成熟结果。</li>
+</ol>
+<p>数据缺失时采用保守降级：同意、风险、价格或履约状态不可确认，便不展示相关策略；机会分不足只保留 App 被动展示或 No Action；MOT 到达后重新计算，不沿用过期的前置判断。</p>
+<h3>6.3 四本目录分权管理，运营策略包只引用上游能力</h3>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>内容</th>
+<th>可由运营配置</th>
+<th>不能由运营修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product/Risk Offer</td>
+<td>临额、分期、期限、价格、模拟器、还款入口、额度恢复</td>
+<td>选择是否在已批准范围内主动展示</td>
+<td>资格、额度、期限、利率、费用和负担能力阈值</td>
+</tr>
+<tr>
+<td>Operational Treatment</td>
+<td>提醒、教育、息费券、商户券、Cashback、积分/任务、Referral</td>
+<td>人群、权益面额、有效期、预算、叠加与核销规则</td>
+<td>用优惠掩盖产品错误或绕过 Risk/Offer</td>
+</tr>
+<tr>
+<td>Touch Execution</td>
+<td>Customer Proposition、App Banner、Push、SMS、WhatsApp、Email、Deep Link</td>
+<td>时间、顺序、CTA、频控、冷却、fallback 和退出</td>
+<td>必要账单、安全、服务通知的法定义务</td>
+</tr>
+<tr>
+<td>Protected Service</td>
+<td>申请/放款恢复、到账解释、欺诈、投诉、困难援助、延期/重组</td>
+<td>服务分流、响应 SLA、人工容量和补救</td>
+<td>与销售权益组合，或设置 No Action 沉默客户</td>
+</tr>
+</tbody>
+</table>
+<p>标准运营策略包定义：objective（经营目标）+ target &amp; exclusion（入选与排除）+ eligible Offer（只读）+ operational benefit（运营权益）+ proposition（客户主张）+ channel sequence（渠道序列）+ timing（执行时点）+ frequency（频控）+ exit rule（退出规则）+ experiment（实验）+ metrics（评估指标）。</p>
+<p>组合的依据是解决不同摩擦，不是权益数量：看不见用提醒；看不懂用成本解释与模拟 Deep Link；价格摩擦用息费券；金额不足调用 Risk/Offer 返回的临额或期限选项；流程故障进入 Service Journey，不发券；困难或信任问题进入人工服务，不与销售组合。</p>
+<h3>6.4 全生命周期场景矩阵</h3>
+<p>六张 Journey Card 分别覆盖真正的前置识别、漏斗恢复、首期履约、健康复借和召回。下列时间与频控是首轮实验起始参数，不是行业常数；上线前须结合本方自然曲线、样本量、客户同意和墨西哥当地静默时段校准。</p>
+<h4>6.4.1 Journey P1：预测型健康需求窗口</h4>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>可执行定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经营目标</td>
+<td>在客户主动查看产品前识别未来 7/14/30 天健康需求机会，提升增量健康支用，而不是补贴自然借款</td>
+</tr>
+<tr>
+<td>产品与 Risk/Offer 基线</td>
+<td>所有实验组均可在 App 查看相同 eligible Offer、金额/期限模拟与总成本；运营不可改变资格和参数</td>
+</tr>
+<tr>
+<td>入选</td>
+<td>个人支还周期接近、收入/aguinaldo/PTU/季节窗口临近、活跃偏离或品类周期出现，且预测增量响应概率达到门槛</td>
+</tr>
+<tr>
+<td>排除</td>
+<td>逾期、困难、投诉、欺诈、REUS、退订、近期高频促销、重叠负债或 Offer 在窗口前失效</td>
+</tr>
+<tr>
+<td>Customer Proposition</td>
+<td>“你可以在 App 查看当前可用选项、金额、期限和总成本；是否使用由你决定。”不得推断客户“急需用钱”</td>
+</tr>
+<tr>
+<td>Treatment Cells</td>
+<td>Control Group / 场景内容 / 息费券 / 场景内容+券；有临额时只引用 Risk/Offer 已批准的 eligible 临额</td>
+</tr>
+<tr>
+<td>触达与频控</td>
+<td>窗口前 App 被动展示；每个机会窗口最多 1 次 Push；未打开不自动叠加 SMS；失败后冷却 14 日</td>
+</tr>
+<tr>
+<td>退出</td>
+<td>Offer 失效、窗口结束、已支用、明确拒绝、退订、风险变化、困难/投诉或达到频控</td>
+</tr>
+<tr>
+<td>指标</td>
+<td>7/14/30 日增量健康支用、增量贡献利润、自然借款补贴率、FPD、过快复借和投诉</td>
+</tr>
+</tbody>
+</table>
+<h4>6.4.2 Journey A1：获批未支用</h4>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>可执行定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经营目标</td>
+<td>区分“未看到、未理解、价格摩擦和不想借”，提升 Approved-to-Draw 增量</td>
+</tr>
+<tr>
+<td>产品基线</td>
+<td>所有组拥有相同有效报价、模拟器、App 支用入口和资格剩余期；产品页面先通过履约验收</td>
+</tr>
+<tr>
+<td>入选</td>
+<td>获批 24 小时仍未支用；报价剩余有效期不少于 72 小时；区分未查看与查看未完成</td>
+</tr>
+<tr>
+<td>排除</td>
+<td>报价失效、风险变化、流程错误、早逾/困难、投诉、欺诈、REUS、退订、7 日内已有两次促销</td>
+</tr>
+<tr>
+<td>Customer Proposition</td>
+<td>
+<code>Tu oferta sigue disponible. Revisa monto, plazo y costo total en la app; usarla es opcional.</code>（可在 App 查看金额、期限和总成本，是否使用由客户决定）</td>
+</tr>
+<tr>
+<td>Treatment Cells</td>
+<td>Control Group / 解释+Deep Link / 息费券被动展示 / 解释+券；SMS 渠道效果另设实验，不与权益绑定</td>
+</tr>
+<tr>
+<td>触达序列</td>
+<td>D0 仅 App 被动展示；D+1 一次 Push；D+2 仅对 Push 未送达且仍合格者随机测试 SMS</td>
+</tr>
+<tr>
+<td>频控与退出</td>
+<td>72 小时最多 2 次主动触达；支用、拒绝、失效、退订、风险变化或达到频控立即退出；之后冷却 7 日</td>
+</tr>
+<tr>
+<td>指标</td>
+<td>7 日 Approved-to-Draw 增量、每增量支用客户成本、成熟增量利润、FPD、投诉与退订</td>
+</tr>
+</tbody>
+</table>
+<h4>6.4.3 Journey M1：金额/期限试算退出</h4>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>可执行定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经营目标</td>
+<td>恢复无故障但未完成的高意图客户，并识别理解摩擦与价格摩擦</td>
+</tr>
+<tr>
+<td>产品基线</td>
+<td>试算方案可保存，金额、期限、月供、CAT 和总还款额一致；Deep Link 能恢复此前试算状态</td>
+</tr>
+<tr>
+<td>入选</td>
+<td>完成至少一次有效试算后退出，30 分钟内未支用；错误码、加载失败和 KYC 问题必须先排除</td>
+</tr>
+<tr>
+<td>Customer Proposition</td>
+<td>
+<code>Retoma tu simulación y revisa el costo total antes de decidir.</code>（继续查看试算和总成本，再自行决定）</td>
+</tr>
+<tr>
+<td>Treatment Cells</td>
+<td>Control Group / 恢复提醒 / 成本解释 / 息费券 / 解释+券；替代期限仅使用 Risk/Offer 已返回选项</td>
+</tr>
+<tr>
+<td>触达序列</td>
+<td>退出后 30—120 分钟一次 Push；Push 未送达后的 SMS 作为独立实验；复杂解释回到 App</td>
+</tr>
+<tr>
+<td>频控与退出</td>
+<td>单次试算窗口最多 1 次主动提醒；重新打开、支用、拒绝、Offer 变化或 24 小时过期即退出；冷却 7 日</td>
+</tr>
+<tr>
+<td>指标</td>
+<td>试算恢复增量、支用增量、券的边际贡献、成熟利润、CAT 页面退出、投诉和 FPD</td>
+</tr>
+</tbody>
+</table>
+<h4>6.4.4 Journey R1：首期履约培养</h4>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>可执行定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经营目标</td>
+<td>提升首期按时还款和产品理解；不以贷后提醒刺激再次借款</td>
+</tr>
+<tr>
+<td>产品/服务基线</td>
+<td>T+0 提供到账凭证、还款日、自动扣款、SPEI/现金还款路径、费用摘要和困难入口</td>
+</tr>
+<tr>
+<td>入选</td>
+<td>首次支用且距离首期到期日进入 D-3/D-1 窗口；按历史渠道可达和支付偏好分层</td>
+</tr>
+<tr>
+<td>排除</td>
+<td>已完成还款、主动求助、困难、投诉、欺诈、早逾或法务要求转入人工服务</td>
+</tr>
+<tr>
+<td>Customer Proposition</td>
+<td>
+<code>Tu fecha de pago es __. Consulta el monto y las formas de pago seguras en la app.</code>（明确日期、金额和安全还款路径）</td>
+</tr>
+<tr>
+<td>Treatment Cells</td>
+<td>标准服务 Control / D-3 教育型 Push / D-3 Push+D-1 必要提醒 / 首期按时后 Cashback 或进度权益</td>
+</tr>
+<tr>
+<td>触达序列</td>
+<td>T+0 凭证不计营销频控；D-3 App/Push；D-1 仅对未完成且可合法触达者使用 SMS/Email；困难信号转人工</td>
+</tr>
+<tr>
+<td>频控与退出</td>
+<td>服务与合同通知按必要性发送；营销权益最多 1 次；还款完成、困难、投诉或到期后立即退出促销</td>
+</tr>
+<tr>
+<td>指标</td>
+<td>相对标准服务的首期按时还款增量、支付失败恢复、奖励后利润、FPD、困难援助和投诉</td>
+</tr>
+</tbody>
+</table>
+<h4>6.4.5 Journey C1：预测窗口下的健康复借</h4>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>可执行定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经营目标</td>
+<td>在真实需求窗口提高健康复借和长期留存，不追求结清后立即再借</td>
+</tr>
+<tr>
+<td>产品与 Risk/Offer 基线</td>
+<td>T+0 完成还款确认、额度恢复或资格重评；所有组在 App 可看到相同 eligible Offer 和模拟器</td>
+</tr>
+<tr>
+<td>入选</td>
+<td>结清后超过首轮冷静期，个人支还周期、收入/季节信号与风险稳定性共同形成新机会</td>
+</tr>
+<tr>
+<td>排除</td>
+<td>结清当日、7/14 日过快复借风险、多头或重叠负债、Debt Service Ratio 过高、困难、投诉、早逾或 Offer 不稳定</td>
+</tr>
+<tr>
+<td>Customer Proposition</td>
+<td>
+<code>Cuando lo necesites, revisa en la app tu opción vigente, plazo y costo total.</code>（有需要时查看当前选项，不制造紧迫感）</td>
+</tr>
+<tr>
+<td>Treatment Cells</td>
+<td>Control Group / eligible Offer 被动展示 / 窗口提醒 / 下笔息费券 / 提醒+券；临额组合单独保留单项实验臂</td>
+</tr>
+<tr>
+<td>触达序列</td>
+<td>T+0 只发交易确认；进入预测窗口后 App 被动展示；最多 1 次 Push；SMS 仅作未送达补发实验</td>
+</tr>
+<tr>
+<td>频控与退出</td>
+<td>每个预测窗口最多 1 次主动触达；支用、拒绝、风险变化、窗口过期或达到频控即退出；失败后冷却 14 日</td>
+</tr>
+<tr>
+<td>指标</td>
+<td>30/60/90 日健康复借增量、复借间隔、固定 cohort 留存、增量利润、过快复借、FPD 与多头风险</td>
+</tr>
+</tbody>
+</table>
+<h4>6.4.6 Journey D1：活跃衰减与沉睡召回</h4>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>可执行定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经营目标</td>
+<td>对偏离个人正常节奏但仍健康的客户验证可恢复性，不把沉睡等同低价值</td>
+</tr>
+<tr>
+<td>产品基线</td>
+<td>App 入口与 eligible Offer 对 Control 和 Treatment 保持一致；无 Offer 时不发送借款促销</td>
+</tr>
+<tr>
+<td>入选</td>
+<td>超出个人正常支用间隔，30/60/90 日活跃衰减，仍有可验证需求或季节信号，历史风险稳定</td>
+</tr>
+<tr>
+<td>排除</td>
+<td>无有效 Offer、长期低信号且无新窗口、逾期、困难、投诉、欺诈、REUS、退订或优惠依赖过高</td>
+</tr>
+<tr>
+<td>Customer Proposition</td>
+<td>强调可查看选项、用途场景或权益到期，不写“我们想念你”“最后机会”或未经证实的需求判断</td>
+</tr>
+<tr>
+<td>Treatment Cells</td>
+<td>Control Group / 低成本场景内容 / 窄场景息费券 / 内容+券；Push 与 SMS 渠道另行拆分</td>
+</tr>
+<tr>
+<td>触达序列</td>
+<td>14 日最多 2 次主动触达：App/Push 优先，SMS 只对未送达且同意营销者测试；复杂信息回 App</td>
+</tr>
+<tr>
+<td>频控与退出</td>
+<td>打开后不再重复唤醒；支用、拒绝、退订、窗口失效、风险变化或两次未响应即退出；冷却 30 日</td>
+</tr>
+<tr>
+<td>指标</td>
+<td>30/90 日恢复增量、90/180 日健康留存、优惠依赖、每增量恢复客户成本、成熟利润与投诉</td>
+</tr>
+</tbody>
+</table>
+<h4>6.4.7 独立 Service Journey：申请、放款和困难恢复</h4>
+<p>产品错误、KYC 中断、放款失败、到账不确定、欺诈、投诉和困难援助不属于促销运营。它们进入独立队列：Control 使用现有标准服务，Treatment 测试增强状态解释、Deep Link、渠道切换或人工响应；不得设置 No Action 让客户得不到必要帮助。进入保护性服务后，系统立即取消队列中未发送的券、临额展示和复借消息。</p>
+<p>金额、阈值、等待时间和冷却期均为待估参数。El Buen Fin、aguinaldo、PTU、返校和旅行只提供候选窗口，不能替代个体证据；应使用历年自然曲线估计波峰，并用 Control Group 判断运营增量。[C2][C3]</p>
+<h3>6.5 渠道序列与联系预算</h3>
+<p>用户级联系账本记录七天、三十天和九十天内的促销、服务、安全与催收触点，以及到达、已读、退订、投诉、无效号码和最佳可达时段。Frequency Capping（触达频次控制，后文简称频控）按客户总预算管理，不按渠道各自封顶；否则 Push、SMS、Email 和 WhatsApp 各发两次，客户仍会收到八次。</p>
+<p>组合旅程允许多触点，但由状态退出：资格存在而意图弱时只在 App 被动展示；窗口临近用一次 Push；Push 未到达且机会仍有效，再随机测试 SMS；客户完成后停止后续触点；敏感操作回到认证 App。服务、安全与合同通知保留必要发送权，但避免与促销同屏同刻。系统记录因联系预算、容量或组件冲突而未执行的策略，供机会成本分析。</p>
+<h3>6.6 实验识别单项、组合、渠道和长期价值</h3>
+<p>实验单位默认是用户或稳定账户，不是消息。同一运营旅程继承首次分组，避免客户在 Treatment Group 与 Control Group 之间跳转。每个重点促销场景保留局部 Control Group；另保留 5%—10% 的全局 Holdout 估计多个可选运营旅程叠加后的长期增量，具体比例由样本量、经营成本和风险决定。全局 Holdout 仍接收安全、账单、合同、服务和必要催收通知，不等于与机构失联。</p>
+<p>组合权益采用 Factorial Design（因子实验）或 Multi-arm Experiment（多臂实验）。在所有客户拥有相同 eligible 临额时，纯运营四臂可设为“Control Group（仅 App 被动入口）/ 主动提醒 / 息费券 / 主动提醒+息费券”；这识别的是展示与权益的增量，而不是临额资格的效果。若直接比较“无临额 / 有临额”，则属于 Risk/Offer 联合实验，必须另行随机、核算新增暴露，并由风险共同负责。渠道在内容固定后另行比较，或采用 Orthogonal Design（正交实验设计）；若把券只用 Push 发送、提醒只用 SMS，结果无法区分权益与渠道效果。样本量、MDE（Minimum Detectable Effect，最小可检测效应）、随机化单元、成熟期、多重比较和提前停止规则在上线前注册。</p>
+<p>三类对照不能混用：促销实验的 Control Group 保持相同产品能力与 eligible Offer，只不接收可选营销干预；Service Journey 的 Control 使用现有标准服务，Treatment 测试增强服务，绝不设置沉默组；长期 Holdout 不接收可选促销，却继续接收法定与必要服务信息。</p>
+<p>主要经济指标为成熟窗口内的风险调整增量贡献利润：</p>
+<pre><code class="language-text">增量贡献利润
+= 增量利息与费用收入
+− 增量资金成本
+− 增量信用损失
+− 权益与渠道成本
+− 可归因的服务、欺诈与投诉成本
+</code></pre>
+<p>短期看资格、到达、完成、首用和增量支用；中期看再支用间隔、周转倍数、健康周期数和固定 cohort 留存；成熟后看首逾、金额风险、迁徙、投诉、退订和利润。分析采用 ITT（Intention-to-Treat，按初始随机分组分析），未送达仍留在原组。风险未成熟前只能判定“短期可继续观察”，不能宣布策略全面胜出。</p>
+<h3>6.7 十二个月分阶段路线</h3>
+<p><strong>第 0—30 天：建立事实基线与四本目录。</strong> 统一客户身份、生命周期、<code>opportunity_id</code> 与 <code>decision_id</code>；分别建立 Product/Risk Offer、Operational Treatment、Touch Execution 和 Protected Service 目录及负责人；接入 REUS、退订、投诉、欺诈和困难抑制；盘点现有触点、权益成本、临额暴露和履约失败；回放“获批未支用、申请/放款中断、结清后复借”三类自然曲线。</p>
+<p><strong>第 31—60 天：上线两个促销实验和一个服务实验。</strong> 获批未支用在产品能力与 eligible Offer 一致的前提下，比较 Control Group、成本解释、息费券和解释+券；结清后健康复借比较 Control Group、预测窗口提醒、下笔息费券和组合。申请/放款中断不放进促销实验，单独比较标准服务、Deep Link 恢复、渠道切换与人工帮助。上线统一联系账本，但分别核算运营权益履约和服务恢复结果。</p>
+<p><strong>第 61—90 天：形成双引擎与三队列协同。</strong> 前置机会与 MOT 共享统一事件入口，再分别进入促销、服务恢复和保护性服务队列；共享联系账本、抑制与优先级，但使用不同目标、Control 和指标。上线跨渠道退出条件与永久 Holdout；形成周度实验评审、月度成熟风险与利润评审。九十天通过门槛是：机会窗口可回放、自然转化可估、组合 treatment 可拆解、服务不被营销污染、至少一个促销场景在短期指标和护栏上具备继续观察资格。</p>
+<p><strong>第 4—6 个月：扩展到首期习惯、季节窗口和活跃衰减。</strong> 上线固定首次支用 cohort 留存、过快复借、周转倍数和优惠依赖监控；Cashback、息费券和 Referral 进入 Operational Treatment 目录，现金还款路径进入 Product Capability 目录，困难援助进入 Protected Service 目录；仅将成熟利润为正且客户结果通过护栏的促销策略扩大覆盖。</p>
+<p><strong>第 7—12 个月：局部实时化与个体化。</strong> 对事件密度高的 App 客群将窗口刷新缩短到小时或分钟；对现金型和低连接客群保留周期批次、SMS 兜底和现金还款路径。模型负责机会排序、预估与 treatment 选择，但不得改写资格、价格、额度或期限；Offer 版本、组合兼容、随机分组与每次执行均保持可审计。</p>
+<h2 id="sec-7">七、三种未来剧本</h2>
+<h3>7.1 最可能：三层经营结构成为主流</h3>
+<p>未来三到五年，墨西哥数字信贷更可能形成“前置机会识别 + 对话入口 + 认证 App”三层结构。个人周转节奏、支付和季节信号负责识别未来窗口；Push、SMS 或合规的对话渠道负责唤醒和澄清；资格、价格、确认与交易留在 App。银行、SOFIPO、钱包和商户平台都会强化邀请制、组合权益、事件触发响应与自动兑现；运营竞争从覆盖人数转向每千个机会窗口创造的健康周转、留存与增量利润。</p>
+<h3>7.2 最危险：实时群发披上 AI（Artificial Intelligence，人工智能）外衣</h3>
+<p>如果机构只升级模型与生成式文案，没有统一约束、联系预算、No Action、Control Group 和结果回传，自动化会把错误放大。客户会在投诉或困难状态收到临额，不相关的权益被机械叠加，同义消息在多个渠道同时出现，并因黑箱差异化无法获得可理解解释。监管、平台封禁、诈骗模仿和渠道疲劳会一起抬高获客与服务成本。</p>
+<h3>7.3 最优：从 Next Best Offer 到 Next Best Outcome（从下一项优惠到下一项客户健康结果）</h3>
+<p>更好的路径是让决策系统优化“形成健康使用习惯、完成一笔负担得起的交易、理解成本、避免诈骗、恢复流程、获得困难帮助或安静地不被打扰”。生成式 AI 可以生成多语言解释和客服摘要，但资格、额度、价格、组件兼容和实验分组仍由可审计规则与受控模型决定。中国的跨周期任务、东南亚的钱包生态、巴西的 credit building、英美的 consumer outcomes 治理和墨西哥的现金/数字双重现实，最终会汇合成一种更克制的持续经营。</p>
+<h2 id="sec-8">八、落地执行手册</h2>
+<h3>8.1 最小系统由八个模块组成</h3>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>必备输入</th>
+<th>核心产出</th>
+<th>上线最低要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>客户与状态层</td>
+<td>客户、账户、交易、余额、额度、还款、产品阶段</td>
+<td>统一客户视图与生命周期阶段</td>
+<td>身份合并稳定；关键状态有时间戳</td>
+</tr>
+<tr>
+<td>机会识别层</td>
+<td>个人周期、利用轨迹、季节日历、品类和活跃变化</td>
+<td>
+<code>opportunity_id</code>、窗口、可信度、最晚干预时间</td>
+<td>可离线回放；不把预测写成客户事实</td>
+</tr>
+<tr>
+<td>MOT 接收层</td>
+<td>页面、试算、支付、流程、结清和服务事件</td>
+<td>实时事件与有效期</td>
+<td>去重、迟到监控、Idempotency（幂等，即重复事件不重复执行）和降级规则</td>
+</tr>
+<tr>
+<td>Product/Risk Offer 层</td>
+<td>产品能力、额度、临额、期限、价格、费用和负担能力</td>
+<td>可读的 eligible Offer 与版本</td>
+<td>运营只读；资格、金额、期限和价格不可被营销配置改写</td>
+</tr>
+<tr>
+<td>Operational Treatment 层</td>
+<td>息费券、Cashback、任务、Referral、内容及预算</td>
+<td>可版本化的单项与组合权益</td>
+<td>成本、适用场景、兼容、兑现、失效和冲回完整</td>
+</tr>
+<tr>
+<td>Touch Execution 层</td>
+<td>联系历史、同意、模板、渠道、Deep Link 与频控</td>
+<td>渠道序列、回退、退出和履约结果</td>
+<td>发送、到达、打开、办理与停止原因可以对账</td>
+</tr>
+<tr>
+<td>Service &amp; Protection 层</td>
+<td>产品故障、申请/放款异常、投诉、欺诈、困难及客服容量</td>
+<td>标准/增强服务旅程与促销抑制</td>
+<td>必要服务不会被 Holdout 或联系预算屏蔽；服务优先于促销</td>
+</tr>
+<tr>
+<td>实验与价值层</td>
+<td>分组、Holdout、收入、成本、风险和消保结果</td>
+<td>增量周转、留存、利润与护栏</td>
+<td>指标预注册；风险成熟结果能回写</td>
+</tr>
+</tbody>
+</table>
+<p>系统不必一次建成实时平台。第一阶段可以用日批机会表、现有营销平台和独立实验表完成，只要 <code>opportunity_id</code>、<code>decision_id</code>、组件版本和结果能贯通。技术复杂度应跟随已被验证的经营价值，而不是先于策略学习。</p>
+<h3>8.2 角色与决策权</h3>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>负责内容</th>
+<th>必须签字的事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>运营策略</td>
+<td>机会定义、客户主张、运营权益、触达序列、预算和经营节奏</td>
+<td>场景目标、Treatment、扩量或淘汰；不得改变额度、期限或价格</td>
+</tr>
+<tr>
+<td>风险</td>
+<td>临额/分期资格、额度、期限、价格、暴露、客户负担与成熟风险</td>
+<td>eligible Offer、风险阈值、暂停线、覆盖扩大</td>
+</tr>
+<tr>
+<td>产品与技术</td>
+<td>事件、页面、Deep Link、确认、兑现、冲回和回滚</td>
+<td>数据 SLA（Service Level Agreement，服务等级协议）、履约完整性、故障恢复</td>
+</tr>
+<tr>
+<td>数据与财务</td>
+<td>随机化、指标、样本量、增量损益和报告</td>
+<td>分析计划、结果有效性、利润口径</td>
+</tr>
+<tr>
+<td>法务与合规</td>
+<td>持牌实体、REUS、隐私用途、CAT、模板与平台政策</td>
+<td>新组件、新渠道、新数据用途</td>
+</tr>
+<tr>
+<td>客服与消保</td>
+<td>投诉、困难援助、话术、补救与人工容量</td>
+<td>服务旅程、投诉阈值、客户补偿</td>
+</tr>
+</tbody>
+</table>
+<p>每个场景指定一名业务负责人和一名数据负责人。任何团队都不能绕开联系账本单独导出名单；eligible Offer 的新增暴露、运营权益与渠道成本都进入同一份场景损益，但归属不同科目。运营不得修改临额/分期资格、额度、期限或价格；风险也不代替运营决定文案、触达序列和频控。风险、合规、履约或客户负担任一项未通过，策略不进入实验。</p>
+<h3>8.3 每个场景先写“作业卡”，再配置系统</h3>
+<p>场景作业卡是开发和上线的共同合同，至少包含：</p>
+<ol>
+<li>
+<strong>业务问题：</strong> 要缩短哪个间隔、提高哪类健康周转或留存；</li>
+<li>
+<strong>进入与退出：</strong> 生命周期阶段、机会窗口、MOT、有效期与停止条件；</li>
+<li>
+<strong>产品与 Offer 基线：</strong> 所有实验臂共有的产品能力、eligible Offer 版本、额度/期限/价格及有效期；</li>
+<li>
+<strong>资格与排除：</strong> 风险、负担能力、REUS、同意、投诉、困难、频控和冷却；</li>
+<li>
+<strong>运营 treatment：</strong> 客户主张、提醒、解释、券、Cashback、任务或组合，以及成本、门槛、确认、失效和冲回；</li>
+<li>
+<strong>实验臂：</strong> Control Group、单项 A、单项 B、组合 A+B，及各自样本量；若 Offer 不同，明确标记为联合实验；</li>
+<li>
+<strong>渠道序列：</strong> App 页面、Push、SMS、Email 或人工服务的进入、回退和退出；</li>
+<li>
+<strong>指标：</strong> 主指标、经济指标、成熟期、风险与消保护栏；</li>
+<li>
+<strong>履约与补救：</strong> Offer 未展示、券未到账、Deep Link 失效、消息重复时如何补偿；</li>
+<li>
+<strong>版本与负责人：</strong> Offer、Treatment、规则、模型、模板、发布日期、审批记录和回滚版本。</li>
+</ol>
+<p>没有作业卡的活动不进入生产。作业卡中的“预计收益”只能来自历史回放或实验，不使用行业案例的转化数字直接承诺预算。</p>
+<h3>8.4 上线门槛分为五道检查</h3>
+<p><strong>数据门：</strong> 客户身份、账户状态、额度、还款、同意、REUS 和事件时效达到约定 SLA；重复事件不会重复发放权益。</p>
+<p><strong>分层门：</strong> Product/Risk Offer、Operational Treatment、Touch Execution 与 Protected Service 的负责人和版本清楚；运营配置无法改写资格、额度、期限或价格；组合策略能被客户用一句话理解，不靠隐藏条件控制预算。</p>
+<p><strong>实验门：</strong> 随机单位、样本量、MDE、指标、成熟期、污染检查和多重比较已经注册；纯运营实验各组拥有相同产品能力和 eligible Offer，Control Group 不会被其他同类旅程污染；服务实验始终保留标准服务。</p>
+<p><strong>合规与消保门：</strong> 具体持牌实体、合同、CAT/总成本、数据用途、渠道同意和 WhatsApp 产品分类已复核；困难、投诉、欺诈和早逾状态可以实时抑制促销组件。[C4][C5]</p>
+<p><strong>履约与回滚门：</strong> 临额生效/到期、券发放/核销/冲回、消息发送/到达和 Deep Link 完成能够对账；异常暴露、投诉、欺诈或平台拒发超过阈值后可以自动暂停并回滚。</p>
+<h3>8.5 日、周、月、季度经营节奏</h3>
+<table>
+<thead>
+<tr>
+<th>节奏</th>
+<th>会议与看板</th>
+<th>必看内容</th>
+<th>允许的决定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每日</td>
+<td>15分钟异常看板</td>
+<td>重复触达、履约失败、投诉、欺诈、早逾、暴露、平台拒发</td>
+<td>暂停、回滚、修复、客户补救</td>
+</tr>
+<tr>
+<td>每周</td>
+<td>场景与实验评审</td>
+<td>入组、样本比例、到达、组件成本、短期行为、数据质量</td>
+<td>修复配置、继续采样；不提前宣胜</td>
+</tr>
+<tr>
+<td>每月</td>
+<td>成熟风险与利润评审</td>
+<td>周转、固定 cohort 留存、风险、投诉、增量利润</td>
+<td>缩窄/扩大资格、调整组合、停止策略</td>
+</tr>
+<tr>
+<td>每季度</td>
+<td>组合与场景组合盘点</td>
+<td>场景重叠、优惠依赖、全局 Holdout、预算和 Model Drift（模型漂移）</td>
+<td>淘汰组件、重排路线、更新年度预算</td>
+</tr>
+</tbody>
+</table>
+<p>报告必须同时展示 Treatment Group 与 Control Group、绝对值与增量、短期与成熟结果。只展示核销率、点击率或策略覆盖金额的看板不能作为扩量依据。</p>
+<h3>8.6 预算、容量与风险一起进入策略资格</h3>
+<p>每个自然日分别设置三类上限：Operational Treatment 与渠道的现金成本，Risk/Offer 带来的新增暴露与资金占用，Service Journey 的客服与投诉处理容量。达到任一上限后，促销队列停止新增执行并记录被容量限制的机会；必要服务不得因营销预算用尽而停止。这样可以区分“运营无效”“Offer 资源不足”和“服务容量不足”。</p>
+<p>扩量使用分级门槛：1% 技术与履约验证，5% 短期行为与投诉验证，20% 初步周转与风险观察，50% 以上等待成熟利润。每级都保留 Control Group，不因短期转化上升跳过风险成熟期。组合策略的增量收益若不能覆盖两个组件的总成本和新增暴露，退回单项策略。</p>
+<h3>8.7 最小团队与阶段交付物</h3>
+<p>最小常设小组包括：1 名运营策略负责人、1 名生命周期运营、1 名产品经理、1 名数据分析、1 名数据/后端工程、风险与法务合规各 0.5—1 名共享资源、1 名客服消保接口。涉及商户券、分期或支付失败时，再加入支付/商户运营负责人。</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>必须交付</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30天</td>
+<td>生命周期口径、机会字典、四本分层目录、联系账本、三张场景卡、基线回放、合规清单</td>
+</tr>
+<tr>
+<td>60天</td>
+<td>三个用户级实验、履约对账、实验看板、日级告警、客户补救流程</td>
+</tr>
+<tr>
+<td>90天</td>
+<td>双引擎与三队列协同、永久 Holdout、组合权益实验、周转与固定 cohort 留存看板</td>
+</tr>
+<tr>
+<td>6个月</td>
+<td>六类以上稳定场景、成熟利润复盘、优惠依赖监控、组件淘汰记录</td>
+</tr>
+<tr>
+<td>12个月</td>
+<td>局部实时策略协同、Model Drift 与公平审查、年度增量损益、下一年度路线图</td>
+</tr>
+</tbody>
+</table>
+<p>这套执行体系的完成标志不是“平台上线”，而是任何一项运营策略都能回答五个问题：为什么现在经营这个客户；为什么使用这组权益；为什么选择这条渠道序列；它相对 Control Group 改变了什么；成熟后的利润、风险与客户关系是否值得继续。</p>
+<h2 id="sec-9">九、研究边界与信息来源</h2>
+<h3>9.1 研究边界</h3>
+<p>本报告基于公开监管资料、机构规则、产品说明、年报和官方公告形成市场判断。公开页面能证明机构展示了什么机制，不能证明其内部模型、实际分流规则或真实增量效果。公司自述和供应商案例只用于发现机制或结果线索，不作为预算回报承诺；没有随机对照或可信反事实的数字，均标注为非因果结果。</p>
+<p>研究对象以现金贷、可循环现金额度、支用后还款和结清复借为中心。信用卡、商户分期、钱包与 BNPL 案例仅用于提取交易入口、组合权益、自动兑现和客户结果治理，不用其积分或刷卡收益替代现金贷的支用、首还、复借与成熟风险指标。</p>
+<p>报告没有获得本方客户、交易、风控、渠道成本和投诉数据，因此不设临额幅度、券面额、频次、阈值和收益目标。所有数值参数都应通过历史回放、样本量测算、用户级随机和成熟风险观察确定。文中对未来的判断是基于历史路径与当前横截面的推断，不是确定预测。</p>
+<h3>9.2 核心信息来源</h3>
+<ul>
+<li>[M1] INEGI，<a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/enif/ENIF2024_RR.pdf">ENIF 2024 结果</a>。</li>
+<li>[M2] CNBV，<a href="https://www.cnbv.gob.mx/Inclusi%C3%B3n/Documents/Panorama_2025_Version_Accesible.pdf">Panorama de Inclusión Financiera 2025</a>。</li>
+<li>[M3] Banco de México，<a href="https://www.banxico.org.mx/publicaciones-y-prensa/rib-tarjetas-de-credito/%7BEDFAC909-76C7-749D-778B-859D724250E2%7D.pdf">信用卡基本指标，2025 年 6 月</a>。</li>
+<li>[H1] CONDUSEF，<a href="https://revista.condusef.gob.mx/usuario-inteligente/a-tu-favor/2018/08/los-origenes-de-la-tarjeta-de-credito/">墨西哥信用卡起源</a>。</li>
+<li>[H2] Banco de México，<a href="https://www.banxico.org.mx/publicaciones-y-prensa/reportes-sobre-el-sistema-financiero/recuadros/%7B2C72DAE8-3C33-FCBF-FC79-BE05536F83DD%7D.pdf">1994 年危机与金融体系演进</a>。</li>
+<li>[H3] Cámara de Diputados，<a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LRSIC.pdf">信用信息公司监管法</a>。</li>
+<li>[H4] Grupo Elektra，<a href="https://grupoelektra.com.mx/Documents/ES/Downloads/Informe_Anual_BAZ_2011.pdf">Banco Azteca 历史资料</a>。</li>
+<li>[H5] Banco de México，<a href="https://www.banxico.org.mx/servicios/spei_-transferencias-banco-me.html">SPEI 特征</a>。</li>
+<li>[H6] Cámara de Diputados，<a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LTOSF.pdf">金融服务透明与秩序法</a>。</li>
+<li>[H7] CONDUSEF，<a href="https://www.condusef.gob.mx/index.php?idc=957&amp;idcat=1&amp;p=contenido">REUS 要求</a>。</li>
+<li>[H8] Banco de México，<a href="https://www.banxico.org.mx/marco-normativo/normativa-emitida-por-el-banco-de-mexico/circular-21-2009/costo-anual-total-disposicion.html">CAT 规则</a>。</li>
+<li>[H9] CNBV，<a href="https://www.gob.mx/cnbv/articulos/regulacion-para-prevenir-el-robo-de-identidad-en-el-sector-bancario">远程开户与身份核验规则说明</a>。</li>
+<li>[H10] DOF，<a href="https://www.dof.gob.mx/nota_detalle.php?codigo=5515623&amp;fecha=09/03/2018">金融科技机构监管法</a>。</li>
+<li>[H11] Banco de México，<a href="https://www.banxico.org.mx/publicaciones-y-prensa/miscelaneos/%7BCB1171B9-4806-04EF-D191-C57F6A082B35%7D.pdf">CoDi 上线公告</a>。</li>
+<li>[H12] Nu México，<a href="https://blog.nu.com.mx/nu-mexico-una-financeira-solida-y-regulada-acerca-de-nu/nu-cumple-4-anos-en-mexico/">墨西哥四周年时间线</a>；Stori，<a href="https://www.storicard.com/blog/2-millones-de-storians">产品时间线</a>。</li>
+<li>[H13] Kueski，<a href="https://www.kueski.com/blog/kueski-celebra-decimo-aniversario">十周年资料</a>。</li>
+<li>[H14] INEGI，<a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2024/ENDUTIH/ENDUTIH_23.pdf">ENDUTIH 2023</a>。</li>
+<li>[H15] INEGI，<a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/enoe/enoe2025_02_Mex.pdf">ENOE 2024 年第四季度</a>。</li>
+<li>[X1] BBVA México，<a href="https://www.bbva.mx/personas/productos/tarjetas-de-credito/solicitar-tarjeta-de-credito.html">Start 信用卡</a>、<a href="https://www.bbva.mx/personas/apps/bbva/nuevas-funcionalidades.html">App 个性化分期</a>。</li>
+<li>[X2] Santander México，<a href="https://www.santander.com.mx/personas/santander-digital/app-santander/mis-ofertas">Mis Ofertas</a>。</li>
+<li>[X3] Nu México，<a href="https://blog.nu.com.mx/productos-nu/dudas-sobre-productos-nu/credito-disponible-nu/">信用额度评估</a>。</li>
+<li>[X4] Nu México，<a href="https://blog.nu.com.mx/productos-nu/dudas-sobre-productos-nu/oferta-prestamo-personal/">个贷资格与 App 报价</a>。</li>
+<li>[X5] Stori，<a href="https://www.storicard.com/files/stori-cuentamas/tyc-tasa-premium.pdf?20260515=">Stori Pro 条款</a>。</li>
+<li>[X6] Klar，<a href="https://www.klar.mx/tarjeta-de-credito-con-garantia">担保卡毕业</a>、<a href="https://www.klar.mx/plus">Klar Plus</a>、<a href="https://www.klar.mx/post/klarfest-disfruta-de-cashback-en-compras">Klarfest</a>。</li>
+<li>[X7] Mercado Pago，<a href="https://www.mercadopago.com.mx/creditos/comprar-meses-sin-tarjeta">Meses sin Tarjeta</a>。</li>
+<li>[X8] Kueski，<a href="https://tyc.kueski.com/ec/enero-2026/vales_recurrentes.pdf">重复客户促销条款</a>、<a href="https://preguntas.frecuentes.kueski.com/hc/es/articles/14821211995419--Cu%C3%A1ntas-compras-puedo-tener-activas-en-Kueski-Pay">Kueski Pay 活跃购买说明</a>。</li>
+<li>[CL1] DiDi Préstamos，<a href="https://web.didiglobal.com/mx/tarjeta-de-credito/blog/que-es-didi-prestamos/">循环现金额度与期限说明</a>、<a href="https://web.didiglobal.com/mx/prestamos/preguntas-frecuentes/">Preguntas frecuentes</a>、<a href="https://web.didiglobal.com/mx/newsroom/didi-prestamos-ha-otorgado-mas-de-5-millones-de-prestamos/">累计贷款规模披露</a>、<a href="https://web.didiglobal.com/mx/prestamos/legal/">Legal 与 CAT</a>。</li>
+<li>[CL2] Tala México，<a href="https://talamobile.mx/">产品与还款路径</a>、<a href="https://talamobile.mx/como-pagar/">Cómo pagar</a>、<a href="https://talamobile.mx/wp-content/uploads/sites/5/2026/05/MX-Cashback-TCs.pdf">Cashback por Pago Puntual 2026 条款</a>、<a href="https://tala.co/global-financial-infrastructure-company-tala-expands-in-latin-america/">墨西哥业务规模披露</a>。</li>
+<li>[CL3] Baubap，<a href="https://www.baubap.com/va-de-vuelta-terminos-y-condiciones">Va de Vuelta 条款</a>、<a href="https://www.baubap.com/reduccion-de-tasa-terminos-y-condiciones">提前还款后的利率优惠条款</a>、<a href="https://www.baubap.com/invita-y-gana-terminos-y-condiciones">推荐奖励条款</a>、<a href="https://www.baubap.com/dondepagar">现金还款网点</a>。</li>
+<li>[CL4] Kueski Cash，<a href="https://www.braze.com/resources/articles/from-emails-to-engagement-kueskis-journey-in-cross-channel-communication">WhatsApp Retargeting 客户案例</a>、<a href="https://tyc.kueski.com/ec/enero-2026/vales_recurrentes.pdf">重复客户活动条款</a>、<a href="https://preguntas.frecuentes.kueski.com/hc/es/articles/16050292183323--Qu%C3%A9-puedo-hacer-si-estoy-realizando-una-solicitud-y-la-p%C3%A1gina-deja-de-cargar">申请中断修复</a>、<a href="https://preguntas.frecuentes.kueski.com/hc/es/articles/46585383190555--C%C3%B3mo-pagar">还款与提前结清</a>。</li>
+<li>[CL5] 京东金融，<a href="https://jrhelp.jd.com/show/getProblemInfo?id=3096">金条现金贷合同与还款说明</a>、<a href="https://jr.jd.com/">京东金融首页</a>；360 借条，<a href="https://www.xjietiao.com/">循环额度产品说明</a>、<a href="https://cdn.xjietiao.com/dir_mkteditor/external_xd/sykiozi6kcf1676547579381.html">息费券活动页</a>。</li>
+<li>[CL6] JULO，<a href="https://www.julo.co.id/product/pinjaman-online/pinjaman-uang-online">现金额度产品</a>、<a href="https://www.julo.co.id/terms-and-conditions/julo-pinjaman">Cashback 与等级条款</a>、<a href="https://www.julo.co.id/faq/faq-referral">Referral 规则</a>；MoEngage，<a href="https://www.moengage.com/casestudy/julo-improves-time-to-value-ttv/">JULO 自动化 journey 客户案例</a>。</li>
+<li>[CL7] GCash GLoan，<a href="https://help.gcash.com/hc/en-us/articles/39050895669145-How-to-get-GLoan-interest-cashback">提前结清 Interest Cashback</a>、<a href="https://help.gcash.com/hc/en-us/articles/30350171784217-What-happens-when-I-pay-my-total-GLoan-outstanding-balance-in-advance">结清后资格重评</a>、<a href="https://gcash.com/promos/gloan-sakto-cashback-promo">GLoan Sakto Cashback Promo</a>、<a href="https://help.gcash.com/hc/en-us/articles/50421464765593-GLoan-0-Interest-Rate-Promo">首月 0% 定向活动</a>。</li>
+<li>[CL8] Maya，<a href="https://www.mayabank.ph/borrow/">Borrow 产品矩阵</a>、<a href="https://www.mayabank.ph/personal-loan/">Personal Loan</a>、<a href="https://www.maya.ph/deals/get-up-to-p1000-cashback-with-maya-personal-loan-2025">首期履约 Cashback 活动</a>、<a href="https://www.maya.ph/stories/maya-leads-ai-breakthroughs-to-revolutionize-ph-banking">AI Action Card 公司自述</a>。</li>
+<li>[CL9] Nubank，<a href="https://nubank.com.br/nu/emprestimos/pessoal">Empréstimo Pessoal 产品与重组</a>、<a href="https://international.nubank.com.br/company/nubank-customers-saved-29-million-in-one-year-via-strategic-partnerships/">困难客户重组观察结果</a>。</li>
+<li>[CL10] Mercado Pago Brasil，<a href="https://www.mercadopago.com.br/mp/conta/emprestimos">Empréstimos</a>、<a href="https://www.mercadopago.com.br/blog/como-pegar-emprestimo-mercado-pago">资格与账户使用说明</a>；PicPay，<a href="https://meajuda.picpay.com/hc/pt-br/articles/360049937232-D%C3%BAvidas-sobre-a-simula%C3%A7%C3%A3o-do-Empr%C3%A9stimo-Pessoal">个贷模拟与资格说明</a>、<a href="https://meajuda.picpay.com/hc/pt-br/articles/360050391651-Se-eu-antecipar-as-parcelas-do-meu-Empr%C3%A9stimo-Pessoal-tenho-desconto">提前还款利息折扣</a>。</li>
+<li>[CL11] AdaKami，<a href="https://www.adakami.id/promo/motormay2026">获批未支用活动页</a>；Apple Ads，<a href="https://ads.apple.com/app-store/success-stories/adakami">AdaKami 渠道案例</a>。</li>
+<li>[CL12] GoPay Pinjam，<a href="https://gopay.co.id/blog/tarik-lagi-gopay-pinjam">#TarikLagi 再次支用</a>、<a href="https://gopay.co.id/blog/gopay-pinjam-aplikasi-gopay">分期成本折扣与 Referral</a>、<a href="https://gopay.co.id/blog/cashback-gopaypinjam">获批未支用 Cashback 历史活动</a>。</li>
+<li>[G1] 中国农业银行，<a href="https://www.abchina.com/cn/PersonalServices/ABCPromotion/National/yyzx20260520.htm">邀约客户专享活动</a>、<a href="https://www.abchina.com/CN/PersonalServices/ABCPromotion/National/yyfx20260529.htm">消费达标活动</a>。</li>
+<li>[G2] 中国农业银行，<a href="https://www.abchina.com/cn/CreditCard/HelpCard/DataAdjustment/201912/t20191216_1862947.htm">信用卡临时额度调整</a>。</li>
+<li>[G3] Chase，<a href="https://www.chase.com/personal/merchant-offers/faqs">Chase Offers</a>。</li>
+<li>[G4] American Express，<a href="https://www.americanexpress.com/en-us/benefits/offers//">Amex Offers</a>。</li>
+<li>[G5] Monzo，<a href="https://monzo.com/help/monzo-flex/Two-ways-to-flex">Two ways to Flex</a>。</li>
+<li>[G6] Commonwealth Bank，<a href="https://www.commbank.com.au/content/dam/commbank-assets/investors/docs/results/1h25/CBA-2025-Half-Year-Results-Presentation.pdf">2025 Half-Year Results Presentation</a>。</li>
+<li>[G9] FCA，<a href="https://www.fca.org.uk/firms/consumer-duty/about">Consumer Duty</a>。</li>
+<li>[CN1] 中国农业银行，<a href="https://www.abchina.com/cn/personalservices/abcpromotion/National/yyzx20260305.htm">受邀任务与跨月积分活动</a>、<a href="https://www.abchina.com/cn/CreditCard/Special0ffers/All/yyzx20260130.htm?merId=1769752996107160851&amp;typeName=%E5%85%B6%E4%BB%96">跨月消费加速活动</a>。</li>
+<li>[CN2] 中国建设银行，<a href="https://www1.ccb.com/chn/2026-05/06/article_2026050611440834033.shtml">淘宝分期满减活动</a>。</li>
+<li>[CN3] 中国建设银行，<a href="https://insurance1.ccb.com/cn/creditcard/cards/20220802_1659403368.html">线上新户首笔消费活动</a>。</li>
+<li>[CN4] 中国银联，<a href="https://benefits.95516.com/upbms-web/customActivities/wjactivity/activityDetail/00">无界卡数字生活礼遇</a>、<a href="https://cn.unionpay.com/upowhtml/cn/templates/card-style-unbounded/card-style-unbounded.html">无界卡产品页</a>。</li>
+<li>[CN5] 中国银行，<a href="https://www.boc.cn/bcservice/bc3/bc31/201106/t20110607_1414163.html">信用卡使用指南</a>。</li>
+<li>[ID1] Bank Jago，<a href="https://www.jago.com/en/media-center/press-release/goto-financial-and-bank-jago-launch-gopay-tabungan-by-jago-a-bank-account-and-e-money-service-combined">GoPay Tabungan by Jago</a>、<a href="https://www.jago.com/en/media-center/press-release/gopay-and-jago-collaboration-enables-indonesians-to-open-a-bank-account-via-the-gojek-app">GoPay 与 Jago 场景整合</a>。</li>
+<li>[ID2] Kredivo，<a href="https://www.kredivo.com/signup/?partnerId=KREDIVOWEB">注册与商户结账</a>、<a href="https://www.kredivo.com/landing-page/">产品页</a>、<a href="https://kredivo.com/fitur-uang-muka/">部分自付功能</a>。</li>
+<li>[ID3] Kredivo，<a href="https://blog.kredivo.com/kini-kamu-bisa-ajukan-kenaikan-limit-di-aplikasi-kredivo/">提额条件</a>、<a href="https://www.kredivo.com/p/kredivo_agreement.html">用户协议</a>、<a href="https://www.kredivo.com/p/in/repayment_instructions.html">还款渠道</a>。</li>
+<li>[PH1] GCash，<a href="https://help.gcash.com/hc/en-us/articles/360017566894-What-is-GScore">GScore</a>、<a href="https://help.gcash.com/hc/en-us/articles/31112602155033-How-to-apply-for-GCredit">GCredit 资格</a>。</li>
+<li>[PH2] Maya，<a href="https://www.maya.ph/xp">Maya XP</a>、<a href="https://www.maya.ph/deals/boost-your-interest-up-to-2-pa-with-maya-savings-when-you-use-maya-easy-credit-2026">Easy Credit 与储蓄利率任务</a>。</li>
+<li>[PH3] GCash，<a href="https://help.gcash.com/hc/en-us/articles/10040298426137-Shift-of-SMS-messages-to-GCash-App-Inbox">交易通知迁移至 App Inbox</a>、<a href="https://help.gcash.com/hc/en-us/articles/4408436427033-How-does-GCash-help-with-my-GCredit-payment">GCredit 还款提醒</a>。</li>
+<li>[BR1] Nubank，<a href="https://international.nubank.com.br/pt-br/consumidores/com-experiencia-gamificada-no-app-nubank-ajuda-clientes-a-construirem-limite-no-cartao-de-credito/">担保额度与信用养成任务</a>、<a href="https://nubank.com.br/nu/cartao/limite">额度产品页</a>。</li>
+<li>[BR2] Mercado Pago Brasil，<a href="https://www.mercadopago.com.br/blog/comprar-no-mercado-livre-pagar-com-mercado-pago">结账机制</a>、<a href="https://www.mercadopago.com.br/blog/como-usar-a-linha-de-credito-mercado-pago">信用额度使用</a>、<a href="https://www.mercadopago.com.br/blog/como-aumentar-limite-mercado-pago">额度评估</a>；Banco Central do Brasil，<a href="https://www.bcb.gov.br/estabilidadefinanceira/estatisticaspix">Pix 统计</a>。</li>
+<li>[C1] WhatsApp，<a href="https://www.whatsappbusiness.com/policy/">Business Messaging Policy</a>。</li>
+<li>[C2] Cámara de Diputados，<a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LFT.pdf">联邦劳动法</a>。</li>
+<li>[C3] El Buen Fin，<a href="https://www.elbuenfin.org/assets/pdf/FAQ_El_BUEN_FIN_2025.pdf">2025 官方 FAQ</a>。</li>
+<li>[C4] Cámara de Diputados，<a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf">私营部门个人数据保护法</a>。</li>
+<li>[C5] CONDUSEF，<a href="https://eduweb.condusef.gob.mx/redeco/redeco.aspx">REDECO</a>。</li>
+</ul>
+<p>所有网络来源访问日均为 2026 年 7 月 16 日。涉及法规和平台政策的执行，应在上线前由本地法务按具体持牌主体、产品经济实质、消息用途和最新文本复核。</p>
+<h3>9.3 方法说明</h3>
+<p>研究采用横纵分析。纵轴追踪墨西哥从信用卡、征信、零售嵌入、实时支付、透明度监管到移动原生现金信贷经营的演化；横轴优先比较墨西哥 DiDi Préstamos、Tala、Baubap、Kueski，中国京东金条与 360 借条，印尼 JULO、AdaKami 与 GoPay Pinjam，菲律宾 GLoan 与 Maya，以及巴西 Nubank、Mercado Pago 与 PicPay 的公开现金贷机制，再用银行信用卡、钱包、BNPL、英美与澳大利亚案例补充交易场景和治理能力。交叉点用于识别墨西哥可以迁移的前置识别、MOT 实时响应、组合权益、渠道序列和增量评估能力。事实、供应商归因、机构自述、观察结果、活动规则和研究推断分别处理，未知参数不以行业故事替代本方验证。</p>
+</body>
+</html>
