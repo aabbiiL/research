@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>从 Scorecard 到 Causal Decisioning：Credit Line × Pricing 联动系统横纵分析报告</title>
+    <meta charset="UTF-8">
+    <style>
+@page {
+    size: A4;
+    margin: 25mm 20mm 20mm 20mm;
+
+    @top-center {
+        content: "从 Scorecard 到 Causal Decisioning：Credit Line × Pricing 联动系统横纵分析报告  |  横纵分析法深度研究报告";
+        font-family: "Droid Sans Fallback", Helvetica, Arial, sans-serif;
+        font-size: 8pt;
+        color: #95a5a6;
+        border-bottom: 0.5pt solid #ecf0f1;
+        padding-bottom: 3mm;
+    }
+
+    @bottom-center {
+        content: "第 " counter(page) " 页";
+        font-family: "Droid Sans Fallback", Helvetica, Arial, sans-serif;
+        font-size: 8pt;
+        color: #95a5a6;
+        border-top: 0.8pt solid #1a5276;
+        padding-top: 2mm;
+    }
+}
+
+@page :first {
+    @top-center { content: none; }
+    @bottom-center { content: none; }
+}
+
+body {
+    font-family: "Droid Sans Fallback", Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.75;
+    color: #2c3e50;
+    text-align: justify;
+}
+
+/* 封面 */
+.cover {
+    page-break-after: always;
+    text-align: center;
+    padding-top: 45%;
+}
+.cover h1 {
+    font-size: 28pt;
+    color: #1a5276;
+    margin-bottom: 8mm;
+    font-weight: bold;
+    letter-spacing: 2pt;
+}
+.cover .subtitle {
+    font-size: 14pt;
+    color: #95a5a6;
+    margin-bottom: 6mm;
+}
+.cover .meta {
+    font-size: 11pt;
+    color: #95a5a6;
+    margin-bottom: 4mm;
+}
+.cover .divider {
+    width: 60%;
+    margin: 8mm auto;
+    border: none;
+    border-top: 1.5pt solid #1a5276;
+}
+
+/* 一级标题 */
+h1 {
+    font-size: 20pt;
+    color: #1a5276;
+    margin-top: 16mm;
+    margin-bottom: 6mm;
+    padding-bottom: 3mm;
+    border-bottom: 2pt solid #1a5276;
+    page-break-before: always;
+    font-weight: bold;
+}
+
+/* 二级标题 */
+h2 {
+    font-size: 14pt;
+    color: #1e8449;
+    margin-top: 10mm;
+    margin-bottom: 5mm;
+    font-weight: bold;
+}
+
+/* 三级标题 */
+h3 {
+    font-size: 12pt;
+    color: #2e86c1;
+    margin-top: 6mm;
+    margin-bottom: 3mm;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 11pt;
+    color: #5b2c6f;
+    margin-top: 5mm;
+    margin-bottom: 2mm;
+    font-weight: bold;
+}
+
+/* 段落 */
+p {
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+    orphans: 3;
+    widows: 3;
+}
+
+/* 引用块 */
+blockquote {
+    margin: 4mm 0;
+    padding: 4mm 4mm 4mm 10mm;
+    background: #f8f9fa;
+    border-left: 3pt solid #1a5276;
+    color: #5d6d7e;
+    font-size: 10pt;
+}
+blockquote p {
+    margin: 1mm 0;
+}
+
+/* 粗体 */
+strong, b {
+    font-weight: bold;
+    color: #1a252f;
+}
+
+/* 行内代码 */
+code {
+    font-family: "Courier New", Courier, monospace;
+    background: #fdf2e9;
+    color: #c0392b;
+    padding: 0.5mm 1.5mm;
+    border-radius: 2pt;
+    font-size: 9.5pt;
+}
+
+/* 表格 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+}
+thead th {
+    background: #1a5276;
+    color: white;
+    padding: 3mm;
+    text-align: left;
+    font-weight: bold;
+}
+tbody td {
+    padding: 2.5mm 3mm;
+    border-bottom: 0.5pt solid #bdc3c7;
+}
+tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    border-top: 0.5pt solid #bdc3c7;
+    margin: 4mm 0;
+}
+
+/* 列表 */
+ul, ol {
+    margin: 2mm 0;
+    padding-left: 8mm;
+}
+li {
+    margin-bottom: 1mm;
+}
+
+/* 链接 */
+a {
+    color: #2e86c1;
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+    <div class="cover">
+        <h1 style="page-break-before: avoid; border: none;">从 Scorecard 到 Causal Decisioning：Credit Line × Pricing 联动系统横纵分析报告</h1>
+        <div class="subtitle">横纵分析法深度研究报告</div>
+        <div class='meta'>研究时间：2026-07-16</div>
+        <hr class="divider">
+        <div class="meta">作者: OpenAI Codex</div>
+    </div>
+    
+
+<blockquote>
+<p>研究时间：2026-07-16<br>
+所属领域：消费信贷、贷中经营、causal inference 与 policy learning<br>
+研究对象类型：技术—经营—治理复合决策系统<br>
+核心材料：公开 ChatGPT 分享对话、内嵌深度研究文件、监管原文、论文与开源项目官方资料<br>
+证据标签：<strong>[事实]</strong> 可由相邻来源直接支持；<strong>[推断]</strong> 为跨证据综合判断；<strong>[建议]</strong> 为待验证的通用设计方案</p>
+</blockquote>
+<style>
+pre { white-space: pre-wrap; word-break: break-word; font-size: 8.5pt; line-height: 1.45; background: #f6f8fa; padding: 3mm; border: 0.5pt solid #d5d8dc; }
+svg { width: 100%; height: auto; margin: 4mm 0; page-break-inside: avoid; }
+table { font-size: 8.4pt; line-height: 1.45; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; }
+.key { background: #eef6fb; border-left: 4pt solid #1a5276; padding: 4mm 5mm; margin: 4mm 0; }
+.warning { background: #fdf2e9; border-left: 4pt solid #d35400; padding: 4mm 5mm; margin: 4mm 0; }
+.small { font-size: 8.5pt; color: #566573; }
+.center { text-align: center; }
+@media screen {
+  body { max-width: 1120px; margin: 0 auto; padding: 32px 28px 72px; box-sizing: border-box; background: #fff; }
+  .cover { min-height: 72vh; padding-top: 18vh; box-sizing: border-box; }
+  h1 { page-break-before: auto; }
+  table { display: block; overflow-x: auto; width: 100%; }
+  th, td { min-width: 110px; vertical-align: top; }
+}
+@media screen and (max-width: 720px) {
+  body { padding: 18px 14px 48px; font-size: 15px; line-height: 1.7; }
+  .cover { min-height: auto; padding-top: 16vh; padding-bottom: 12vh; }
+  table { font-size: 12px; }
+}
+</style>
+
+<h2>摘要：要研究的不是一个“动态定价模型”，而是一套 constrained decisioning system</h2>
+<p>本报告的结论可以压缩成一句话：</p>
+<blockquote>
+<p><strong>Current offer 是 decision-time state 的一部分。policy 可以 condition on current offer，但不能把历史相关性当作 action effect。joint action value 必须由可识别的 counterfactual 支撑，并在 hard constraints、state transition 与 uncertainty 下优化。</strong></p>
+</blockquote>
+<p>原对话从“策略如何联动”一路追问到“额度/价格敏感如何识别”“敏感度为什么会变”“current offer 入模会不会内生”“策略实际如何开发”。这已经不是单一 scorecard 或 pricing model 能回答的问题。更准确的研究对象是：<strong>Credit Line × Pricing 联动的 decisioning system</strong>。它需要同时处理 state、risk、demand、contract action、long-term value、causal identification、policy evaluation 与 consumer protection。</p>
+<p>本研究得到六项核心判断：</p>
+<ol>
+<li><strong>[推断] Risk scoring 和 action selection 是两个不同的问题。</strong> <code>PD(x)</code> 回答 historical policy 下的风险排序；decisioning system 要比较同一账户在不同 feasible actions 下的增量结果，并选择 long-term net value 最高的 action。</li>
+<li><strong>[事实] 额度和价格都会改变行为，而且效应高度异质。</strong> 随机与准实验显示，额度会改变借款/消费，价格弹性会随客群和时间窗口变化；但这些研究不能直接给出跨市场通用的调额比例、调价步长或锁定周期。<a href="https://doi.org/10.1257/aer.20191178">Aydin 额度随机试验</a>、<a href="https://www.nber.org/papers/w21567">Agarwal 等额度阈值研究</a>、<a href="https://www.nber.org/papers/w19106">Karlan 与 Zinman 长期价格随机试验</a></li>
+<li><strong>[推断] offer endogeneity 不能靠“删掉 offer 特征”解决。</strong> 删除 current offer 会漏掉重要 state；直接使用又可能复制 historical policy。正确分工是把 current/historical offer 与 market context 放进 decision-time state，再用 experiment、quasi-experiment、DML/DR 或 OPE 识别“提额、降价、不动”等 action 的效果。</li>
+<li><strong>[推断] Rules、predictive model、CATE、OPE 与 bandit 不在同一抽象层。</strong> Rules 定义 feasible action set，predictive model 估计 conditional outcomes，CATE 比较 action effects，OPE 评估 candidate policy。contextual bandit 只适用于近似 one-step、或长期效应已被可靠封装进 reward 的局部问题；显著的跨期 feedback 应交给 DTR/MDP/POMDP 与 sequential OPE。</li>
+<li><strong>[推断] 不存在“直接上 contextual bandit”的通用捷径。</strong> 没有稳定的 action semantics、candidate set、decision-time logged propensity、matured long-term outcomes、足够的 overlap/support 和可 replay 的 policy version，online learning 只会更快复制 historical policy 的偏差。</li>
+<li><strong>[推断] 公开监管和研究材料没有提供跨法域通用的周期、step size、holdout ratio 或 drift threshold。</strong> 这些都属于 context-specific design parameters，应按适用法律、target estimand、sample size、outcome maturity curve、risk appetite、overlap 与 recoverability 校准。<a href="https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm">美联储 SR 26-2</a>、<a href="https://eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2020/Guidelines%20on%20loan%20origination%20and%20monitoring/884283/EBA%20GL%202020%2006%20Final%20Report%20on%20GL%20on%20loan%20origination%20and%20monitoring.pdf">EBA 贷款发放与监测指引</a></li>
+</ol>
+<h3>理论设计判别表</h3>
+<table>
+<thead>
+<tr>
+<th>应纳入理论设计</th>
+<th>应排除的错误前提</th>
+<th>成立所需证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>统一 state、action、cost 与 matured outcome 的口径</td>
+<td>无边界的个体化自由定价</td>
+<td>candidate set、executed action、policy version 与 outcome 可完整 replay</td>
+</tr>
+<tr>
+<td>建立 action log、固定 holdout 和少量 joint offer</td>
+<td>用 observational correlation 宣称“个体真实敏感度”</td>
+<td>每个 action 都有可识别样本与明确 support region</td>
+</tr>
+<tr>
+<td>用浅 policy tree / rules 承接首个可审计 causal policy</td>
+<td>只用 AUC/Qini 或短期 response 代表 policy value</td>
+<td>成熟的 risk-adjusted value、置信区间和金额暴露均可验证</td>
+</tr>
+<tr>
+<td>用 DR/OPE 比较 candidate policy</td>
+<td>把 DR 当成无 overlap、无混杂假设的护身符</td>
+<td>IPS/SNIPS/DR 方向一致，ESS 与 weight tail 可接受</td>
+</tr>
+<tr>
+<td>在 safe action set 内做极小流量的 conservative exploration</td>
+<td>没有自动 fallback 就运行 online bandit</td>
+<td>baseline、circuit breaker、delayed outcome 回填与 audit replay 齐备</td>
+</tr>
+</tbody>
+</table>
+<h1>一、研究问题与理论边界</h1>
+<h2>1.1 研究对象与边界</h2>
+<p>这里的 Credit Line × Pricing decisioning system，面向存量借款人或账户，在贷中阶段综合 risk、affordability、demand、value、current contract、historical response 与 market context，联合选择额度、价格/综合费率、期限及必要的触达方式，并持续用 matured outcomes 验证 policy。</p>
+<p>它不等于以下任何单一对象：</p>
+<ul>
+<li>不是“风险分决定额度”的评分卡；</li>
+<li>不是“风险越高价格越高”的风险加点表；</li>
+<li>不是“预测谁会借”的响应模型；</li>
+<li>不是“给每个人一个敏感度标签”的画像系统；</li>
+<li>也不是不受约束、自动探索所有价格和额度的强化学习系统。</li>
+</ul>
+<p>设 decision history 为 <code>H_t</code>，current offer 为 <code>C_t=(L_t,p_t,q_t)</code>，分别表示额度、价格/综合费率与期限。<code>policy</code> 指从 state/context 到 action 的决策规则；<code>A_t</code> 表示本次 action。<code>A_t</code> 可以编码为目标合同 <code>C_t*</code>，也可以编码为相对变化 <code>ΔC_t=C_t*−C_t</code>，但同一个 estimand 与 policy version 内必须二选一；触达或 execution channel 另记为 <code>M_t</code>。policy 可以 condition on <code>C_t</code>，但不能把 <code>C_t</code> 的历史系数解释为本次合同变更的 causal effect。</p>
+<p>系统目标应写成受约束的长期增量价值，而不是单一 PD 或单次响应率：</p>
+<pre><code class="language-text">Action Value(x,a)
+= Δ利息与费用收入
+- Δ预期信用损失
+- Δ资金成本
+- Δ运营与补贴成本
+- Δ资本占用
++ Δ可归因留存与后续借款价值
+</code></pre>
+<p>并满足 affordability、legal pricing、contract change、risk exposure、funding/capital、fairness、action frequency 与 explainability 等约束。</p>
+<p>这里必须防止 double counting：如果 <code>Action Value</code> 已覆盖完整的 discounted multi-period cash flow，continuation value 只能补充尚未展开的未来价值；未来各期 cash flow 已进入 cumulative reward 时，不能再次叠加 retention value。Risk 也有两种角色：expected credit loss 是 reward 中的经济成本，tail loss、concentration 或 maximum exposure 则属于独立约束；二者不能互相替代。</p>
+<h2>1.2 证据使用规则</h2>
+<p>本报告区分五类数字：<code>监管硬约束 / 研究 estimate / 内部 observation / 经验 default / 待验证 hypothesis</code>。没有标签的数字不能支撑 decision claim。原对话和研究文件用于确定问题、方案假设与核验清单；法规原文、论文和官方项目文档用于外部证据。任何 estimate 都不能跨产品、跨市场或跨 action dose 直接搬用。</p>
+<h1>二、纵轴：从“判断人”到 action selection 的八十年演进</h1>
+<blockquote>
+<p><strong>[推断] 这段历史不是“scorecard 被新算法淘汰”的路线图，而是 decision object 不断扩大的过程：先量化 risk，再把账户描述为随时间变化的 state，把额度与价格视为会改变行为的 contract action；只有识别出 action effect，系统才有资格讨论 constrained policy learning。</strong></p>
+</blockquote>
+<h2>2.0 五条谱系不是接力赛，而是逐步汇流的五个问题</h2>
+<p>额度—定价联动系统没有单一发明人，也没有一个可以被称为“诞生时刻”的年份。它由五条长期各自发展的谱系汇流而来。每条谱系都解决了前一代系统无法回答的问题，也都带着自己的盲区进入今天。</p>
+<table>
+<thead>
+<tr>
+<th>谱系</th>
+<th>它持续追问的问题</th>
+<th>留给现代系统的核心资产</th>
+<th>单独使用时的盲区</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>风险测量</strong></td>
+<td>谁更可能履约，损失有多大</td>
+<td>可验证的风险排序，后续扩展为 PD、LGD、EAD 等量化语言</td>
+<td>预测历史政策下的结果，不直接回答该采取什么动作</td>
+</tr>
+<tr>
+<td><strong>合同经济学</strong></td>
+<td>额度、价格、期限为何同时改变需求、客群和偿付行为</td>
+<td>把 offer 视为干预，而不只是风险的被动报价</td>
+<td>经济机制成立，不等于个体效应已经被数据识别</td>
+</tr>
+<tr>
+<td><strong>行为状态</strong></td>
+<td>同一账户今天与数月后为何不是同一个决策对象</td>
+<td>动态状态、账户管理、champion/challenger 与反馈闭环</td>
+<td>传统分群和规则常只能处理少量离散动作，跨 action interaction 不足</td>
+</tr>
+<tr>
+<td><strong>因果识别</strong></td>
+<td>观察到的结果中，究竟有多少由动作造成</td>
+<td>potential outcomes、异质性 treatment effect、准实验、DML/DR 等识别工具</td>
+<td>方法不能凭空补回未观测混杂或历史从未尝试的动作</td>
+</tr>
+<tr>
+<td><strong>policy learning 与治理</strong></td>
+<td>在不确定、预算、风险、公平和解释约束下如何选动作并持续学习</td>
+<td>OPE、保守探索、policy version、审计、监控与回滚</td>
+<td>reward、约束或日志设计错误时，学习速度只会放大错误</td>
+</tr>
+</tbody>
+</table>
+<p>五条谱系在今天汇入同一条决策事件链。决策前已经生效的合同记为 <code>C_t</code>；风险、余额、历史响应和环境等可观测状态记为 <code>S_t</code>；需求、流动性、偏好等不可完整观测状态记为 <code>Z_t</code>。策略先分配合同动作 <code>R_t</code>，展示与客户接受环节记为 <code>D_t</code>，真正落到合同并生效的动作才是 <code>A_t</code>。因此历史数据不是简单的“状态—结果”，而是：</p>
+<pre><code class="language-text">(C_t, S_t, Z_t) → R_t → D_t → A_t → 多时间窗结果 → (C_{t+1}, S_{t+1}, Z_{t+1})
+</code></pre>
+<p>其中 <code>Z_t</code> 不能被策略直接观测，只能由历史形成信念或区间。<code>R_t</code>、<code>D_t</code> 和 <code>A_t</code> 也不能被一个“offer”字段混写：分配效应、接受机制与 executed action 对应不同 estimand。动作编码必须在一个 policy version 内固定为两种语义之一：目标合同，或相对 <code>C_t</code> 的变化；两种语义只有在决策时 <code>C_t</code> 被完整保存时才能可靠转换。</p>
+<p>这五条线并非按年代整齐交棒。治理在评分工业化时已经出现，合同经济学在在线学习之前几十年就指出“价格会改变风险”，champion/challenger 也早于现代 bandit。历史真正呈现的是一组不断加深的追问：<strong>能否一致地判断风险；能否及时描述账户；能否理解合同动作；能否识别 action effect；能否在约束内学习更好的政策。</strong></p>
+<h2>2.1 1941 前后：人工判断开始变成可计算风险</h2>
+<p>大众消费信贷早期面对的难题不是模型不够复杂，而是人工判断无法复制。信贷员根据职业、收入、居住稳定性和个人印象决定是否授信，少量案件尚可运转；当客户、网点和产品增多，同一人可能在不同审贷员手里得到不同结论，机构也很难知道哪一套经验真的有效。</p>
+<p><strong>[事实]</strong> David Durand 为 NBER 所做的 1941 年研究《Risk Elements in Consumer Instalment Financing》是统计化消费信贷的重要早期节点。其技术版不仅讨论风险因素，还专门包含信用评级公式、判别函数、显著性与抽样误差等内容。<a href="https://www.nber.org/books-and-chapters/risk-elements-consumer-instalment-financing-technical-edition">NBER 技术版与目录</a>、<a href="https://www.nber.org/books-and-chapters/risk-elements-consumer-instalment-financing-technical-edition/how-risks-can-be-studied">风险研究方法章节</a></p>
+<p>主流范式由此发生一次根本变化：历史上的“好贷款/坏贷款”被转化为可比较样本，经验线索被转化为变量和权重，模型的优劣开始接受样本外表现而非专家资历的检验。它解决了规模化授信最基础的两件事——一致性与可验证性。风险从个人判断变成了可以被计算、复核和批量执行的对象。</p>
+<p>但成功也锁定了问题的形状。评分公式天然围绕“谁会坏”设计，训练标签来自过去已经发放的贷款，动作通常只有“批或不批”。它既没有描述账户如何随时间变化，也不比较“对同一个人给不同额度或价格会发生什么”。<strong>[推断]</strong> 风险测量谱系从一开始就是优秀的预测工程，却不是 action-value model；后来的许多系统误把风险分直接映射为额度和价格，正是把这个历史起点当成了终点。</p>
+<p>当统计评分证明风险可以被量化，下一个瓶颈便从“能不能算”转向“能不能在大规模机构中稳定使用，并让被影响的人与监管者看得懂”。评分工业化与可审计治理由此进入主线。</p>
+<h2>2.2 1956—1970s：评分成为工业基础设施，治理也同时进入模型</h2>
+<p>统计方法要进入大众金融，仅有论文还不够。机构需要稳定的数据流程、可移植的开发方法、批量计算能力和可以长期更新的决策接口。<strong>[事实]</strong> Fair Isaac 由 Bill Fair 与 Earl Isaac 于 1956 年创立，公司资料称其在 1958 年构建了早期信用评分系统。这一组织创新把统计模型、计算系统和业务决策结合成可持续交付的产品，而不是一次性的研究项目。<a href="https://investors.fico.com/corporate-information">FICO 公司资料</a></p>
+<p>规模化同时把另一个问题推到台前：一致执行不必然等于公平、准确或可申诉。<strong>[事实]</strong> 1970 年的 FCRA 围绕征信信息的准确性、允许用途和消费者权利建立框架；ECOA 及其后续修订把受保护特征、公平审贷与“经验推导且统计上可靠”的评分系统放进制度讨论。<a href="https://www.ftc.gov/business-guidance/blog/2020/10/50-years-fcra">FTC 对 FCRA 的历史回顾</a>、<a href="https://fraser.stlouisfed.org/title/equal-credit-opportunity-act-amendments-1976-1039/fulltext">1976 年 ECOA 修法文本</a></p>
+<p>这一阶段形成了后来延续数十年的主流架构：模型团队维护相对稳定的风险排序，业务团队在其上配置准入 cut-off、额度档位和价格档位。这个“模型—政策分层”当时非常有效。模型不必随每一次资金成本或市场目标变化而重训，业务也能在受控边界内调整政策；验证、理由通知和变更管理因而有了相对清晰的责任对象。</p>
+<p>它解决了批量自动审批、跨场景一致执行和初步可审计的问题，却把组织边界固化成了系统边界。风险模型、额度表、定价表和营销策略开始由不同团队维护，各自拥有自己的样本、目标和更新时间。一个模块可以准确预测违约，另一个模块可以准确预测响应，拼在一起却未必产生更好的合同。</p>
+<p><strong>[推断]</strong> 治理谱系在这一时期留下的并不是“必须使用简单模型”，而是更持久的原则：决策必须有明确用途、可复核依据和可追责流程。它留下的包袱则是把“可审计”等同于“模块彼此分离”。当循环信贷和信用卡进入大规模账户运营，开户时的一张静态分数再也不足以支撑贷中决策，行为状态谱系因此走上前台。</p>
+<h2>2.3 1980s—1990s 中期：行为评分把对象从“一个人”改成“一个正在变化的账户”</h2>
+<p>申请评分隐含了一个稳定世界：在申请时测量客户，随后依据这次测量管理较长时间。循环信贷打破了这个假设。余额、利用率、还款节奏、逾期、消费频次和现金提取不断产生新信息；同一个客户在稳定使用、突然加杠杆和刚刚恢复还款时，不应被视为同一种状态。</p>
+<p><strong>[事实]</strong> 芝加哥联储 1981 年工作论文已经记录信用评分在信用卡和零售场景的大规模采用，并提到大型零售机构按卡计划和门店维护大量模型，模型用于发卡、授权额度并随经济与信用条件重估。<a href="https://fraser.stlouisfed.org/files/docs/historical/frbchi/workingpapers/frbchi_workingpaper_1981-03.pdf">Federal Reserve Bank of Chicago, 1981</a> 行业系统随后把行为分、分群动作和生产试验接到一起。FICO 在 2007 年 SEC 年报中将 TRIAD 描述为存量客户的 adaptive control 系统，覆盖风险管理、调额、定价调整、逾期管理与 champion/challenger；同一材料称其当时管理约全球 65% 的信用卡账户。<a href="https://www.sec.gov/Archives/edgar/data/814547/000095013707017904/c21843e10vk.htm">FICO 2007 年 10-K</a></p>
+<p>主流范式从“一次评分、长期使用”变成“周期性更新状态、按状态选择动作”。champion/challenger 又加入了一个关键制度：现行策略不再是不可挑战的真理，替代策略可以在受控流量中接受结果检验。现代决策系统最重要的组织原型已经出现——状态更新、action mapping、对照比较和结果反馈处在同一个运营循环里。</p>
+<p>这个范式解决了贷中管理的时间问题。机构可以根据账户的新行为收缩或扩张暴露，也可以将策略迭代从大规模一次性切换改成受控比较。可是，当时的算力、数据和审计方式更适合“少量分群 × 少量动作”：行为分被切成档位，档位被映射到规则，额度和价格通常分开调整。局部试验能比较两套策略，却很少覆盖完整的 <code>额度 × 价格 × 期限</code> 组合。</p>
+<p>更深的限制藏在反馈里。旧策略决定了谁得到什么额度与价格，客户随后表现出来的使用和风险又被拿来训练下一代模型。大量数据因此是“被政策选择后的数据”，并非自然世界中对所有动作都有观察。传统 champion/challenger 让系统开始学习，却常只保留最终 <code>A_t</code>，没有完整区分分配 <code>R_t</code>、展示/接受 <code>D_t</code>，也没有保存每个 candidate action 的选择概率。</p>
+<p><strong>[推断]</strong> 行为状态谱系把客户从静态类型改写为动态过程，但动作仍常被当成状态更新后的机械结果。合同经济学随后补上关键一课：额度和价格不只是根据风险被动设置的结果，它们本身会改变谁愿意借、借多少以及如何偿还。</p>
+<h2>2.4 1981 理论起点、1990s 中期—2008 加速：合同经济学让额度和价格从“报价结果”变成“行为干预”</h2>
+<p>当风险评分可以排序、行为评分可以更新，机构自然倾向于把合同设计简化为一条单调规则：风险越高，价格越高、额度越低。这个逻辑忽略了合同会反过来选择客户和改变行为。<strong>[事实]</strong> Stiglitz 与 Weiss 1981 年关于信贷配给的经典研究指出，利率上升会通过逆向选择改变申请人构成，也会通过激励效应改变借款后行为，因此贷款人的期望收益未必随利率单调上升。<a href="https://ideas.repec.org/a/aea/aecrev/v71y1981i3p393-410.html">Stiglitz &amp; Weiss, 1981</a></p>
+<p>合同经济学由此改变了问题：价格不只是对既定风险收取的补偿，额度也不只是对既定风险设置的上限。两者共同决定客户是否接受、使用多少、承担多大还款压力，并进一步改变暴露和违约。风险定价在零售信贷扩张后，风险、资金成本和预期收益开始被放入共同的货币化框架；Basel II 又把 PD、LGD、EAD、内部评级和验证嵌入资本计量，使额度变化同时成为客户行为、预期损失与资本占用问题。<a href="https://www.bis.org/publ/bcbs107.htm">Basel II 官方文件</a></p>
+<p>后来的高质量实证把这种机制从理论可能变成可测量事实。额度随机试验和阈值准实验发现，提高可用额度会改变借款或消费，且响应随风险状态和流动性约束显著不同；价格随机试验也发现需求弹性会随人群和观察窗口变化。<a href="https://doi.org/10.1257/aer.20191178">Aydin 额度随机试验</a>、<a href="https://www.nber.org/papers/w21567">Agarwal 等额度阈值研究</a>、<a href="https://www.nber.org/papers/w19106">Karlan 与 Zinman 长期价格试验</a></p>
+<p>这些研究解决的是“动作会不会改变结果”和“平均效应是否异质”，并没有给出可跨产品、跨时期复制的调额比例、调价步长或观察周期。一个试验中的大幅额度冲击不能线性缩放为另一个产品的小幅提额；阈值附近的局部效应也不能直接外推到全客群。<strong>[推断]</strong> 历史在这里留下了一条重要证据纪律：经验估计可以证明合同动作值得建模，却不能替机构决定通用参数。</p>
+<p>合同经济学让机构拥有风险—收益共同语言，也暴露了旧架构最深的裂缝。若额度模型、价格模型、风险模型和营销响应模型分别在历史政策数据上训练，每个模块都可能在自己的指标上准确，联合起来仍可能选择错误合同。价格改变接受概率，额度改变使用与 EAD，两者还会共同改变偿付压力；“先选最优额度，再选最优价格”只有在交互可忽略时才成立，而真实信贷很难普遍满足这一条件。</p>
+<p>到危机前夕，系统已经知道合同会改变结果，却仍缺少一个可治理的方式把长期利润、偿付能力、资本和客户保护同时放入 action selection。风险事件与监管反思把这个缺口推到中心，下一阶段的主角不再只是更精细的定价，而是受约束的生命周期优化。</p>
+<h2>2.5 2009—2015：危机后治理把“为什么可以这样行动”写进优化问题</h2>
+<p>危机前的风险定价和自动化扩张证明机构能够更细地分层，却也暴露出局部模型准确并不足以保证组合安全。过度授信、还款能力不足、模型误用和不可解释的合同变化，使问题从“模型是否预测得准”转向“这个模型和策略为何适合此用途，谁批准，如何监测，失效时如何退出”。</p>
+<p><strong>[事实]</strong> 美国 CARD Act 及现行 Regulation Z 对信用卡发卡或提高额度前的偿付能力评估提出要求；2011 年的 SR 11-7 则曾系统化模型开发、使用、独立验证和治理。到本报告研究截点，SR 11-7 已被 2026 年发布的 SR 26-2 取代，后者继续强调按模型风险、机构规模和复杂度实施风险相称的验证、监测与治理，而非给出统一业务阈值。<a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/51/">CFPB Regulation Z §1026.51</a>、<a href="https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm">美联储 SR 26-2</a></p>
+<p>在方法侧，利润优化和动态规划开始更直接地进入账户管理。<strong>[事实]</strong> So 与 Thomas 2011 年用马尔可夫决策过程研究信用卡账户管理，将行为评分带作为状态、额度作为动作，并以利润而非单一违约率比较静态与动态策略。<a href="https://www.sciencedirect.com/science/article/pii/S0377221711000518">EJOR 论文</a>、<a href="https://eprints.soton.ac.uk/71324/1/CORMSIS-09-09.pdf">预印本</a> 这一范式把多期 state transition、未来收益和当前动作放进同一计算框架，承认今天的调额可能改变明天的账户。</p>
+<p>它解决了两个长期缺口：经营目标不再只等于降低 PD，治理也不再只是模型外部的一次审批。偿付能力、资本、损失、消费者保护、人工覆盖和回滚开始成为动作能否进入生产的组成部分。一个优化器即使给出更高期望利润，如果依赖不可靠数据、越过合同边界或无法复现，也不是可接受策略。</p>
+<p>当时没有直接跃迁到全自动联合决策，原因并不只是算力。违约和长期利润需要较长时间成熟，历史策略高度确定，未 executed action 缺少结果；多期优化依赖可信的 state transition，而额度和价格恰会改变这个转移；合规和模型风险团队也更容易验证评分卡与决策表，而非不断变化的黑盒策略。于是主流落地形成了“优化建议 + 规则执行 + champion/challenger 验证”的折中。</p>
+<p><strong>[推断]</strong> 这一折中保住了安全边界，却仍无法回答一个更尖锐的问题：历史数据显示某类客户在某个 offer 下表现较好，究竟是 offer 造成的，还是旧策略本来就挑中了更好的人？要把利润优化从结构假设推进到可辩护证据，因果识别谱系必须接管 action effect 的定义。</p>
+<h2>2.6 2015—2020：因果识别把问题从“谁会发生”改写成“动作让谁改变”</h2>
+<p>传统风险模型估计的是 <code>P(违约 | C_t,S_t,历史政策)</code>，响应模型估计的是 <code>P(使用 | C_t,S_t,历史分配与 executed action)</code>。两者都可以很好地预测已经发生的世界，却不自动回答同一账户在另一个动作下会怎样。旧策略又会主动选择客户：如果高额度长期只给优质账户，“高额度组违约更低”很可能是选择结果，而不是高额度降低了风险。</p>
+<p>因果推断提供了不同的语言。potential outcomes 把 executed action <code>A_t</code> 取值为 <code>a</code> 与 baseline <code>a0</code> 时的结果写成 <code>Y(A_t=a)</code> 与 <code>Y(A_t=a0)</code>，action value 关心的是二者之差。Rubin 的 potential outcomes 框架奠定了现代识别表达；商业响应领域随后发展 differential response 与 uplift，提醒普通响应模型容易找到“本来就会响应的人”，而不是“因动作才改变的人”。<a href="https://dash.harvard.edu/entities/publication/73120378-82c0-6bd4-e053-0100007fdf3b">Rubin 1974</a>、<a href="https://www.research.ed.ac.uk/en/publications/differential-response-analysis-modeling-true-responses-by-isolati/">Radcliffe &amp; Surry 1999</a>、<a href="https://kdd.org/exploration_files/lo.pdf">Lo, True Lift</a></p>
+<p>2010 年代中后期，因果树、因果森林、DML 与 observational policy learning 把异质性效应和高维状态带入可用方法栈。因果森林用于估计不同状态下的 treatment effect，DML 通过正交化与交叉拟合降低高维 nuisance model 的正则化偏差，policy learning 则进一步比较受预算、公平或可解释形式约束的分配规则。<a href="https://arxiv.org/abs/1510.04342">Causal Forest</a>、<a href="https://arxiv.org/abs/1608.00060">Double/Debiased Machine Learning</a>、<a href="https://arxiv.org/abs/1702.02896">Policy Learning with Observational Data</a></p>
+<p>这次范式变化重写了“敏感度”。额度敏感或价格敏感不再是客户身上永久不变的标签，而是给定 <code>C_t</code>、<code>S_t</code>、action dose 与结果窗口时，对潜在状态 <code>Z_t</code> 的条件效应判断。当前合同 <code>C_t</code> 不能简单删除：它会影响需求、约束和未来 feasible action；但也不能让它直接代表下一次动作的价值，因为它由旧政策形成，带有内生性。正确的分工是把 <code>C_t</code> 与决策前 <code>S_t</code> 放入状态条件，再用随机、准实验或有明确假设的观察性设计识别 action effect。</p>
+<p>action semantics 也必须在实验、日志和 policy 中保持一致。系统可以把 <code>R_t</code> 与实际 <code>A_t</code> 编码为目标合同，也可以编码为相对 <code>C_t</code> 的变化；同一个 estimand 和 policy version 内不应混用。若“提额一级”在不同账户上对应完全不同的经济剂量，却被记录成同一动作，估计出的 response surface 就失去清晰含义。<code>D_t</code> 还会使“被分配”“看到/接受”和“实际生效”分离：随机分配通常直接识别 <code>R_t</code> 的 ITT，若要解释实际 <code>A_t</code> 的效果，还需处理接受、执行与依从性选择。<strong>[推断]</strong> 当前合同 <code>C_t</code> 可以作为 policy 条件，用来决定哪些目标合同或相对变化可选；它本身既不是 treatment effect，也不能被解释成“当前价格导致了当前风险”的因果证据。</p>
+<p>因果方法解决了“预测”与“干预”的概念混淆，却没有消灭识别条件。随机试验仍需处理执行偏差、失访、干扰和外推；RD 主要识别阈值附近的局部效应；DiD 依赖平行趋势等条件；DML 不能自动消除未观测混杂；DR 也不能恢复历史从未尝试过的动作。<strong>[事实]</strong> 当目标策略在某类账户选择的动作，旧策略在该类账户上从未选择时，overlap 缺失会使重要性权重不存在或极端不稳定。<a href="https://arxiv.org/abs/2106.02029">OPE overlap 研究</a></p>
+<p>还有一个容易被忽略的断点：CATE 高不等于 policy value 高。一个动作可能提高使用，却同时提高损失、资本占用或客户退出；效应估计必须经过统一价值口径和硬约束，才能进入 action selection。<strong>[推断]</strong> 因果识别把“该对谁行动”变成了可研究问题，也暴露了数据基础设施的不足——没有 <code>R_t</code>、<code>D_t</code>、<code>A_t</code>、decision-time logged propensity、版本和 matured outcomes，方法越复杂，越容易把模型外推包装成因果结论。</p>
+<p>这直接催生下一阶段：与其只训练一个更好的效应模型，不如把“candidate policy 能否超过现行策略”作为独立估计对象，并在安全边界内主动生产可识别数据。</p>
+<h2>2.7 2020—2026：OPE 与 constrained learning 把研究对象从 model 推进到 policy</h2>
+<p>champion/challenger 的优点是安全、清楚，缺点是每次只能比较少量人工设计策略；环境变化快时，固定矩阵迭代缓慢。contextual bandit 提供了更细的局部学习框架：给定决策时 <code>C_t</code> 与可观测状态 <code>S_t</code>，在多个 assigned action <code>R_t</code> 中选择一个，同时用 controlled exploration 更新对 action value 的不确定性。它并非突然出现的新思想。Epoch-Greedy、LinUCB 和基于随机日志的 replay evaluation 在 2007—2010 年已经建立关键方法基础。<a href="https://papers.nips.cc/paper/3178-the-epoch-greedy-algorithm-for-multi-armed-bandits-with-side-information">Epoch-Greedy</a>、<a href="https://arxiv.org/abs/1003.0146">LinUCB</a>、<a href="https://arxiv.org/abs/1003.5956">Replay Evaluation</a></p>
+<p>真正推动其进入高风险决策讨论的，是 off-policy evaluation (OPE)与保守学习逐渐成熟。双重稳健 OPE 将 reward model 与 logging policy 信息结合，Counterfactual Risk Minimization 从带 propensity 的历史反馈中学习策略并控制估计方差；保守 contextual bandit 则要求新策略相对既有 baseline 维持最低表现保证，预算约束 bandit 把稀缺资源直接写入选择问题。<a href="https://arxiv.org/abs/1103.4601">Dudík 等双重稳健 OPE</a>、<a href="https://proceedings.mlr.press/v37/swaminathan15.html">Counterfactual Risk Minimization</a>、<a href="https://arxiv.org/abs/1611.06426">Conservative Contextual Bandits</a>、<a href="https://arxiv.org/abs/1507.06738">Contextual Bandits with Knapsacks</a></p>
+<p>这套方法把系统推进了三步。评估对象从单个模型的 AUC、KS 或 Qini 转为整套策略相对 baseline 的价值；探索不再只是营销流量分配，而成为生产 counterfactual 证据的机制；资金、资本、风险、公平与客户保护也可以作为 action space 和约束进入策略，而不是等模型给出结果后再补一层人工拦截。</p>
+<p>信贷场景也让它的边界格外清楚。delayed reward，未借款者没有还款标签，<code>R_t</code> 还要经过 <code>D_t</code> 才可能成为 <code>A_t</code>，公平和解释要求也不能被平均收益覆盖。如果一次动作对未来 <code>C</code>、<code>S</code> 与 <code>Z</code> 的影响在研究窗口内可以忽略，contextual bandit 可作为近似单步的安全局部学习：它回答“给定当前可见状态，下一次分配什么”，不是动态决策理论的终点。</p>
+<p>若研究目标从定义起就跨越多次决策，且 <code>A_t</code> 会改变未来合同 <code>C_{t+1}</code>、可观测状态 <code>S_{t+1}</code>、潜在状态 <code>Z_{t+1}</code> 或下一次 feasible action，那么问题从定义起就是 dynamic treatment regime、MDP，或在 <code>Z_t</code> 不可完整观测时的 POMDP，而不是 bandit 运行后再“升级”出来的问题。候选动态策略也不能只靠单步 OPE 验收，需要 sequential OPE 或相应纵向因果估计处理多期动作—状态反馈。<a href="https://arxiv.org/abs/2002.07285">Dynamic DML</a>、<a href="https://proceedings.mlr.press/v48/jiang16.html">Sequential Doubly Robust OPE</a> 只有当各期分配和接受机制、overlap、state transition 与 long-horizon reward 可以识别，日志又能复原 <code>R_t→D_t→A_t</code> 的完整轨迹时，这些动态框架才有成立基础；否则，以 bandit 做受控的局部近似，并用长期对照验证外溢影响，反而更诚实。</p>
+<p>因此，“在线学习”在信用决策中首先是治理架构，而不是一个算法包。系统必须保存决策时 <code>C_t</code>、<code>S_t</code>、完整 feasible action set、<code>R_t</code> 的 logging propensity、<code>D_t</code>、实际 <code>A_t</code>、策略与随机种子版本；新策略需要现行 champion 作为 safe baseline，overlap 不足时要返回“不可识别”，异常时可以限流、冻结动作或回滚。复杂算法也不能替代具体动作理由。CFPB 对不利行动通知的解释明确指出，黑箱复杂度不能成为无法提供具体、准确理由的借口。<a href="https://www.consumerfinance.gov/compliance/circulars/circular-2022-03-adverse-action-notification-requirements-in-connection-with-credit-decisions-based-on-complex-algorithms/">CFPB Circular 2022-03</a></p>
+<p><strong>[推断]</strong> 截至 2026 年，公开研究足以证明信用定价、调额和 constrained policy learning“可以被建模和试验”，不足以证明全自动联合 bandit/RL 已成为大规模零售信贷的普遍生产范式。可辩护的结构仍是规则安全域、可识别实验、因果响应、policy evaluation 与保守探索逐层提供证据。任何探索分配、对照比例、action dose 或冷却周期都应由适用法律、风险偏好、统计功效、outcome maturity curve、overlap 和可恢复性校准，而不是从论文或同业案例中抄成“标准答案”。</p>
+<p>这一阶段解决了静态策略难以持续适应的问题，也把历史矛盾推到最尖锐的位置：系统终于能边行动边学习，但它学习到什么，完全取决于 reward、约束、日志和探索如何设计。错误的目标函数配上更快的学习，只会更快地把短期收入偏好、选择偏差或不公平待遇固化进政策。</p>
+<h2>2.8 汇流后的结论：系统竞争力从 better score 转向 trustworthy decisioning process</h2>
+<p>到 2026 年，五条谱系可以被放进同一个决策表达。风险测量与行为状态共同定义当前合同 <code>C_t</code>、可观测状态 <code>S_t</code> 以及对潜在状态 <code>Z_t</code> 的 belief；合同经济学说明分配 <code>R_t</code> 会通过展示/接受 <code>D_t</code> 形成 executed action <code>A_t</code>，并改变需求、暴露和偿付；因果识别比较 <code>Y(A_t=a)</code> 与 baseline <code>Y(A_t=a0)</code>；policy learning 在合法、风险、资本、公平和解释约束内比较 long-term incremental value；governance 则保证 <code>C_t/S_t/R_t/D_t/A_t</code>、reason code、版本和结果能够被验证、replay 与回滚。动作 <code>a</code> 的语义必须固定为 target contract 或相对 <code>C_t</code> 的 change 之一。</p>
+<pre><code class="language-text">选择策略 π，不是最大化某个模型分数，而是：
+
+max  E[长期增量收入 - 增量信用损失 - 资金/资本/运营成本 + 可归因长期价值]
+ s.t. 合法合同、偿付能力、风险暴露、公平、解释、overlap 与可回滚约束
+</code></pre>
+<p>contextual bandit 只承接 state transition 可忽略时的近似单步局部学习。只要目标跨期且 <code>A_t</code> 改变未来 <code>C/S/Z</code>，理论对象从定义起就是 DTR、MDP/POMDP 与 sequential OPE；没有可识别的转移、long-horizon reward 和轨迹支持，算法名称不能证明动态策略有效。</p>
+<p>这段历史同时留下五项结构性技术债：</p>
+<table>
+<thead>
+<tr>
+<th>历史遗产</th>
+<th>当时为何合理</th>
+<th>今天需要补上的能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>风险分直接驱动动作</td>
+<td>早期核心问题只有风险排序与准入</td>
+<td>把风险设为边界和价值组成，而非 action value 本身</td>
+</tr>
+<tr>
+<td>额度、价格和营销分模块</td>
+<td>模型—政策分层便于组织和审计</td>
+<td>统一状态与价值口径，显式估计 joint action 交互</td>
+</tr>
+<tr>
+<td>行为数据由旧策略持续生成</td>
+<td>一致执行比 counterfactual 识别更优先</td>
+<td>保存 <code>R_t/D_t/A_t</code>、propensity、版本与长期对照</td>
+</tr>
+<tr>
+<td>因果模型被当成“自动因果机”</td>
+<td>高维方法改善了估计能力</td>
+<td>把识别假设、common support、局部性和不确定性写进输出</td>
+</tr>
+<tr>
+<td>学习算法被当成自动化终点</td>
+<td>在线更新看似能替代人工迭代</td>
+<td>用 baseline、硬约束、独立验证、监控和回滚包住学习</td>
+</tr>
+</tbody>
+</table>
+<p>其中最关键的历史教训是：<strong>策略会制造自己的训练数据。</strong> 旧政策决定谁被分配什么合同，谁看到并接受，什么动作最终生效；这些环节又共同决定未来可见的使用和坏账。样本量增加并不自动增加 counterfactual 信息，确定性越强的旧策略，反而可能让替代动作越难识别。现代系统的稀缺能力因而不只是模型复杂度，而是一条持续生产可识别证据的数据供应链。</p>
+<blockquote>
+<p><strong>证据边界：</strong> 本章引用的随机试验、准实验和监管文件用于证明机制、异质性与治理方向。研究中的效应数值受市场、产品、时期、入组条件、action dose 和结果窗口限制；监管共同强调的也是风险相称的验证、监测、审计和消费者保护，而非跨市场统一的经营阈值。任何参数都应标明它是监管硬约束、研究估计、内部观测、经验默认还是待验证假设。</p>
+</blockquote>
+<p>纵轴走到这里，横轴的问题也随之清楚：规则与评分卡、预测响应、uplift/CATE、OPE 和 bandit 并不是五选一的“代际竞赛”。它们分别承接历史上尚未消失的职责。下一章要比较的，不是谁最先进，而是谁能在整条决策链中回答哪一个问题、依赖什么证据，又必须被什么边界约束。</p>
+<h1>三、横轴：先比较 end-to-end decision paradigms，再拆 capability components</h1>
+<p>Rules、predictive models、CATE、OPE 和 bandit 经常被写成五条互相替代的“技术路线”，但这个分类混合了不同抽象层。Rules 是约束与执行机制，predictive models 和 CATE 是 outcome-estimation components，OPE 负责 policy evaluation，bandit 则同时包含 action selection 与 data acquisition。它们可以组合成多种完整系统，不能放在同一张算法先进度榜单上。</p>
+<p>横轴需要先比较端到端范式：一个范式怎样定义状态和动作、凭什么比较 counterfactual、怎样求解策略、如何处理时间反馈与约束。完成这一层后，才有意义比较各能力组件分别负责哪一种不确定性。</p>
+<h2>3.1 第一层：六种端到端决策范式</h2>
+<table>
+<thead>
+<tr>
+<th>端到端范式</th>
+<th>完整决策闭环</th>
+<th>主要数据与识别依据</th>
+<th>合适时域与理论生态位</th>
+<th>主要失败条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>规则策略</td>
+<td>状态分层 → 决策表/专家规则 → feasible action → 固定映射</td>
+<td>历史风险表现、政策与成本边界；不要求学习 counterfactual</td>
+<td>冷启动、逐笔硬约束、稳定 baseline 和人工例外</td>
+<td>阈值陈旧、规则冲突、局部最优、动作维度增加后组合爆炸</td>
+</tr>
+<tr>
+<td>Predict-then-optimize</td>
+<td>预测每个候选合同下的需求、使用、损失与价值 → 约束求解器选优</td>
+<td>历史监督数据；只有在实验、有效 IV 或可交换性成立时才有因果含义</td>
+<td>连续动作的局部响应地图、情景模拟和确定性约束优化</td>
+<td>优化器放大预测误差、复制旧策略、在无支持区域寻找虚假最优</td>
+</tr>
+<tr>
+<td>结构需求模型 + 约束优化</td>
+<td>显式建模选择、需求、违约与合同机制 → 估计结构参数 → 求解 counterfactual 合同</td>
+<td>经济行为假设、选择数据、价格/额度变化，常需 IV、自然实验或结构限制</td>
+<td>合同设计、逆向选择与激励并存、需要机制解释的 counterfactual 模拟</td>
+<td>结构设定错误、工具无效、均衡或偏好假设不可检验、对异质性过度简化</td>
+</tr>
+<tr>
+<td>因果 policy learning</td>
+<td>估计动作 counterfactual 价值/DR score → 在受限 policy class 中最大化价值</td>
+<td>RCT 最清晰；或无未观测混杂、overlap、consistency，必要时使用 IV</td>
+<td>二元或少量联合合同、固定评价窗口、可审计策略树</td>
+<td>隐藏混杂、动作臂稀疏、支持不足、局部 CATE 被误当整体 policy value</td>
+</tr>
+<tr>
+<td>安全 contextual bandit</td>
+<td>safe action set → baseline 与受控随机分配 → 局部反馈 → 更新选择概率</td>
+<td>已知分配概率、快速或可管理的延迟反馈、稳定回退和可重放日志</td>
+<td>安全域内近似单步或短反馈的局部适应与信息生产</td>
+<td>即时代理绑架长期目标、状态反馈、非平稳、约束只在平均意义成立</td>
+</tr>
+<tr>
+<td>Dynamic regime / MDP / POMDP</td>
+<td>历史或 belief state → 序列动作 → state transition → 长期价值与序列 policy evaluation</td>
+<td>序列随机化或 sequential ignorability、轨迹支持、转移/观测模型及 sequential OPE</td>
+<td>当前合同显著改变未来状态、复借和后续可选动作的跨期问题</td>
+<td>轨迹支持迅速稀释、转移模型错误、long-horizon reward 难归因、隐藏混杂被误当部分可观测性</td>
+</tr>
+</tbody>
+</table>
+<p>规则策略和 predict-then-optimize 主要延续了评分与运筹传统；结构需求模型把信息经济学中的选择、逆向选择和合同激励写进模型。利率并非只补偿既定风险，它会改变申请者构成和借后行为（<a href="https://ideas.repec.org/a/aea/aecrev/v71y1981i3p393-410.html">Stiglitz &amp; Weiss</a>）；结构化合同研究也表明，首付、额度或价格可以同时筛选风险并改变贷款规模（<a href="https://web.stanford.edu/~leinav/pubs/ECMA2012.pdf">Einav, Jenkins &amp; Levin</a>）。结构范式因此比普通预测面拥有更强的 counterfactual 表达力，也承担更强的模型设定风险。</p>
+<p>因果 policy learning、安全 bandit 与动态 regime 则分别解决固定窗口的策略选择、受控信息获取和跨期状态控制。它们也不是线性升级关系：若动作对未来状态影响可忽略，动态模型可能徒增不可验证假设；若状态反馈显著，单步 bandit 再精细也没有覆盖真正的问题。</p>
+<h2>3.2 统一 notation：current offer 是 state，assignment、acceptance 与 execution 必须拆开</h2>
+<p>为避免方法之间悄然更换 estimand，本报告固定以下符号：</p>
+<ul>
+<li><code>C_t=(L_t,p_t,q_t)</code>：决策前已经生效的当前合同，分别表示额度、价格/综合费率与期限；</li>
+<li><code>S_t</code>：决策时可观测的其余状态，包括风险、余额、利用、历史响应和市场信号；</li>
+<li><code>Z_t</code>：需求、流动性、偏好或竞争环境等不能被完整观测的潜在状态；</li>
+<li><code>R_t</code>：策略或随机机制分配的 assigned action；</li>
+<li><code>D_t</code>：提议是否被展示、理解或接受的中间环节，必要时可继续拆分；</li>
+<li><code>A_t</code>：真正执行并生效的动作；</li>
+<li><code>Y_{t:t+h}</code>：即时响应、使用、损失、成本、留存和后续状态组成的 outcome trajectory。</li>
+</ul>
+<p>当前合同 <code>C_t</code> 属于决策前状态，策略可以条件化它；它不是本次干预。<code>R_t</code> 与 <code>A_t</code> 的动作编码必须在一个 estimand 内固定为两种形式之一：目标合同 <code>C_t^*</code>，或相对变化 <code>ΔC_t=C_t^*−C_t</code>。两种形式不能在训练、策略比较和执行时混用。采用相对变化时，feasible action set 和结果合同都必须由 <code>C_t</code> 显式推导；采用目标合同时，则要把路径依赖保留在 <code>S_t</code> 与历史中。</p>
+<p>这组符号同时拆开三个问题：条件预测描述 <code>E[Y_{t:t+h}|S_t,C_t,R_t,D_t,A_t]</code>；action effect 比较同一决策前状态下的 potential outcomes，例如 <code>E[Y_{t:t+h}(A_t=a)-Y_{t:t+h}(A_t=a_0)|S_t,C_t]</code>；policy evaluation 的是分配规则 <code>π(R_t|S_t,C_t)</code> 经过展示、接受和实际生效之后的总体结果。随机分配识别的是 <code>R_t</code> 的 ITT 效应；若只研究真正生效的 <code>A_t</code>，还需要处理依从性和选择，不能把二者都叫“实验效应”。</p>
+<h2>3.3 第二层：五类能力组件的六维比较</h2>
+<table>
+<thead>
+<tr>
+<th>能力组件</th>
+<th>问题定义</th>
+<th>最低数据条件</th>
+<th>因果能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>规则/评分卡</td>
+<td>哪些 assigned action 允许被分配，哪个风险档满足政策</td>
+<td>历史表现、<code>S_t</code>、<code>C_t</code>、成本、政策与人工规则</td>
+<td>默认没有；排序的是既有制度下的风险，不识别改变合同的增量</td>
+</tr>
+<tr>
+<td>predicted response surface/弹性</td>
+<td>给定状态与提议/executed action，展示、接受、使用、损失和价值分别会是多少</td>
+<td><code>S_t,C_t,R_t,D_t,A_t,Y</code>，且 candidate action 附近有数据覆盖</td>
+<td>观测拟合本身没有；实验、有效 IV 或可辩护的可交换性可使 response surface 因果化</td>
+</tr>
+<tr>
+<td>Uplift/CATE</td>
+<td>相对基准动作，哪个动作使特定状态下的结果发生多大改变</td>
+<td>RCT 最清晰；观测数据需关键混杂可观测、consistency 与 overlap</td>
+<td>直接估计条件平均效应，但必须先明确估计 <code>R_t</code> 的分配效应还是 <code>A_t</code> 的生效效应</td>
+</tr>
+<tr>
+<td>DR/OPE</td>
+<td>在不直接采用 candidate policy 时，它的总体价值是否高于 baseline</td>
+<td>logging policy <code>π_b(R_t|H_t)</code>、logged propensity、matured outcomes、common support；不依从时还需 <code>D_t,A_t</code></td>
+<td>在条件成立时校正已观测选择并估计 policy value；不能修复隐藏混杂、零支持或错误 action semantics</td>
+</tr>
+<tr>
+<td>受约束 contextual bandit</td>
+<td>在安全 action set 内，怎样分配 assigned action 并平衡利用与信息价值</td>
+<td>实时状态、候选集、<code>R_t</code>、已知选择概率、<code>D_t,A_t</code> 与延迟结果回填</td>
+<td>随机分配能前瞻产生可识别数据；算法本身不消除执行选择、延迟、漂移或错误 reward</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>能力组件</th>
+<th>理论与治理角色</th>
+<th>典型失败条件</th>
+<th>最佳生态位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>规则/评分卡</td>
+<td>逐笔硬约束、剔除理由、人工例外、baseline 与回退</td>
+<td>阈值陈旧、覆盖冲突、把风险排序当 action value</td>
+<td>所有端到端范式中的安全动作生成器</td>
+</tr>
+<tr>
+<td>predicted response surface/弹性</td>
+<td>候选合同生成、局部仿真、预算测算、DML/DR 的 nuisance model</td>
+<td>旧策略复制、历史空白区外推、短期代理替代长期价值</td>
+<td>连续动作的局部地图和结构/因果范式的估计组件</td>
+</tr>
+<tr>
+<td>Uplift/CATE</td>
+<td>识别效应异质性、发现不应干预者、生成 counterfactual 价值分数</td>
+<td>propensity 接近 0/1、CATE 无个体真值、动作臂过多、标签窗口漂移</td>
+<td>少量离散联合合同的异质增量估计</td>
+</tr>
+<tr>
+<td>DR/OPE</td>
+<td>比较 champion 与候选 policy，界定策略采用所需的支持和不确定性条件</td>
+<td>动作概率事后猜测、有效样本量低、极端权重、结果未成熟</td>
+<td>因果 policy、bandit 和动态 regime 的策略比较组件</td>
+</tr>
+<tr>
+<td>受约束 contextual bandit</td>
+<td>在安全域内获取信息并做局部适应，持续记录 logged propensity</td>
+<td>不安全探索、即时 reward 偏置、版本不可重放、多期影响被当成单期反馈</td>
+<td>近似单步或短反馈范式中的选择与数据获取组件</td>
+</tr>
+</tbody>
+</table>
+<h2>3.4 Rules / scorecards：不是落后的 optimizer，而是 decision guardrails</h2>
+<p>规则/评分卡最擅长把偿付能力、风险偏好、合同限制和人工例外转成可重复决策。它能在分配 <code>R_t</code> 前逐账户剔除动作，而组合均值约束做不到这一点；固定 reason code、覆盖顺序和审批权限也便于重放。零售信贷监管手册长期把定价放在风险、竞争价格和业务量共同权衡的框架中，并提醒过高定价可能带来逆向选择或客户流失（<a href="https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/files/retail-lending/pub-ch-retail-lending.pdf">OCC Retail Lending Handbook</a>）。</p>
+<p>它的边界同样明确。评分卡主要描述既有政策下的风险排序，无法仅凭历史相关性回答改变合同造成多少增量价值。规则层最合理的职责是依据 <code>(S_t,C_t)</code> 输出安全提议集合 <code>A_safe(H_t)</code>、每个被排除动作及理由，再由完整决策范式在集合内比较。规则由此从“猜最优动作的旧系统”变成“授予其他组件决策权限的可审计接口”。</p>
+<h2>3.5 predicted response surface：最好的地图，也可能不是因果地图</h2>
+<p>预测组件可以分别估计 <code>R_t</code> 被展示和接受的概率、实际 <code>A_t</code>、使用规模、损失与价值，对一维连续价格或额度尤其自然。它能画局部响应曲线、检查单调性、生成候选合同，也能充当 DML/DR 的结果与 propensity model。</p>
+<p>问题在于，历史提议通常由旧策略分配。若低价或高额主要给了原本更稳定的人，条件预测会混合客户差异、旧政策判断与真实合同效应；优化器随后会偏爱旧策略最少涉足、预测却最不可验证的区域。贷款定价研究已经直接展示这类选择偏差（<a href="https://arxiv.org/abs/2309.03730">A Causal Perspective on Loan Pricing</a>），连续价格还可能需要工具变量等额外识别设计（<a href="https://arxiv.org/abs/2302.12670">Personalized Pricing with Invalid Instrumental Variables</a>）。</p>
+<p>普通预测面是能力组件；只有当它与明确的经济行为结构、识别条件和约束求解器共同组成闭环时，才成为“结构需求模型 + 约束优化”范式。增加模型深度不能替代这个抽象层变化。</p>
+<h2>3.6 Uplift/CATE：从“谁会发生”跨到“谁因动作而改变”</h2>
+<p>对基准动作 <code>a_0</code> 和 candidate action <code>a_1</code>，CATE 估计：</p>
+<pre><code class="language-text">τ_A(S_t,C_t)=E[Y_{t:t+h}(A_t=a_1)-Y_{t:t+h}(A_t=a_0) | S_t,C_t]
+</code></pre>
+<p>若研究的是策略分配，则应另写 <code>τ_R</code>；当展示、接受和实际生效不完全一致时，<code>τ_R</code>、<code>τ_A</code> 与 LATE 回答不同问题。这个区分比选择哪一种 meta learner 更基础。</p>
+<p>因果森林、广义随机森林和 DML 为非线性异质性、高维 nuisance model 及部分连续处理提供工具（<a href="https://arxiv.org/abs/1510.04342">Causal Forest</a>、<a href="https://arxiv.org/abs/1610.01271">Generalized Random Forests</a>、<a href="https://arxiv.org/abs/1608.00060">Double/Debiased Machine Learning</a>）。但 CATE 的可信度来自实验或识别设计，不来自算法名称。个体 counterfactual 没有可同时观测的真值；动作从二元扩到多臂乃至二维连续空间后，每个“状态 × 动作”单元的有效样本会迅速稀释。</p>
+<p>它的最佳生态位是少量、经济含义明确的联合合同：先估计各动作相对基准的效应与不确定性，再把稳定异质性转为受限 policy class 或浅策略树（<a href="https://grf-labs.github.io/policytree/">policytree</a>）。对支持不足的区域，保留 baseline 比给出虚假个性化更符合因果证据。</p>
+<h2>3.7 DR/OPE：它比较策略，不是再训练一个响应模型</h2>
+<p>CATE 说明局部动作可能有效之后，仍需回答：把这些效应组合为一套分配策略 <code>π(R_t|H_t)</code>，总体是否优于 champion？OPE 正是策略比较组件。Direct Method 依赖 outcome model，IPS 依赖 logging policy 的 logged propensity，Doubly Robust 将二者结合；在相应正则条件和 overlap 下，outcome model 或 logging policy 模型其中一个正确即可获得一致估计（<a href="https://arxiv.org/abs/1103.4601">Doubly Robust Policy Evaluation and Learning</a>）。</p>
+<p>“双重稳健”不会创造缺失的 counterfactual。旧策略从未分配的动作没有支持；事后拟合 propensity 不等于恢复决策时真实概率；若 <code>R_t</code> 与 <code>A_t</code> 因展示和接受而分离，忽略 <code>D_t</code> 还会把分配 policy value 与实际 treatment effect 混在一起。新策略远离 logging policy 时，少数轨迹获得巨大权重，点估计可能由极小有效样本量支撑。common support 缺失会使标准 OPE 严重失效（<a href="https://arxiv.org/abs/2006.09438">OPE under Deficient Support</a>）。</p>
+<p>策略采用条件因此不应只是一项期望价值：还需同时给出相对 baseline 的置信区间、有效样本量、权重分布、状态—动作覆盖、结果成熟度和分群稳健性。无支持区域应保持 baseline、补充实验或缩小候选 policy，而不是继续更换估计器。</p>
+<h2>3.8 Constrained contextual bandit：第一产物不是 personalization，而是可信的 logged data</h2>
+<p>Contextual bandit 根据 <code>(S_t,C_t)</code> 在 safe action set 中分配 <code>R_t</code>，只观察经 <code>D_t</code> 后实际生效的 <code>A_t</code> 与局部结果。它相比确定性规则最重要的新增能力，是前瞻记录已知分配概率，让未来日志具备可评估性。Vowpal Wabbit 的标准工作流也把 context、action、选择概率和 reward 作为不可分割的日志要素（<a href="https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/tutorials/python_Contextual_bandits_and_Vowpal_Wabbit.html">VW Contextual Bandits</a>）。</p>
+<p>“受约束”至少包含三层：逐笔禁止动作必须在分配前剔除；资金和资本等资源约束需要累计控制；新策略相对 baseline 的表现要有保守边界。保守 contextual bandit 和带预算的 bandit 分别提供后两类理论工具（<a href="https://arxiv.org/abs/1611.06426">Conservative Contextual Linear Bandits</a>、<a href="https://arxiv.org/abs/1507.06738">Linear Contextual Bandits with Knapsacks</a>），但它们不自动等价于逐笔合法、公平或可解释。</p>
+<p>它应被明确定位为安全域内、近似单步或短反馈的局部学习组件，不是动态理论终点。若本期合同显著改变下一期 <code>S_{t+1}</code>、<code>C_{t+1}</code>、<code>Z_{t+1}</code> 和后续可选动作，问题应转向 dynamic treatment regime、MDP 或 POMDP，并以 sequential OPE 比较整条策略轨迹；序列双重稳健估计提供了相应框架（<a href="https://proceedings.mlr.press/v48/jiang16.html">Doubly Robust Off-policy Value Evaluation for Reinforcement Learning</a>）。POMDP 的 belief state 可以表达对 <code>Z_t</code> 的后验不确定性，却不能证明旧策略没有使用模型未见的信息；隐藏混杂仍需独立的因果识别证据。</p>
+<h2>3.9 组件怎样连接：按证据分配权限，按状态反馈选择范式</h2>
+<p>在近似单期问题中，规则组件先生成 safe action set；预测与 CATE 组件估计候选合同的结果、增量和不确定性；DR/OPE 比较完整 policy；只有在概率日志、延迟结果和 fallback baseline 均可靠时，bandit 才获得受控信息获取权限。结构需求范式可以复用预测组件，因果 policy learning 可以复用 CATE 与 OPE，安全 bandit 也需要规则、outcome model 和 OPE。组件可以共存，端到端范式却必须明确说明自己依赖哪一种识别逻辑。</p>
+<p>若动作造成显著跨期状态反馈，静态组件仍可用于风险估计或局部效应，但决策对象已经从单次动作变为策略轨迹。此时需要动态 regime/MDP/POMDP 与序列策略比较，而不是把远期结果简单塞进单步 reward。模型治理也应随角色改变：规则审计覆盖与理由，预测审计校准和外推，CATE 审计 estimand、overlap 与敏感性，OPE 审计真实 propensity、支持和有效样本量，动态策略还要审计转移、观测模型与轨迹支持。复杂算法不能成为无法说明具体决策原因的理由；相关原则可参见 <a href="https://www.consumerfinance.gov/compliance/circulars/circular-2022-03-adverse-action-notification-requirements-in-connection-with-credit-decisions-based-on-complex-algorithms/">CFPB Circular 2022-03</a> 与 <a href="https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm">Federal Reserve SR 26-2</a>。</p>
+<h1>四、横纵交叉：六个由历史与方法版图共同推出的非显然结论</h1>
+<p>纵轴显示，信用决策从风险评分、行为账户管理、风险定价，一路走到因果效应与动态策略；横轴则说明，今天并不存在一个能够取代前代能力的“终极模型”。两条轴交叉后，关键变化不是算法越来越复杂，而是系统必须重新安排证据、权限、action semantics 和反馈时钟。</p>
+<h2>4.1 过去最成功的制度资产，正在制造今天最难偿还的因果债务</h2>
+<p>评分工业化和规则一致性曾解决大规模授信最棘手的问题：同类状态得到可重复、可审计的处理。它们越成功，<code>R_t</code> 就越确定；分配越确定，历史数据中可比较的替代动作越少。于是出现一个悖论：数据规模持续增长，counterfactual 信息却未同步增长。百万条由同一规则产生的记录，可能不如一小批分层随机日志更能回答“换一个合同会怎样”。</p>
+<p>风险评分的职责因此需要重新定位。它仍是 safe action set 和价值函数的关键输入，却不应独自承担合同选择。动作日志也不是普通数据治理，而是偿还因果债务的会计系统：除 <code>S_t,C_t</code> 和最终 <code>A_t</code> 外，还要保存全部 candidate action、分配 <code>R_t</code>、展示/接受 <code>D_t</code>、真实概率、剔除理由、override 与版本。规则由此保留历史形成的审计优势，也为后续识别留下空间。</p>
+<h2>4.2 “敏感度”不是隐藏的人格标签，而是状态、合同与动作共同定义的响应</h2>
+<p>行为评分把对象从静态借款人改成动态账户，因果方法又把问题从“谁会响应”改成“哪个动作使结果改变”。两者交叉后，长期固定的“价格敏感度=0.8”失去清晰含义：同一个人会因 <code>C_t</code>、余额、需求状态、竞品环境和目标合同不同而表现出不同响应。</p>
+<p>更合理的输出不是一个标签，而是条件 action value 表：给定 <code>(S_t,C_t)</code>，分别报告候选目标合同或相对变化的预期增量、不确定性、common support 和可执行性。<code>Z_t</code> 可以用 belief state 表达为后验分布，但它只解决部分可观测状态的表示问题。若旧策略依据当前数据中缺失的信息分配 <code>R_t</code>，隐藏混杂仍然存在；更复杂的状态表示不会把观察性关联变成 action effect。</p>
+<h2>4.3 方法升级不是给 model 更多 authority；每个 decision claim 都要跨过更高的 evidence bar</h2>
+<p>纵轴容易给人线性升级的印象：评分卡之后是机器学习，机器学习之后是因果，再走到 bandit 和动态控制。端到端范式表却揭示了相反的治理逻辑：不同范式解决不同反馈结构，并不存在一条所有机构都应走完的阶梯。</p>
+<p>从能力组件看，预测模型只应获得生成候选和描述结果的权限；CATE 在识别成立的区域获得比较动作的权限；OPE 在支持充分时提供采用 candidate policy 的证据；bandit 只有在 safe action set、baseline 和延迟反馈可控时才获得局部探索权限；动态 regime 还需额外证明轨迹支持与转移假设。技术成熟度不等于模型复杂度，而是每个结论只触发与其证据强度相称的行动。</p>
+<h2>4.4 Action space 不是预先给定的菜单，而是一项统计设计</h2>
+<p>历史上的离散额度表和价格档常被视为落后遗产，连续优化则被视为自然终点。横轴比较给出更谨慎的判断：动作颗粒度越细，商业表达越灵活，但每个“状态 × 动作”单元的支持越薄，因果识别、OPE 方差、客户解释和运营复现都会变难。二维连续联动不是把两个连续模型接起来，它会成倍放大可识别性问题。</p>
+<p>早期最好的 action space 往往不是最细，而是信息效率最高：把额度、价格、期限作为联合合同，设计少量经济含义清楚、彼此可比较的目标 offer，或固定版本的相对变化，并保留 baseline 与接近 baseline 的探索档。动作数量应由预期决策价值、样本支持、风险差异和解释成本共同决定。减少动作有时不是牺牲个性化，而是在用高质量证据换取可持续的个性化。</p>
+<h2>4.5 Outcome delay 决定算法上限；先定义 long-term value，再谈 online learning</h2>
+<p>行为评分时代留下了快速更新账户状态的能力，bandit 又把快速反馈变成优势；但信用损失、资本占用和关系价值的成熟速度远慢于展示、接受或使用。如果目标由最先到达的指标定义，系统会把“可快速观测”误当成“最重要”，并在 matured outcomes 出现前持续放大同一方向。</p>
+<p>因此，系统需要双时钟：快时钟只负责流量、响应、异常和代理风险，拥有暂停权而没有扩大长期策略权；慢时钟用 matured outcomes 重算 policy value、验证代理指标并决定是否扩大策略权限。若 <code>A_t</code> 还会改变未来 <code>S_t,C_t,Z_t</code> 和可选动作，单步 bandit 的理论边界已经到达；此时需要动态 regime、MDP/POMDP 和序列 OPE。在没有可信 state transition 证据前，受限的短视策略可能比未经验证的长期 RL 更理性。</p>
+<h2>4.6 最稀缺的能力不是某个模型，而是把治理变成可学习接口</h2>
+<p>早期模型—规则分层的价值在于组织清晰，代价是风险、额度、价格和营销各自优化。今天若只把多个模型放到同一个服务中，烟囱仍然存在，只是接口从表格变成 API。真正的联动要求统一四个对象：决策前的 <code>S_t,C_t</code>，分配—展示/接受—生效链 <code>R_t,D_t,A_t</code>，跨时间结果归因，以及潜在状态 <code>Z_t</code> 的不确定性表示。</p>
+<p>治理在这个结构中不只是限制。safe action set 缩小搜索空间；原因码定义可审计 action semantics；稳定对照和 logged propensity 使 OPE 成为可能；fallback baseline 让受控探索获得生存条件；固定目标合同或相对变化的编码，使跨期重放不会悄然更换 estimand。历史上为控制风险建立的制度资产，经重新设计后会成为持续学习的基础设施。系统竞争力最终来自一条可证伪链：每次分配都能重放，每项结果都能追溯，每个策略都能与 baseline 比较，每个结论都可能被后续成熟数据推翻。这条链也允许系统明确说“不知道”：证据不足时保留 baseline，而不是用模型自信替代识别条件。</p>
+<h1>五、通用理论架构：四层 decision stack、两条 feedback loop、一个 safe baseline</h1>
+<p><svg viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="推荐的额度定价联动系统架构"><br>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1a5276"/></marker><style>.box{rx:14;stroke-width:2}.h{font:700 22px Arial,'Noto Sans CJK SC';fill:#fff}.p{font:16px Arial,'Noto Sans CJK SC';fill:#243746}.a{stroke:#1a5276;stroke-width:3;fill:none;marker-end:url(#arrow)}</style></defs><br>
+  <rect x="170" y="20" width="660" height="82" class="box" fill="#1a5276" stroke="#154360"/><text x="500" y="54" text-anchor="middle" class="h">① Safe action set generator：A_safe(H_t)</text><text x="500" y="82" text-anchor="middle" class="h" style="font-size:16px">法规 / 合同 / 偿付能力 / 风险暴露 / 价格与额度边界</text><br>
+  <path d="M500 104 L500 135" class="a"/><br>
+  <rect x="170" y="140" width="660" height="82" class="box" fill="#2e86c1" stroke="#1f618d"/><text x="500" y="174" text-anchor="middle" class="h">② Response &amp; causal estimation</text><text x="500" y="202" text-anchor="middle" class="h" style="font-size:16px">take-up / 使用 / 损失 / CATE / dose-response / overlap</text><br>
+  <path d="M500 224 L500 255" class="a"/><br>
+  <rect x="170" y="260" width="660" height="82" class="box" fill="#1e8449" stroke="#196f3d"/><text x="500" y="294" text-anchor="middle" class="h">③ Offline Policy Evaluation + evidence checks</text><text x="500" y="322" text-anchor="middle" class="h" style="font-size:16px">Action Value / DR-OPE / ESS / 压力测试 / shallow policy tree</text><br>
+  <path d="M500 344 L500 375" class="a"/><br>
+  <rect x="170" y="380" width="660" height="82" class="box" fill="#7d3c98" stroke="#633974"/><text x="500" y="414" text-anchor="middle" class="h">④ Conservative online policy（仅限 one-step setting，可选）</text><text x="500" y="442" text-anchor="middle" class="h" style="font-size:16px">baseline / safe exploration / logged propensity / constraints &amp; fallback</text><br>
+  <path d="M835 420 C950 420 950 170 840 170" class="a"/><text x="920" y="285" class="p" transform="rotate(-90 920 285)">成熟标签与稳定对照反馈</text><br>
+  <path d="M165 420 C50 420 50 60 160 60" class="a"/><text x="80" y="280" class="p" transform="rotate(-90 80 280)">动作日志、版本与审计反馈</text><br>
+  <text x="500" y="505" text-anchor="middle" class="p" style="font-weight:bold">任一前提不成立：返回 baseline / 不可识别，并保留原始证据</text><br>
+</svg></p>
+<p>图中的第四层只表示“动作不显著改变后续状态”这一分支。若 <code>A_t</code> 会改变未来 <code>C/S/Z</code> 与 feasible action，第四层应替换为 dynamic treatment regime (DTR)、MDP/POMDP 与序列 policy evaluation；这属于问题类型分流，不是算法成熟后自动升级。</p>
+<h2>5.1 五类理论必需的信息对象</h2>
+<table>
+<thead>
+<tr>
+<th>信息对象</th>
+<th>理论含义</th>
+<th>缺失后的不可恢复问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>decision history <code>H_t</code></td>
+<td>time zero 之前的观测、当前合同 <code>C_t</code>、历史动作与环境</td>
+<td>状态不充分、时间泄漏、无法定义目标总体</td>
+</tr>
+<tr>
+<td>feasible action set <code>A_safe(H_t)</code></td>
+<td>当时合法、合同允许且风险可接受的 candidate action 及剔除理由</td>
+<td>无法区分“没被选”与“从不允许”</td>
+</tr>
+<tr>
+<td>分配—展示—接受—执行链</td>
+<td><code>R_t</code> 为策略/随机分配，<code>D_t</code> 为展示或接受，<code>A_t</code> 为 executed action</td>
+<td>ITT、per-protocol、LATE 与 policy value 被混为一谈</td>
+</tr>
+<tr>
+<td>outcome trajectory <code>Y_{t:t+h}</code></td>
+<td>即时响应、近期价值、成熟损失、后续状态与删失</td>
+<td>用短期代理冒充长期价值，或重复计量</td>
+</tr>
+<tr>
+<td>logging policy 与版本 <code>π_b</code></td>
+<td>每个 candidate action 的真实概率、规则/模型版本与人工覆盖</td>
+<td>propensity 不可验证，OPE 与重放失去依据</td>
+</tr>
+</tbody>
+</table>
+<p>这五类对象是因果问题的语义结构，不是某一种数据库产品的 schema。关键是它们在同一 <code>decision_id</code> 与 time zero 下可一致对应。若 offer 只是“被分配”但未展示，ITT 估计的是分配制度；若只分析真正接受并生效者，则需处理依从性和选择，不能继续把 estimator 称为随机分配效应。</p>
+<h2>5.2 状态表示：从“客户画像”改成“决策时状态”</h2>
+<table>
+<thead>
+<tr>
+<th>特征层</th>
+<th>示例</th>
+<th>用途</th>
+<th>禁止做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态/慢变量</td>
+<td>资质、收入、职业、历史信用、渠道</td>
+<td>风险和偿付能力边界</td>
+<td>把受保护或未经授权数据当经营杠杆</td>
+</tr>
+<tr>
+<td>当前约束</td>
+<td>当前/可用额度、余额、利用率、价格、期限</td>
+<td>判断客户是否被 current offer 约束</td>
+<td>将动作后变量泄漏到决策时点</td>
+</tr>
+<tr>
+<td>Offer 轨迹</td>
+<td>历次额度/价格、变更时间、方向、幅度、锁定期</td>
+<td>识别路径依赖与策略震荡</td>
+<td>只保留最新 offer 覆盖历史</td>
+</tr>
+<tr>
+<td>响应轨迹</td>
+<td>展示、点击、申请、提款、借满、提前还款、复借间隔</td>
+<td>描述状态与候选响应</td>
+<td>把相关 proxy 直接叫“因果敏感度”</td>
+</tr>
+<tr>
+<td>风险迁徙</td>
+<td>PD、还款、逾期、损失严重度、暴露轨迹</td>
+<td>约束动作并计算 ΔECL</td>
+<td>用单一频率指标替代损失分布</td>
+</tr>
+<tr>
+<td>市场上下文</td>
+<td>竞品价格、资金成本、季节、触达版本</td>
+<td>分离外部变化</td>
+<td>将市场变化归因于个人偏好</td>
+</tr>
+</tbody>
+</table>
+<p>关键原则是：所有特征都必须以 <code>decision_ts</code> 为时间零点；current offer 可以进入状态，但不能让一个静态预测模型同时承担状态判断和 action selection。</p>
+<h2>5.3 推荐输出：candidate action-value table</h2>
+<p>系统最不应输出的是“价格敏感度=0.87”；更应输出按 candidate action 展开的价值表：</p>
+<table>
+<thead>
+<tr>
+<th>动作</th>
+<th style="text-align: right;">Δ使用/GMV</th>
+<th style="text-align: right;">Δ收入</th>
+<th style="text-align: right;">ΔECL/暴露</th>
+<th style="text-align: right;">Δ成本与资本</th>
+<th>约束/支持</th>
+<th style="text-align: right;">Action Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不动</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td>baseline</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>提额一档</td>
+<td style="text-align: right;">模型估计</td>
+<td style="text-align: right;">模型估计</td>
+<td style="text-align: right;">模型估计</td>
+<td style="text-align: right;">模型估计</td>
+<td>支持充分/不足</td>
+<td style="text-align: right;">净值与区间</td>
+</tr>
+<tr>
+<td>降价一档</td>
+<td style="text-align: right;">模型估计</td>
+<td style="text-align: right;">模型估计</td>
+<td style="text-align: right;">模型估计</td>
+<td style="text-align: right;">模型估计</td>
+<td>锁价/可执行</td>
+<td style="text-align: right;">净值与区间</td>
+</tr>
+<tr>
+<td>提额 + 降价</td>
+<td style="text-align: right;">模型估计</td>
+<td style="text-align: right;">模型估计</td>
+<td style="text-align: right;">模型估计</td>
+<td style="text-align: right;">模型估计</td>
+<td>联合臂支持</td>
+<td style="text-align: right;">净值与区间</td>
+</tr>
+</tbody>
+</table>
+<p>当某动作缺少 overlap 或违反硬约束，应输出“不可识别/不可执行”，而不是仍给出排序。</p>
+<h1>六、没有 A/B 时，怎样从相关性走向可辩护的因果证据</h1>
+<h2>6.1 先承认代理特征的正确用途</h2>
+<p>历史利用率、借满率、还款后复借间隔、看价不借、有效价格差等 proxy 很有用，它们可以稳定描述“当前约束状态”，也可用于分层实验和 candidate action 生成；但在旧策略非随机时，它们不能天然等于提额或降价的因果效应。</p>
+<h2>6.2 识别证据的优先级</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>能回答什么</th>
+<th>必须满足</th>
+<th>不能偷换</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>随机多剂量 A/B</td>
+<td>试验人群与动作范围内 ITT/CATE</td>
+<td>随机、执行清楚、标签成熟</td>
+<td>不自动外推未试客群和剂量</td>
+</tr>
+<tr>
+<td>阈值 RD</td>
+<td>评分/资格阈值附近的局部效应</td>
+<td>连续性、不可操纵、无同点跳变</td>
+<td>不能当全客群 ATE</td>
+</tr>
+<tr>
+<td>自然实验/IV</td>
+<td>受外生冲击者的局部效应</td>
+<td>相关性、排除限制等</td>
+<td>“某天改策略”不自动是自然实验</td>
+</tr>
+<tr>
+<td>DiD / event study</td>
+<td>合格条件下的组别—时间效应</td>
+<td>平行趋势、无预期/溢出</td>
+<td>前趋势不显著不等于已证明</td>
+</tr>
+<tr>
+<td>Target trial + DML/DR</td>
+<td>无未观测混杂等假设下的观察性效应</td>
+<td>time zero、混杂集、positivity</td>
+<td>模型复杂不等于消除隐藏混杂</td>
+</tr>
+<tr>
+<td>DR/OPE</td>
+<td>历史日志下候选 policy 的价值</td>
+<td>真实 propensity、overlap、同口径 reward</td>
+<td>两个模型都错或无支持时不稳健</td>
+</tr>
+</tbody>
+</table>
+<p><strong>[建议]</strong> 没有 A/B 时，优先研究评分阈值、额度阶梯、价格带切点、外生制度变化和分期实施形成的识别机会；若关键假设不能辩护，就把结论写成“相关/预测”，不要写“增量/导致”。</p>
+<h2>6.3 Time-varying treatment：区分 treatment–confounder feedback、washout 与 cooldown</h2>
+<p>连续调额/调价会形成 treatment–confounder feedback：上一次 action 改变下一次 state，而下一次 state 又影响后续 action。解决路径有两类：</p>
+<ul>
+<li>使用动态处理、g-method 或多期模型明确时序；</li>
+<li>在单次效应研究中用 washout 定义因果污染窗口，并用 cooldown 控制运营中的重复 action。两者目的不同，不能共用一个含混的“冷静期”。</li>
+</ul>
+<p>washout 与 cooldown 的长度都应由 response maturity、risk maturity、合同边界和 contamination diagnostics 决定，而不是从固定天数模板抄取。紧急风险 action 可以保留 override，但必须记录 reason code。</p>
+<h1>七、通用理论设计：受约束的动态因果决策系统</h1>
+<h2>7.1 Structural Causal Model (SCM)：先区分 state、action 与 outcome</h2>
+<p>一个通用的额度—定价系统至少包含六类变量：</p>
+<ul>
+<li><code>X_t</code>：决策时可观测的外生或慢变特征；</li>
+<li><code>C_t</code>：决策时已经生效的当前合同/offer；</li>
+<li><code>S_t</code>：其余可观测状态，包括风险度量、余额、历史响应和市场信号；</li>
+<li><code>Z_t</code>：不可完全观测的需求、流动性、偏好或竞争状态；</li>
+<li><code>A_t</code>：本次实际生效的动作，固定编码为目标合同或相对变化；</li>
+<li><code>Y_{t+h}</code>：在不同时间窗成熟的使用、收入、损失、留存和客户结果。</li>
+</ul>
+<p>其动态关系可以抽象为：</p>
+<pre><code class="language-text">A_t ~ π_b(a | H_t)                                  历史/当前策略选择动作
+Y_{t+h} = g_h(S_t,C_t,Z_t,A_t,M_t,ε_{t+h})          动作产生多时间窗结果
+Z_{t+1} ~ P_Z(· | Z_t,S_t,C_t,A_t,M_{t+1})          潜在 state transition
+(S_{t+1},C_{t+1}) ~ P_O(· | S_t,C_t,Z_{t+1},A_t)    新观测与新合同形成
+</code></pre>
+<p>其中 <code>H_t</code> 是截至决策时点的历史，<code>M_t</code> 是可观测市场或宏观环境，<code>ε_t</code> 是新的随机冲击。这个表示法直接解释了 offer 内生性：<strong>current offer 是过去动作的结果和本次决策的条件；策略可以根据它选择动作，但不能把 current offer 与结果的历史相关性解释为本次动作的效果。</strong> 因而“把 offer 删掉”和“用 offer 的预测系数冒充干预效应”都不成立。</p>
+<p>这里还需要区分三个容易被同一个字段名混淆的量：</p>
+<table>
+<thead>
+<tr>
+<th>理论角色</th>
+<th>例子</th>
+<th>可以进入哪里</th>
+<th>主要风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>决策前状态</td>
+<td>当前额度、当前价格、余额、最近一次变更</td>
+<td>状态表示、资格与分层</td>
+<td>遗漏会造成状态不充分</td>
+</tr>
+<tr>
+<td>本次动作</td>
+<td>目标合同，或维持/额度变化/价格变化的版本化相对编码</td>
+<td>treatment/action、策略输出</td>
+<td>表示法混用会改变 estimand</td>
+</tr>
+<tr>
+<td>决策后变量</td>
+<td>新利用率、实际借款、还款、后续 offer</td>
+<td>结果或下一期状态</td>
+<td>提前入模会造成泄漏和碰撞偏差</td>
+</tr>
+</tbody>
+</table>
+<p>一个合格的理论定义不应只写“用当前额度预测需求”，而应把决策事件写成：<code>E_t=(H_t,A_safe,R_t,D_t,A_t,π_b,Y_{t:t+h})</code>。其中 <code>R_t</code> 是分配，<code>D_t</code> 是展示/接受，<code>A_t</code> 是 executed action，<code>A_safe</code> 是当时允许的 action set，<code>π_b</code> 是产生分配的 logged propensity。这个定义把“世界在决策前是什么样”“系统可以做什么”“系统分配了什么”“客户接受且实际生效了什么”“后来发生了什么”分开。没有这种时间语义，再高级的算法也无法判断一个特征是在动作之前、之中还是之后产生。</p>
+<p>状态也不是越多越好。理论上的充分状态要保留影响动作与未来结果的共同原因，但应排除动作后的中介、未来信息以及仅在执行后生成的派生字段。若完整历史过长，可以用递归状态、序列表示或 belief state 压缩；压缩是否成立，取决于它能否支持结果预测、action selection 和 state transition，而不是取决于表示维度是否足够大。</p>
+<h2>7.2 Partial observability：敏感度更接近 belief state</h2>
+<p>真实需求、流动性紧张、竞品报价和心理偏好通常不可完整观测。理论上，这更接近 POMDP，而不是完全可观测的静态分类：</p>
+<pre><code class="language-text">b_t(z) = P(Z_t=z | H_t)
+
+Transition:  T(z' | z, S_t, C_t, A_t)
+Observation: O(S_{t+1} | z', A_t)
+Reward:      r(S_t, C_t, z, A_t)
+
+b_{t+1}(z') ∝ O(S_{t+1}|z',A_t)
+               · Σ_z T(z'|z,S_t,C_t,A_t)b_t(z)
+</code></pre>
+<p><code>b_t</code> 是对潜在状态 <code>Z_t</code> 的 posterior belief，<code>T</code> 是 state transition，<code>O</code> 是观测生成机制。新的申请、查看价格、借满、提前还款或市场信号会更新 <code>b_t</code>；系统随后比较不同动作在该分布下的期望价值和下行风险。</p>
+<p><strong>[推断]</strong> 因此“价格敏感用户”不是本体论类别，而是给定历史和环境下的后验判断。理论输出应包含不确定性，并允许“信息不足/不可识别”，而不是强制给每个人一个稳定标签。</p>
+<p>但需要把两个问题严格分开：POMDP 处理的是<strong>控制中的部分可观测性</strong>，因果识别处理的是<strong>历史动作与 potential outcomes 为何可比较</strong>。belief state 可以概括模型所见历史，却不能证明旧策略没有使用模型未见的信息。若存在隐藏混杂，belief update 不会把观察性关联自动变成 action effect；仍需随机化、可信准实验、工具变量、负向控制、敏感性分析或部分识别等独立证据。</p>
+<p>原问题中三类“敏感度变化”可用同一状态空间解释：一是机构改变 offer，使约束本身变化；二是客户潜在需求或流动性 state transition；三是竞争环境改变相对价格与可替代选择。观察到的响应是三者共同作用的结果：</p>
+<pre><code class="language-text">Observed Response
+= f(潜在偏好与需求, 当前约束, 相对市场位置, action dose, 随机冲击)
+</code></pre>
+<p>因此，理论上更稳妥的对象不是一个静态“敏感度分数”，而是条件 response surface 或后验 action value 分布。对同一客户，<code>τ_t(a,a0)</code> 会随 <code>S_t</code> 和 <code>M_t</code> 改变；在数据稀疏时，它甚至只应被部分识别为一个区间。模型如果把一次降价后的恢复响应永久归结为“不敏感”，本质上是把状态变化误当成偏好不变。</p>
+<p>belief state 还带来一个重要区分：动作既有<strong>控制价值</strong>，也可能有<strong>信息价值</strong>。一个近似等价的小剂量动作，即使即时收益不是最高，也可能帮助缩小需求状态的不确定性。但信息价值不能凌驾于客户保护和硬约束；探索只在预先定义的安全等价类内有意义。</p>
+<h2>7.3 Constrained objective：hard constraints 先定义 feasible set，再优化 long-term value</h2>
+<p>通用目标可以写为：</p>
+<pre><code class="language-text">max_π  E_π[ Σ_t γ^t · r(S_t,A_t) ]
+
+subject to:
+  A_t ∈ A_legal(S_t) ∩ A_contract(S_t) ∩ A_risk(S_t)
+  PortfolioRisk(π) ≤ R_max
+  Exposure(π) ≤ E_max
+  CustomerHarm(π) ≤ H_max
+  FairnessGap(π) ≤ F_max
+  ChangeFrequency(π) ≤ C_max
+</code></pre>
+<p>这里必须区分两类约束：</p>
+<ul>
+<li><strong>硬约束</strong>先于优化器剔除动作，不能用拉格朗日罚项“付费违反”；</li>
+<li><strong>软约束/组合预算</strong>可以进入优化或 policy selection，但需要置信界、压力测试和事后监控。</li>
+</ul>
+<p>仅最大化平均利润仍可能把风险集中到尾部。理论设计应同时报告均值、分位数、CVaR/尾部损失、最大暴露和分群客户影响。</p>
+<p>reward 本身也应是多时间尺度的，而不是把所有结果粗暴压成一个即时标签。设 <code>r_0</code> 为即时接受与使用，<code>r_1</code> 为近期收入和成本，<code>r_2</code> 为成熟信用损失，<code>r_3</code> 为后续留存、投诉与退出，则 policy value 可写成：</p>
+<pre><code class="language-text">V^π(s) = E_π[r_0 + γ_1 r_1 + γ_2 r_2 + γ_3 r_3 | S_t=s]
+</code></pre>
+<p>折现系数不是纯技术参数，它表达不同利益和时间窗口的制度性权衡。若成熟损失尚不可见，不能用短期转化替代后宣称已优化长期价值；更诚实的输出是“短期价值可估、长期价值待成熟”，并给出上下界或压力情景。</p>
+<p>不同约束也不能都被一个惩罚系数吸收。合法性、合同有效性、不得歧视等要求通常具有词典序上的优先级：先满足，再优化。组合风险预算、资金占用或探索成本才适合做拉格朗日约束或受约束策略选择。否则一个足够大的预期利润会在数学上“购买”违法或不可接受的动作，这与治理语义冲突。</p>
+<h2>7.4 Joint action：用 constrained action graph 管住 interaction、hysteresis 与 fallback</h2>
+<p>只有当目标函数可以按额度与价格分解、feasible set 也不存在共享约束或交叉边界，并且任一动作不会改变另一维的后续响应时，顺序优化才可能等价于联合优化。现实中二者共同影响接受、使用量、EAD、还款压力和留存，还共享偿付能力、暴露与合同约束，因此通常同时存在目标交互与约束耦合：</p>
+<pre><code class="language-text">V(L,p | S) ≠ V_L(L | S) + V_p(p | S)
+</code></pre>
+<p>理论上可使用连续动作和 response surface；实践可识别性却由日志支持决定。一个稳健的通用原则是：先定义经济上合理的有限 joint action 集，估计主效应与交互效应；只有在局部支持充分、单调性和光滑性可辩护时，才加密为连续优化。</p>
+<p>动作离散化不是算法落后，而是同时控制统计方差、安全、解释和实验复杂度。action grid 应由可识别性与决策价值共同决定，而不是由模型能输出多少小数位决定。</p>
+<p>joint action 还意味着“最优价格”和“最优额度”未必各自存在稳定排序。若提额使客户从额度约束转为价格约束，降价的边际效果会改变；反之，价格下降带来的需求增长又会改变额度暴露和损失分布。可分离模型忽略的正是这个交互 state transition。</p>
+<p>理论上可以把 action space 视为一个受约束的格：每个节点是一组合同条件，边表示一次允许的变化。策略不是在连续平面任意跳跃，而是在合法且可识别的边上移动。该表示自然支持三种机制：</p>
+<ul>
+<li><strong>邻域约束</strong>：只比较有历史或实验支持的相近动作；</li>
+<li><strong>hysteresis 与冷却</strong>：进入与退出某一档位使用不同门槛，避免噪声造成往复震荡；</li>
+<li><strong>不变基准</strong>：信息不足、边界冲突或异常时回到已验证的 baseline。</li>
+</ul>
+<p>这也是控制理论与因果决策的交汇处：因果模型回答“一次改变会发生什么”，稳定性机制回答“连续重复改变会不会振荡或发散”。只具备其中一个，仍不是完整的动态系统。</p>
+<h2>7.5 Identification principle：没有 counterfactual variation，就没有 action value</h2>
+<p>任何识别路径首先都需要共同基础：干预及其版本定义清楚，time zero、目标总体和结果窗口明确，一致性可以辩护，干扰结构被限定，并且目标 estimand 所需的状态—动作区域有相应支持。在此基础上，随机实验、条件交换性、RD、IV、DiD 等才是不同的识别路径；它们识别不同总体中的不同效应，各自还需要附加假设，不能被写成可以任意互换的“几选一”。</p>
+<p>共同基础与路径特有条件可以分开写：</p>
+<ol>
+<li><strong>干预明确与一致性</strong>：分配、展示、接受、实际生效的动作及其版本、剂量和执行方式不可混用；</li>
+<li><strong>目标与时间明确</strong>：先定义资格总体、time zero、结果窗口、删失和后续动作，再定义 potential outcomes；</li>
+<li><strong>识别路径明确</strong>：随机化依赖正确分配与执行；观察性 g-method/DML 依赖给定历史后的顺序交换性；RD、IV、DiD 分别依赖连续性、排除限制、平行趋势等路径特有假设；</li>
+<li><strong>支持与可迁移范围明确</strong>：目标策略可能选择的动作必须在相应状态中可比较，局部效应不能自动外推为全局 policy value；</li>
+<li><strong>干扰结构明确</strong>：资金预算、竞品和群体传播若让一个主体的动作影响其他主体结果，应进入网络、市场均衡或组合约束模型。</li>
+</ol>
+<p>这些不是模型可以从数据中自动学出的结论，而是研究设计的前提。尤其是 propensity 只能校正已观测的 action selection 机制；若旧策略在某状态永远不给高额度，任何重加权都无法创造该动作的 counterfactual 结果。</p>
+<p>对动态系统还要额外处理：</p>
+<ul>
+<li>当前动作会不会改变下一期混杂变量；</li>
+<li>后续动作是否污染本次结果；</li>
+<li>客户之间是否因预算、市场或竞争发生干扰；</li>
+<li>未接受 offer 的结果如何定义；</li>
+<li>延迟、删失和提前结清是否信息性。</li>
+</ul>
+<p><strong>[推断]</strong> 因果假设通常不能仅靠样本完全检验。当它们无法由设计、制度知识、诊断和反证分析合理辩护时，正确的理论输出是部分识别、上下界、敏感性分析或“需要新证据”，而不是用更复杂模型制造点估计。</p>
+<p>还必须先定义 estimand，再选择算法。同一个“降价效果”可以指 assigned action 的 ITT、在额外依从性假设下的实际执行效应、以随机分配或阈值为工具识别的 LATE、历史 common support 内的 policy value，或某一动态制度下的长期价值。它们针对的人群、动作和 counterfactual 不同，不能仅因单位相同就互相替代。理论报告若不写 estimand，模型精度越高，结论反而可能越精确地回答错误问题。</p>
+<h2>7.6 Policy value 与 model performance 必须分别验证</h2>
+<p>状态模型、outcome model、propensity 模型、CATE 模型和 policy 都有不同目标。AUC、校准、Qini、CATE 稳定或 OPE value 不能互相替代：</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>主要问题</th>
+<th>理论验收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>状态/风险模型</td>
+<td>描述当前世界是否准确</td>
+<td>校准、稳定性、分群误差</td>
+</tr>
+<tr>
+<td>outcome model</td>
+<td>给定动作下结果是否可预测</td>
+<td>跨动作残差、外推诊断</td>
+</tr>
+<tr>
+<td>Propensity/logging policy</td>
+<td>历史动作概率是否正确</td>
+<td>与决策日志逐笔一致、overlap</td>
+</tr>
+<tr>
+<td>CATE/剂量响应</td>
+<td>action contrast 是否可信</td>
+<td>识别设计、异质性稳定、敏感性</td>
+</tr>
+<tr>
+<td>Policy</td>
+<td>选择动作是否提升总体价值</td>
+<td>OPE、置信区间、约束、baseline 对比</td>
+</tr>
+<tr>
+<td>端到端系统</td>
+<td>组合使用是否安全可复现</td>
+<td>回放、压力、熔断、版本和审计</td>
+</tr>
+</tbody>
+</table>
+<h2>7.7 前置能力与 problem class 不是一条成熟度阶梯</h2>
+<p>可审计语义、可识别数据、counterfactual 估计、policy evaluation 和安全控制确实构成能力前提；但 contextual bandit 与 MDP/POMDP 不是同一条“成熟度阶梯”的前后级，而是由问题结构决定的不同模型类：</p>
+<table>
+<thead>
+<tr>
+<th>问题结构</th>
+<th>合适的理论对象</th>
+<th>关键评估</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一次性动作，或长期影响可可靠封装进单次 reward</td>
+<td>CATE、静态 policy learning、单步 OPE</td>
+<td>treatment effect、policy value、common support</td>
+</tr>
+<tr>
+<td>重复决策，但动作不显著改变下一期状态</td>
+<td>非平稳/受约束 contextual bandit</td>
+<td>regret、约束违反、单步 OPE</td>
+</tr>
+<tr>
+<td>动作改变余额、风险、需求或未来可选动作</td>
+<td>dynamic treatment regime、MDP/POMDP</td>
+<td>g-method、序列 DR/OPE、长期价值</td>
+</tr>
+<tr>
+<td>多主体或组合预算产生相互影响</td>
+<td>受约束 MDP、组合优化、博弈/均衡模型</td>
+<td>组合风险、干扰、资源影子价格</td>
+</tr>
+</tbody>
+</table>
+<p>工程上暂时采用静态近似，不等于理论问题已经退化为 bandit；它只表示对状态反馈做了受限近似，并应说明误差可能指向哪里。反过来，使用 RL 名称也不证明动态问题已被识别：没有 state transition 证据、序列支持和成熟长期 reward，序列模型仍可能只是在拟合历史路径。</p>
+<p>因此，任何复杂方法都不能补偿基础缺失。没有可识别数据，bandit 只是自动化探索风险；没有硬约束，constrained optimizer 也不等于逐笔合法；没有成熟长期 reward，动态学习只会追逐代理指标。</p>
+<h2>7.8 一套 minimal closed-loop blueprint</h2>
+<p>不依赖任何特定机构，一个额度—定价联动系统至少应回答以下八个设计问题：</p>
+<ol>
+<li><strong>决策单位是什么</strong>：客户、账户、合同还是一次申请，跨单位如何处理；</li>
+<li><strong>状态边界是什么</strong>：哪些变量在 time zero 前可用，潜在状态如何表示；</li>
+<li><strong>action semantics 是什么</strong>：维持、变化量、绝对合同和执行失败如何编码；</li>
+<li><strong>价值与约束是什么</strong>：多期 reward、硬约束、组合预算和客户结果如何分层；</li>
+<li><strong>counterfactual 从哪里来</strong>：随机化、准实验、观察性假设或安全探索各覆盖哪里；</li>
+<li><strong>策略怎样被评估</strong>：个体效应、总体 policy value、不确定性和尾部风险如何分开报告；</li>
+<li><strong>系统怎样保持稳定</strong>：baseline、hysteresis、冷却、common support 回退和异常冻结如何定义；</li>
+<li><strong>知识怎样更新</strong>：新结果如何改变状态估计、action value 和 policy version，哪些变化需要重新识别。</li>
+</ol>
+<p>这八项共同构成理论上的最小闭环。它们不预设必须使用评分卡、因果森林、DR 还是 bandit；算法只是实现其中某一推断或选择步骤的工具。一个简单方法若八项定义清楚，通常比一个复杂方法但状态、动作和 counterfactual 含混的系统更接近正确设计。</p>
+<h1>八、什么必须通用，什么必须 context-specific：design invariants 与治理边界</h1>
+<h2>8.1 应标准化的是 semantics 与 proof obligations，不是 numeric defaults</h2>
+<p>通用理论能够给出若干不变量，却不能给出跨产品、跨法域的“神奇参数”。两类对象必须分开：</p>
+<table>
+<thead>
+<tr>
+<th>理论不变量</th>
+<th>为什么不可省略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time zero、目标总体、动作版本与结果窗口明确</td>
+<td>否则 potential outcomes 与 estimand 没有稳定含义</td>
+</tr>
+<tr>
+<td>当前合同属于决策前条件，目标合同或相对变化二选一</td>
+<td>否则状态、动作与执行结果互相污染</td>
+</tr>
+<tr>
+<td>硬约束先定义 feasible set，优化器只在域内选优</td>
+<td>否则平均收益可能补偿不可接受动作</td>
+</tr>
+<tr>
+<td>分配、展示、接受、生效和后续使用分开</td>
+<td>否则 ITT、依从效应与 policy value 被混用</td>
+</tr>
+<tr>
+<td>logged propensity、common support 与版本可追溯</td>
+<td>否则重加权、OPE 与 policy replay 没有依据</td>
+</tr>
+<tr>
+<td>短期结果与成熟长期结果分层</td>
+<td>否则快速代理指标会替代真正目标</td>
+</tr>
+<tr>
+<td>不可识别、不可执行与 baseline 是合法输出</td>
+<td>否则模型会在证据空白区强制排序</td>
+</tr>
+</tbody>
+</table>
+<p>而观察周期、action grid、锁定或冷却长度、实验分配、探索预算、漂移诊断线、停止边界和 reward 权重都属于 context-specific design parameters。它们应由适用法律、目标 estimand、最小可检测效应、outcome maturity curve、最大可承受损失、state transition 速度、overlap 和不确定性共同校准。所审阅材料中的具体数字只能作为历史方案的经验假设，不能从其出现本身推出普适性。</p>
+<h2>8.2 一个可接受的 policy 需要满足五类 proof obligations</h2>
+<ol>
+<li><strong>适用性证明</strong>：动作、数据、合同与目标总体符合相应的法律、权利和制度边界；</li>
+<li><strong>识别证明</strong>：estimand、time zero、分配与执行、混杂、支持、干扰和删失假设能够被清楚陈述并合理辩护；</li>
+<li><strong>估计证明</strong>：结果、propensity、CATE 或转移模型在其声称的范围内具有校准、不确定性与敏感性证据；</li>
+<li><strong>策略证明</strong>：候选 policy 相对 baseline 的价值、尾部风险、组合约束与不支持区域均被显式表达；</li>
+<li><strong>动态证明</strong>：若动作改变未来状态，整条轨迹的 state transition、序列支持、长期 reward 与 sequential OPE 必须成立。</li>
+</ol>
+<p>这五类证明不是项目阶段，而是逻辑依赖。一个策略可以在预测上很强、在识别上很弱；也可以在平均价值上为正、在尾部风险或逐笔权利上不可接受。任何一类缺失，都限制它可以提出的 decision claim。</p>
+<h2>8.3 Governance 的核心是 falsifiability</h2>
+<p>治理的本质不是附加一张审批表，而是使系统的核心命题可以被反驳。最低限度应能回答：当时看到了什么状态；哪些动作可选；为何选中该动作；分配与实际生效是否一致；结果何时成熟；candidate policy 若替换 baseline 会怎样；哪些区域没有支持；新证据是否推翻原结论。</p>
+<p>因此，监测也应对应不同命题，而不是依赖单一阈值：合法性和合同命题接受逐事件检验；执行命题检验分配—展示—接受—生效链；风险与价值命题同时检验均值、金额暴露与尾部；模型命题检验校准、漂移和外推；因果与策略命题检验 overlap、ESS、权重、不确定性和与对照的可重复差异。独立治理不能由同一个 reward optimizer 自我认证，因为优化器没有权限重新定义自身的约束和证伪标准。</p>
+<h1>九、行业实践案例与实验范式：先定 estimand，再选 assignment scheme</h1>
+<p>实验不是“有 A/B / 没 A/B”的二元选项，而是一组为不同 counterfactual gap 服务的研究设计。真正需要先回答的是：要识别哪个 estimand；treatment 是一次 offer、实际生效合同，还是连续 policy；随机化落在账户、门店、地区还是时间窗；客户不接受、动作 carryover、资源竞争和主体间 interference 怎样进入分析。只有这四件事明确，算法和样本量计算才有意义。</p>
+<p>下面分两类列举。第一类是公开可核验的信贷或银行案例，可以说明金融问题曾怎样被实验化；第二类来自科技平台与医疗决策研究，只是<strong>可迁移的 design pattern</strong>，不代表它们已成为信贷行业的普遍生产实践。</p>
+<h2>9.1 公开信贷与银行案例：同一个“实验”可以识别完全不同的量</h2>
+<table>
+<thead>
+<tr>
+<th>范式</th>
+<th>公开案例与 assignment unit</th>
+<th>主要 estimand</th>
+<th>关键假设</th>
+<th>适用场景 / 常见误用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Individual RCT / persistent holdout</td>
+<td>Aydin 与合作银行对 45,307 个既有账户随机提供 credit-line expansion（<a href="https://www.aeaweb.org/articles?id=10.1257%2Faer.20191178">AER</a>）</td>
+<td>提额 offer 的 ITT，以及预设分群内的异质性</td>
+<td>随机分配未被后续规则系统性覆盖；结果窗口和 attrition 清楚</td>
+<td>适合一次性、离散合同动作；不能把某个大剂量试验结果线性缩放为任意 step size</td>
+</tr>
+<tr>
+<td>Multi-arm / dose-response RCT</td>
+<td>南非消费信贷机构向约 5.3 万名既有客户随机化利率，并交叉随机 mailer 的非价格内容（<a href="https://www.nber.org/papers/w11892">NBER</a>、<a href="https://poverty-action.org/publication/what%E2%80%99s-advertising-content-worth-evidence-consumer-credit-marketing-field-experiment">IPA</a>）</td>
+<td>不同 price dose 的 demand curve；价格与 framing 的主效应及 interaction</td>
+<td>每个 treatment version 清楚，factorial cell 有足够样本，multiple testing 受控</td>
+<td>适合同时拆价格和触达机制；不能把打开、申请、借款混成同一个 response</td>
+</tr>
+<tr>
+<td>Encouragement design + IV</td>
+<td>对 787 名边缘拒绝申请者随机进行“second look”，只有一部分最终收到贷款 offer（<a href="https://www.povertyactionlab.org/evaluation/small-individual-loans-and-mental-health-south-africa">J-PAL</a>）</td>
+<td>随机 encouragement 的 ITT；在 exclusion restriction 等条件下识别 compliers 的 LATE</td>
+<td>instrument 影响结果只能经由实际授信，且不存在 defier 等</td>
+<td>适合 assignment 与 take-up 分离；不能把 LATE 写成全客群的 treatment effect</td>
+</tr>
+<tr>
+<td>Multi-stage randomization</td>
+<td>Karlan 与 Zinman 分别随机化 offer rate、contract rate 和动态还款激励，以拆开 selection 与 moral hazard（<a href="https://sites.dartmouth.edu/jzinman/files/2021/02/KarlanZinman_OU_long.pdf">研究原文</a>）</td>
+<td>申请/接受选择、实际合同价格效应、借后激励效应</td>
+<td>每阶段 randomization 和 treatment path 均完整记录；跨阶段 interference 可忽略</td>
+<td>适合机制拆解；若只保留最终合同，就会丢失最有价值的识别结构</td>
+</tr>
+<tr>
+<td>Contract-feature RCT</td>
+<td>乌干达数字信贷机构随机提供“需临时 cash deposit”与其他条款相同的贷款（<a href="https://haas.berkeley.edu/ibsi/research/screening-with-cash-deposits-in-digital-credit-markets/">UC Berkeley Haas</a>）</td>
+<td>合同特征对 take-up、screening、repayment 与 lender value 的联合作用</td>
+<td>唯一系统差异是 deposit requirement；退出与结果观测机制可解释</td>
+<td>适合测试合同机制，而不只是 price/line；不能只看接受率就判定合同优劣</td>
+</tr>
+<tr>
+<td>Organizational RCT</td>
+<td>一家依赖 soft information 的小企业贷款银行，随机评估 credit score 进入 credit committee 的效果（<a href="https://www.nber.org/papers/w19303">NBER w19303</a>）</td>
+<td>score availability 对委员会生产率、组织行为和放贷结果的 system effect</td>
+<td>分配未被跨组学习污染；组织单位和时间效应得到处理</td>
+<td>提醒实验对象可以是 decision process；不能只把模型离线 AUC 当成组织价值</td>
+</tr>
+<tr>
+<td>Regression Discontinuity</td>
+<td>Agarwal 等利用 8.5 million credit cards、743 个 credit-score cutoffs 研究额度跳变（<a href="https://www.nber.org/papers/w21567">NBER</a>）</td>
+<td>阈值附近的 local treatment effect</td>
+<td>running variable 不被精确操纵；阈值处除 treatment 外保持连续</td>
+<td>适合历史 score/eligibility cutoff；局部效应不能直接外推为全局 ATE</td>
+</tr>
+<tr>
+<td>DiD / event study</td>
+<td>CARD Act 研究以 consumer cards 为处理组、small-business cards 为比较组，分析制度变化前后（<a href="https://www.nber.org/papers/w19484">NBER</a>）</td>
+<td>合格条件下的制度平均效应与动态路径</td>
+<td>parallel trends、无提前反应、无差异化 concurrent shock</td>
+<td>适合法规或制度冲击；“某天改了 policy”本身并不构成可信 DiD</td>
+</tr>
+</tbody>
+</table>
+<p>这些案例共同说明：金融实验的难点通常不在随机数，而在 <strong>assignment、take-up、execution 与 outcome maturity 的断裂</strong>。应至少同时报告 <code>R_t</code> 的 ITT 和 <code>A_t</code> 的实际生效路径；出现 non-compliance 时，per-protocol comparison 不能替代 IV 或明确的 selection model。涉及多个价格、额度或合同部件时，应把 treatment version 和 interaction 预先写入设计，而不是事后从连续特征中“挖”出最佳剂量。</p>
+<h2>9.2 可迁移的实验范式：按 feedback topology 选设计</h2>
+<table>
+<thead>
+<tr>
+<th>范式</th>
+<th>公开案例与 assignment unit</th>
+<th>主要 estimand</th>
+<th>关键假设</th>
+<th>适用场景 / 常见误用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cluster-randomized trial</td>
+<td>以门店、地区、团队或机构为 cluster 分配</td>
+<td>cluster-level ITT；可进一步建模个体异质性</td>
+<td>cluster 数量足够，intra-cluster correlation 进入 power calculation，跨 cluster spillover 可控</td>
+<td>当个体随机化会污染执行时使用；大量客户不等于大量独立样本</td>
+</tr>
+<tr>
+<td>Switchback</td>
+<td>DoorDash 按市场 × 时间块切换 treatment，并讨论 carryover 与稳健标准误（<a href="https://careersatdoordash.com/blog/switchback-tests-and-randomized-experimentation-under-network-effects-at-doordash/">方法说明</a>、<a href="https://careersatdoordash.com/blog/experiment-rigor-for-switchback-experiment-analysis/">分析严谨性</a>）</td>
+<td>市场/系统层 treatment 在一个周期内的平均效应</td>
+<td>环境在时间块间可比；carryover 有可辩护的 washout；周期和 seasonality 被建模</td>
+<td>适合共享容量或市场均衡；不能把同一客户的长期合同效应简单改成时间切换</td>
+</tr>
+<tr>
+<td>Stepped-wedge cluster trial</td>
+<td>各 cluster 最终都接受 treatment，但 rollout order 随机（<a href="https://www.bmj.com/content/350/bmj.h391">BMJ</a>）</td>
+<td>分期采用下的平均 intervention effect</td>
+<td>rollout 顺序随机；calendar-time trend 可建模；无严重 anticipation</td>
+<td>适合必须逐步切换的组织能力；普通 phased rollout 不是 stepped-wedge</td>
+</tr>
+<tr>
+<td>SMART</td>
+<td>在预设 decision points 对 non-responder 或特定状态再次随机（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4311115/">方法综述</a>）</td>
+<td>不同 embedded dynamic treatment regimes 的价值</td>
+<td>response 定义、re-randomization rule 和 treatment history 预先固定</td>
+<td>适合有限阶段的序列 policy；不能把事后人工调参当作 SMART</td>
+</tr>
+<tr>
+<td>Micro-randomized trial (MRT)</td>
+<td>在大量 decision points 对即时干预随机化（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4732571/">方法论文</a>）</td>
+<td>time-varying proximal effect，以及 effect 如何随 context 衰减</td>
+<td>每次 decision point 的 eligibility、probability 和 proximal outcome 完整记录</td>
+<td>适合低风险、高频触达；不适合用短期 proximal effect 代替长期信用损失</td>
+</tr>
+<tr>
+<td>Contextual bandit</td>
+<td>Yahoo! 的 LinUCB 使用随机日志做 replay evaluation（<a href="https://arxiv.org/abs/1003.0146">论文</a>）；Microsoft 展示可部署的 interactive learning stack（<a href="https://www.microsoft.com/en-us/research/blog/real-world-interactive-learning-cusp-enabling-new-class-applications/">CUSP</a>）</td>
+<td>近似 one-step setting 下的 cumulative reward / regret，以及 policy value</td>
+<td>logged propensity 真实；reward delay 可管理；exploration 在 safe set 内</td>
+<td>适合边学边分配；不能处理显著 state transition，不能取消长期 holdout</td>
+</tr>
+<tr>
+<td>Sequential OPE</td>
+<td>Sequential Doubly Robust estimator 用于多步 policy 的离线价值评估（<a href="https://proceedings.mlr.press/v48/jiang16.html">PMLR</a>）</td>
+<td>整条 action trajectory 的 policy value</td>
+<td>sequential overlap、trajectory log、reward 与 state definition 成立</td>
+<td>适合 dynamic regime 候选比较；单步 propensity 拼接不等于序列可识别</td>
+</tr>
+<tr>
+<td>A/A + CUPED + universal holdout</td>
+<td>Uber XP 强调 A/B/N、因果推断与通用 holdout（<a href="https://www.uber.com/us/en/blog/xp/">Uber XP</a>）；Microsoft 用 CUPED 降低实验方差（<a href="https://www.microsoft.com/en-us/research/articles/deep-dive-into-variance-reduction/">Microsoft Research</a>）</td>
+<td>A/A 校验 false-positive 与管线；CUPED 提高 precision；holdout 测量累积 net effect</td>
+<td>covariate 必须在 treatment 前；holdout 不被其他政策污染；分析口径预注册</td>
+<td>它们是 experimentation infrastructure，不是新的 causal estimand；不能用 CUPED 修复分配偏差</td>
+</tr>
+<tr>
+<td>Two-stage randomization / interference design</td>
+<td>先随机 cluster saturation，再随机 cluster 内个体 exposure</td>
+<td>direct、indirect、total 与 spillover effect</td>
+<td>network/exposure mapping 预先定义，跨 cluster interference 受限</td>
+<td>适合预算竞争、同群传播或 marketplace interference；标准 SUTVA 下的个体 A/B 会漏掉 spillover</td>
+</tr>
+</tbody>
+</table>
+<h2>9.3 一张选择地图：从业务问题回到实验结构</h2>
+<table>
+<thead>
+<tr>
+<th>结构性问题</th>
+<th>优先考虑的范式</th>
+<th>必须保留的证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一次性离散 offer，主体间基本独立</td>
+<td>Individual RCT、multi-arm、factorial</td>
+<td>eligibility、完整 arm、assignment probability、ITT、matured outcome</td>
+</tr>
+<tr>
+<td>offer 不一定被接受或执行</td>
+<td>Encouragement + IV，或清晰的 two-stage model</td>
+<td>assignment、展示、接受、executed action、first stage、ITT/LATE</td>
+</tr>
+<tr>
+<td>连续价格/额度 dose</td>
+<td>随机 dose grid + response surface；必要时结构模型</td>
+<td>每个 dose 的支持、nonlinearity、interaction、不确定性</td>
+</tr>
+<tr>
+<td>score cutoff 或资格阈值留下自然跳点</td>
+<td>RD / fuzzy RD</td>
+<td>running variable、manipulation test、bandwidth、local estimand</td>
+</tr>
+<tr>
+<td>外生法规或制度只影响部分群体</td>
+<td>DiD / event study</td>
+<td>comparison group、pre-trend、concurrent shocks、dynamic effects</td>
+</tr>
+<tr>
+<td>个体随机会造成组织或市场污染</td>
+<td>Cluster RCT、switchback、two-stage interference design</td>
+<td>cluster/time assignment、ICC、carryover、spillover mapping</td>
+</tr>
+<tr>
+<td>必须分期切换但可随机 rollout order</td>
+<td>Stepped-wedge</td>
+<td>randomized order、calendar-time model、anticipation check</td>
+</tr>
+<tr>
+<td>多次决策且后续 action 依赖中间 response</td>
+<td>SMART / DTR；更高频可考虑 MRT</td>
+<td>decision points、response rule、re-randomization probability、trajectory</td>
+</tr>
+<tr>
+<td>近似 one-step、反馈快、允许安全探索</td>
+<td>Contextual bandit + persistent holdout + OPE</td>
+<td>safe action set、logged propensity、baseline、delayed reward 回填</td>
+</tr>
+<tr>
+<td>当前 action 会系统性改变未来 state</td>
+<td>Sequential trial / g-method / sequential OPE</td>
+<td>time-varying confounder、trajectory support、long-horizon reward</td>
+</tr>
+</tbody>
+</table>
+<h2>9.4 可复用的 Experiment Card</h2>
+<p>每个试验在执行前至少应冻结一张 versioned Experiment Card：</p>
+<ol>
+<li><strong>Decision question</strong>：本次只回答一个可证伪的问题，不把“优化全部经营目标”写成 hypothesis；</li>
+<li><strong>Estimand</strong>：明确 ITT、per-protocol、LATE、CATE、policy value 或 dynamic regime value；</li>
+<li><strong>Unit &amp; interference</strong>：写清 account / customer / cluster / market-time unit，以及 spillover 和 shared-budget 结构；</li>
+<li><strong>Treatment version</strong>：额度、价格、期限、展示方式、目标合同或相对变化必须可 replay；</li>
+<li><strong>Assignment mechanism</strong>：记录完整 candidate set、strata、probability、seed、override 和 actual execution；</li>
+<li><strong>Outcome clock</strong>：区分 proximal outcome、matured credit outcome 与 long-term value，说明 censoring 和后续 action contamination；</li>
+<li><strong>Safety &amp; stopping</strong>：hard constraints、exposure cap、sequential monitoring、pause rule、fallback baseline 和 long-term holdout 分层定义；</li>
+<li><strong>Analysis contract</strong>：主分析、multiple testing、missingness、non-compliance、heterogeneity、sensitivity analysis 与外推边界预先写明。</li>
+</ol>
+<p><strong>[推断]</strong> 最成熟的实验范式不是名称最复杂的那个，而是能用最弱、最透明的假设回答一个边界清楚的问题。随机化可以提高 internal validity，但不会自动保证执行一致、长期结果成熟、主体间无干扰或能跨市场外推；准实验可以利用已有制度，但 local estimand 与 identification assumptions 必须写在结论旁边；adaptive design 可以提高信息效率，但不能取消 baseline、holdout 和 governance。</p>
+<h1>十、三种理论情景及其触发条件</h1>
+<h2>10.1 基准情景：rule-based guardrails + CATE + OPE 的 hybrid architecture</h2>
+<p><strong>[推断]</strong> 当长期结果延迟、替代动作支持有限、逐笔约束严格而 state transition 仍难可靠识别时，最自洽的形态是混合架构：规则定义安全域，因果响应比较少量动作，OPE 比较候选 policy，bandit 只承接近似单步、反馈相对快的局部学习。若未来能够稳定识别多期转移、序列支持与长期 reward，这个情景才会被更完整的动态 regime 取代。</p>
+<h2>10.2 最危险：用“AI 个性化”包装相关性定价和短期 GMV 优化</h2>
+<p>系统用 current offer 和短期行为预测下一动作，却没有实验、candidate action 概率和长期损失；降价激活后被判“不敏感”，再涨价造成震荡；或提额增加短期 GMV，却把金额暴露集中到坏客户。模型离线指标可能持续变好，但组合真实价值恶化。</p>
+<p>可证伪信号包括：预测或 uplift 指标上升但随机对照/DR 价值不一致；candidate action 覆盖缩窄；平均风险平稳而损失严重度、金额暴露或尾部风险上升；人工覆盖增多；reason code 与实际约束不一致。</p>
+<h2>10.3 理想情景：action semantics 成为共享基础设施，policy 可被持续证伪</h2>
+<p>系统把“每次决策能否重放、每个动作能否识别、每个参数能否追溯”作为核心性质。知识从少量联合实验、可解释 policy 与长期对照逐步积累；任何区域支持不足都显式显示“不知道”。该情景成立的可观察条件是：替代动作拥有真实概率、长期结果能回填到同一决策事件、candidate policy 可以与 baseline 重复比较、后续证据能够推翻既有结论。</p>
+<h1>十一、局限性、稳健性与未决问题</h1>
+<ol>
+<li><strong>外部证据可迁移性有限。</strong> 土耳其额度 RCT、美国信用卡 RD、墨西哥利率实验的市场、产品、剂量和窗口均不同，不能直接标定任何新的应用场景。</li>
+<li><strong>公开生产案例不足。</strong> 因果 ML/OPE/bandit 的一手生产成效远少于方法论文和供应商材料，不能把推荐/广告 benchmark 换算为信贷利润。</li>
+<li><strong>联合二维动作证据稀缺。</strong> 单独研究额度或价格较多，真正对额度 × 价格长期联合随机化的公开数据少。</li>
+<li><strong>long-horizon reward 包含规范性选择。</strong> 利息、损失、资本、留存、投诉和客户福祉如何折现，不是算法从历史数据中可以自行决定的。</li>
+<li><strong>观测因果依赖不能仅由数据验证的假设。</strong> DML/DR 不能修复未观测混杂或缺失支持；大样本和复杂模型不改变这一点。</li>
+<li><strong>干扰和多贷方竞争可能破坏标准假设。</strong> 竞品、资金预算和多平台借贷会让一个账户的动作与其他结果相互影响。</li>
+<li><strong>法规状态和适用范围会变化。</strong> 任何具体应用都必须按主体、产品和客户所在地重新确定约束，本文不提供法律结论。</li>
+<li><strong>本文刻意保持理论与通用设计层级。</strong> 因而不对任何特定产品给出财务承诺、动作步长、流量比例或项目排期。</li>
+</ol>
+<p>理论设计仍需明确十个问题：目标是单期贡献还是长期 NPV；哪些约束必须逐笔硬执行；状态是否近似充分；是否存在真实随机概率；结果成熟窗口如何定义；后续动作如何污染结果；joint action 空间如何获得支持；未接受 offer 的结果如何定义；公平与客户待遇采用什么形式化约束；异常时如何证明 policy 已冻结并正确回退。</p>
+<h1>十二、最终结论：理论能力必须按“可审计 → 可识别 → 可评估 → 可学习”递进</h1>
+<h2>12.1 理论设计的优先序</h2>
+<ul>
+<li>先定义状态、动作、potential outcomes、时间零点和长期价值，不从算法选型开始；</li>
+<li>将合法性、合同、偿付能力和不可接受风险建模为硬 action set；</li>
+<li>为可观测状态与潜在状态分别定义表示，显式保留不确定性；</li>
+<li>用少量 joint action 建立可识别的主效应与交互效应，再讨论连续最优；</li>
+<li>将预测、因果效应、policy value 和端到端安全分开验证；</li>
+<li>让 baseline、不可识别和回退成为一等输出，而不是异常分支。</li>
+</ul>
+<h2>12.2 因果策略主张成立的通用条件</h2>
+<ul>
+<li>每个决策事件在语义上包含当时状态、candidate action、分配、executed action 和原因；</li>
+<li>实验或 logging policy 具有 logged propensity，后续覆盖不改写原始值；</li>
+<li>主 estimand、动作对照、结果窗口和污染规则预先定义；</li>
+<li>CATE/OPE 同时报告不确定性、overlap、ESS 和分群风险；</li>
+<li>候选 policy 在不支持区域明确回退 baseline；</li>
+<li>任一硬约束或关键证据缺失都使动作降级为不可执行/不可识别，而非由优化器补偿。</li>
+</ul>
+<h2>12.3 bandit 近似成立的必要条件</h2>
+<p>bandit 只有在动作对未来状态的影响可以忽略，或已经被可靠封装进单次 reward 时，才是正确的问题类型。即使如此，安全 action set、真实 propensity、延迟结果、稳定 baseline、可重放 policy 和独立约束仍只是必要而非充分条件。若动作会系统性改变下一期余额、风险、需求或可选动作，理论对象从一开始就是动态 regime/MDP/POMDP；此时应证明序列支持、转移与长期价值，而不是把更多远期标签塞进单步 reward。</p>
+<p>最终判断不是“要不要用最先进算法”，而是：<strong>理论定义能否让每一次行动都可约束、可识别、可验证，并在证据不足时返回 baseline 或未知。</strong> 这才是额度—定价联动系统从评分卡时代迈向因果决策时代的分水岭。</p>
+<h1>十三、主要来源</h1>
+<h2>13.1 历史、信贷与实证</h2>
+<ol>
+<li>NBER, <em>Risk Elements in Consumer Instalment Financing — Technical Edition</em>: https://www.nber.org/books-and-chapters/risk-elements-consumer-instalment-financing-technical-edition</li>
+<li>Federal Reserve Bank of Chicago, 1981 working paper on credit scoring: https://fraser.stlouisfed.org/files/docs/historical/frbchi/workingpapers/frbchi_workingpaper_1981-03.pdf</li>
+<li>FICO, Corporate Information: https://investors.fico.com/corporate-information</li>
+<li>FICO 2007 10-K（TRIAD）: https://www.sec.gov/Archives/edgar/data/814547/000095013707017904/c21843e10vk.htm</li>
+<li>FTC, <em>50 Years of the Fair Credit Reporting Act</em>: https://www.ftc.gov/business-guidance/blog/2020/10/50-years-fcra</li>
+<li>Equal Credit Opportunity Act Amendments of 1976: https://fraser.stlouisfed.org/title/equal-credit-opportunity-act-amendments-1976-1039/fulltext</li>
+<li>Stiglitz &amp; Weiss, <em>Credit Rationing in Markets with Imperfect Information</em>: https://ideas.repec.org/a/aea/aecrev/v71y1981i3p393-410.html</li>
+<li>Basel Committee, <em>International Convergence of Capital Measurement and Capital Standards</em>: https://www.bis.org/publ/bcbs107.htm</li>
+<li>So &amp; Thomas, dynamic credit-card account management: https://www.sciencedirect.com/science/article/pii/S0377221711000518</li>
+<li>OCC, <em>Retail Lending Comptroller’s Handbook</em>: https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/files/retail-lending/pub-ch-retail-lending.pdf</li>
+<li>Aydin, <em>Consumption Response to Credit Expansions</em>: https://doi.org/10.1257/aer.20191178</li>
+<li>Agarwal et al., <em>Do Banks Pass Through Credit Expansions?</em>: https://www.nber.org/papers/w21567</li>
+<li>Karlan &amp; Zinman, <em>Long-Run Price Elasticities of Demand for Credit</em>: https://www.nber.org/papers/w19106</li>
+<li>Bertrand et al., <em>What’s Psychology Worth?</em>: https://www.nber.org/papers/w11892</li>
+<li>Federal Reserve, <em>Automated Credit Limit Increases and Consumer Welfare</em>: https://www.federalreserve.gov/econres/feds/automated-credit-limit-increases-and-consumer-welfare.htm</li>
+</ol>
+<h2>13.2 结构模型、因果推断、OPE 与动态决策</h2>
+<ol>
+<li>Rubin, <em>Estimating Causal Effects of Treatments</em>: https://dash.harvard.edu/entities/publication/73120378-82c0-6bd4-e053-0100007fdf3b</li>
+<li>Radcliffe &amp; Surry, <em>Differential Response Analysis</em>: https://www.research.ed.ac.uk/en/publications/differential-response-analysis-modeling-true-responses-by-isolati/</li>
+<li>Lo, <em>The True Lift Model</em>: https://kdd.org/exploration_files/lo.pdf</li>
+<li>Einav, Jenkins &amp; Levin, <em>Contract Pricing in Consumer Credit Markets</em>: https://web.stanford.edu/~leinav/pubs/ECMA2012.pdf</li>
+<li><em>A Causal Perspective on Loan Pricing</em>: https://arxiv.org/abs/2309.03730</li>
+<li><em>Personalized Pricing with Invalid Instrumental Variables</em>: https://arxiv.org/abs/2302.12670</li>
+<li>Wager &amp; Athey, <em>Causal Forest</em>: https://arxiv.org/abs/1510.04342</li>
+<li>Athey, Tibshirani &amp; Wager, <em>Generalized Random Forests</em>: https://arxiv.org/abs/1610.01271</li>
+<li>Chernozhukov et al., <em>Double/Debiased Machine Learning</em>: https://arxiv.org/abs/1608.00060</li>
+<li>Athey &amp; Wager, <em>Policy Learning with Observational Data</em>: https://arxiv.org/abs/1702.02896</li>
+<li><em>Dynamic Double/Debiased Machine Learning</em>: https://arxiv.org/abs/2002.07285</li>
+<li>Dudík et al., <em>Doubly Robust Policy Evaluation and Learning</em>: https://arxiv.org/abs/1103.4601</li>
+<li>Swaminathan &amp; Joachims, <em>Counterfactual Risk Minimization</em>: https://proceedings.mlr.press/v37/swaminathan15.html</li>
+<li><em>Off-Policy Evaluation under Deficient Support</em>: https://arxiv.org/abs/2006.09438</li>
+<li>Jiang &amp; Li, sequential doubly robust OPE: https://proceedings.mlr.press/v48/jiang16.html</li>
+<li>Kallus &amp; Zhou, <em>Stateful Off-Policy Evaluation</em>: https://proceedings.mlr.press/v151/kallus22a.html</li>
+<li>Li et al., replay evaluation for contextual bandits: https://arxiv.org/abs/1003.5956</li>
+<li><em>Conservative Contextual Linear Bandits</em>: https://arxiv.org/abs/1611.06426</li>
+<li><em>Linear Contextual Bandits with Knapsacks</em>: https://arxiv.org/abs/1507.06738</li>
+</ol>
+<h2>13.3 监管与治理</h2>
+<ol>
+<li>Federal Reserve, SR 26-2: https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm</li>
+<li>CFPB, Regulation Z §1026.51: https://www.consumerfinance.gov/rules-policy/regulations/1026/51/</li>
+<li>CFPB, Circular 2022-03: https://www.consumerfinance.gov/compliance/circulars/circular-2022-03-adverse-action-notification-requirements-in-connection-with-credit-decisions-based-on-complex-algorithms/</li>
+<li>EBA, <em>Guidelines on Loan Origination and Monitoring</em>: https://eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2020/Guidelines%20on%20loan%20origination%20and%20monitoring/884283/EBA%20GL%202020%2006%20Final%20Report%20on%20GL%20on%20loan%20origination%20and%20monitoring.pdf</li>
+<li>BCBS, <em>Principles for the Management of Credit Risk</em>: https://www.bis.org/bcbs/publ/d595.htm</li>
+</ol>
+<h2>13.4 方法实现参考</h2>
+<ol>
+<li>policytree: https://grf-labs.github.io/policytree/</li>
+<li>Vowpal Wabbit Contextual Bandits: https://vowpalwabbit.org/docs/vowpal_wabbit/python/latest/tutorials/python_Contextual_bandits_and_Vowpal_Wabbit.html</li>
+</ol>
+<h2>13.5 行业案例与实验设计</h2>
+<ol>
+<li>Aydin, <em>Consumption Response to Credit Expansions</em>: https://www.aeaweb.org/articles?id=10.1257%2Faer.20191178</li>
+<li>Bertrand et al., <em>What’s Advertising Content Worth?</em>: https://poverty-action.org/publication/what%E2%80%99s-advertising-content-worth-evidence-consumer-credit-marketing-field-experiment</li>
+<li>J-PAL, randomized marginal credit access in South Africa: https://www.povertyactionlab.org/evaluation/small-individual-loans-and-mental-health-south-africa</li>
+<li>Karlan &amp; Zinman, <em>Observing Unobservables</em>: https://sites.dartmouth.edu/jzinman/files/2021/02/KarlanZinman_OU_long.pdf</li>
+<li>UC Berkeley Haas, <em>Screening with Cash Deposits in Digital Credit Markets</em>: https://haas.berkeley.edu/ibsi/research/screening-with-cash-deposits-in-digital-credit-markets/</li>
+<li>Paravisini &amp; Schoar, <em>The Incentive Effect of Scores</em>: https://www.nber.org/papers/w19303</li>
+<li>Agarwal et al., credit-limit regression discontinuities: https://www.nber.org/papers/w21567</li>
+<li>Agarwal et al., CARD Act difference-in-differences: https://www.nber.org/papers/w19484</li>
+<li>DoorDash, switchback tests: https://careersatdoordash.com/blog/switchback-tests-and-randomized-experimentation-under-network-effects-at-doordash/</li>
+<li>DoorDash, switchback analysis rigor: https://careersatdoordash.com/blog/experiment-rigor-for-switchback-experiment-analysis/</li>
+<li>Hemming et al., stepped-wedge cluster randomized trials: https://www.bmj.com/content/350/bmj.h391</li>
+<li>SMART / Dynamic Treatment Regimes: https://pmc.ncbi.nlm.nih.gov/articles/PMC4311115/</li>
+<li>Micro-randomized trials: https://pmc.ncbi.nlm.nih.gov/articles/PMC4732571/</li>
+<li>Li et al., LinUCB: https://arxiv.org/abs/1003.0146</li>
+<li>Jiang &amp; Li, sequential doubly robust OPE: https://proceedings.mlr.press/v48/jiang16.html</li>
+<li>Uber XP experimentation platform: https://www.uber.com/us/en/blog/xp/</li>
+<li>Microsoft Research, CUPED and variance reduction: https://www.microsoft.com/en-us/research/articles/deep-dive-into-variance-reduction/</li>
+<li>Microsoft Research, CUSP interactive learning: https://www.microsoft.com/en-us/research/blog/real-world-interactive-learning-cusp-enabling-new-class-applications/</li>
+</ol>
+<h1>十四、研究方法说明</h1>
+<h2>14.1 材料完整性</h2>
+<p><strong>[事实]</strong> 本次研究核验的公开分享链接为 <code>https://chatgpt.com/share/6a584c22-0e54-83e8-bb30-f5aa7f998a58</code>。保存的原始 JSON 为 976,284 字节，字段显示 <code>is_public=true</code>；<code>linear_conversation</code> 共 61 个事件，其中恰好 13 条用户消息，并包含内嵌 deep-research 组件与后续生成文件事件。</p>
+<p><strong>[事实]</strong> 内嵌研究卡片《信贷贷中经营中额度与定价联动的技术与策略落地报告》已独立导出为 Markdown，共 499 行、37,096 字节。完整 JSON 与该研究文件共同构成源材料 baseline；纵轴、横轴和证据治理分别形成独立研究底稿。材料核验只用于保证研究输入完整，不作为理论结论本身。</p>
+<h2>14.2 横纵分析与证据纪律</h2>
+<p>本报告采用横纵分析法：纵轴并行追踪风险测量、合同经济学、行为状态、因果识别、policy learning 与治理的汇流；横轴在 2026-07-16 的截面区分端到端决策范式与规则、预测、CATE、OPE、bandit 等能力组件；交叉部分从历史路径依赖与方法边界共同推出理论设计判断。</p>
+<p>研究优先使用监管官网、官方法规/指引、NBER/期刊/PMLR/arXiv 原论文和项目官方文档。社区 issue 只用于识别工程痛点，不用于项目排名。对原对话中的经验数字逐项做“是否监管阈值、是否有研究直接支持、是否可跨市场迁移”的审计。所有推断和建议均保留边界，不将方法论文的可行性写成生产普及事实。</p>
+<p>本次源材料与研究底稿仅用于形成这份通用理论研究报告；本文不代入任何特定业务数据，不校准特定产品参数，也不形成地区业务知识库更新。</p>
+</body>
+</html>
